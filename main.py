@@ -1,15 +1,12 @@
-print("""
+files = ["idiomas.txt", "licoes.txt", "exercicios.txt", "usuarios.txt"]
 
 
-                                -----------------Projeto iniciado!---------------------
+for i in range(len(files)):
+    try:
+        with open("Tabelas/" + files[i], "r", encoding="utf-8") as arquivo:
+            conteudo = arquivo.read()
+            print(conteudo)
 
-      Organização atual:   
+    except FileNotFoundError:
+        print("Arquivo não encontrado.")
 
-                      MaxLanguage(root)
-                           |
-                           |------------Estruturas: Arvore_binaria de indices (estruturas de memória)
-                           |
-                           |-------------Tabelas: Arquivos.txt (dados persistentes [disco])
-                           |
-                           ---------- main.py                    
-""")

@@ -1,0 +1,2 @@
+1;1;1;Como se diz olá em Inglês?;Bye|Hey|See you|Hello;Hello;2
+2;2;1;Como se diz bom dia em Espanhol?;Como estas|Buenos dias|Buenas noches|Hasta luego|;Buenos dias;3
