@@ -4,9 +4,9 @@ class Gerenciador_txt:
 
     def __init__(self, nome_arquivo: str):
         self.nome_arquivo = nome_arquivo
+        self.lista_offsets = self.listar_offsets()
         self.ultimo_deletado = []
-        self.ultimo_offset = self.listar_offsets()[-1]
-
+        
     def listar_offsets(self):
     #Responsável por abrir a tabela.txt e retornar uma lista com todos os offsets de cada linha
         lista_offsets = []
@@ -30,6 +30,9 @@ class Gerenciador_txt:
     def acessar_registro(self, offset):
     #Responsável por retornar uma string com uma linha completa do offset
         registro = ""
+        if offset not in self.lista_offsets:
+            return registro
+        
         try:
             with open("Tabelas/" + self.nome_arquivo, "r", encoding="utf-8") as arquivo:
                 arquivo.seek(offset)
@@ -44,6 +47,9 @@ class Gerenciador_txt:
         return len(self.acessar_registro(offset).encode('utf-8'))
 
     def del_registro(self, offset):
+
+        if offset not in self.lista_offsets:
+            return False
         try:
             with open("Tabelas/" + self.nome_arquivo, "r+", encoding="utf-8") as arquivo:
                 arquivo.seek(offset)
@@ -51,38 +57,42 @@ class Gerenciador_txt:
                 arquivo.seek(offset)
                 arquivo.write("-1;")
 
+            return True
+        
         except FileNotFoundError:
             print("Aqruivo não encontrado.")
+            return False
 
     def inserir_registro(self, registro):
+
+        novo_offset = self.lista_offsets[-1] + self.tamanho_linha(self.lista_offsets[-1]) + 1
         try:
             with open("Tabelas/" + self.nome_arquivo, "r+", encoding="utf-8") as arquivo:
-                arquivo.seek(self.ultimo_offset)
+                arquivo.seek(novo_offset)
                 arquivo.write(registro+'\n')
-                self.ultimo_offset += len(registro.encode('utf-8'))+1
-                
+
+            self.lista_offsets.append(novo_offset)
+
         except FileNotFoundError:
             print("Aqruivo não encontrado.")
 
     def atualizar_arquivo(self):
 
-        lista_offsets = self.listar_offsets()
         atualizar = False
-
         try:
             with open("Tabelas/" + self.nome_arquivo, "r+", encoding="utf-8") as arquivo:
-                for i in range(len(lista_offsets)):
-                    arquivo.seek(lista_offsets[i])
+                for i in range(len(self.lista_offsets)):
+                    arquivo.seek(self.lista_offsets[i])
                     linha = arquivo.readline()
   
                     if linha[0:2] == "-1" and not atualizar:
                         atualizar = True
-                        pos = lista_offsets[i]
+                        pos = self.lista_offsets[i]
                     
                     elif atualizar and linha[0:2] != "-1":
                         arquivo.seek(pos)
                         arquivo.write(linha)
-                        tamanho = self.tamanho_linha(lista_offsets[i])
+                        tamanho = self.tamanho_linha(self.lista_offsets[i])
                         pos += tamanho
 
                 if atualizar:
