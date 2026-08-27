@@ -1,6 +1,6 @@
 import os
 
-class Gerenciador_txt:
+class GerenciadorTxt:
 
     def __init__(self, nome_arquivo: str):
         self.__nome_arquivo = nome_arquivo
