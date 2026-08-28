@@ -90,18 +90,16 @@ class ArvoreB:
             if pai_sub:
                 pai_sub.set_d(sub.get_e())
                 sub.set_e(del_node.get_e())
-                sub.set_d(del_node.get_d())
 
-            sub.set_e(del_node.get_e())
+            sub.set_d(del_node.get_d())
 
         elif del_node.get_d():
             sub, pai_sub = self.buscar_subst_dir(del_node)
             if pai_sub:
                 pai_sub.set_e(sub.get_d())
-                sub.set_e(del_node.get_e())
                 sub.set_d(del_node.get_d())
 
-            sub.set_d(del_node.get_d())
+            sub.set_e(del_node.get_e())
 
         else:
             sub = None
@@ -117,15 +115,23 @@ class ArvoreB:
         return True
 
         
+    def print_pre_order(self, node):
+
+        if not node:
+            return
+
+        self.print_pre_order(node.get_e())
+        print(node.get_i(), end=" ")
+        self.print_pre_order(node.get_d())
+
     def print_in_order(self, node):
 
         if not node:
             return
 
-        self.print_in_order(node.get_e())
         print(node.get_i(), end=" ")
+        self.print_in_order(node.get_e())
         self.print_in_order(node.get_d())
-
         
 
     
