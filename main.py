@@ -1,3 +1,5 @@
-from Estruturas.Gerenciador_txt import GerenciadorTxt
+from Estruturas.GerenciadorTxt import GerenciadorTxt
 from Estruturas.Nodes import Node
-from Estruturas.Arvore_indices import ArvoreB
+from Estruturas.ArvoreB import ArvoreB
+from Estruturas.Controller import Controller
+

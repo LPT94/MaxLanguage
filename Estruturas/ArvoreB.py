@@ -3,10 +3,13 @@ from Estruturas.Nodes import Node
 class ArvoreB:
 
     def __init__(self, node):
-        self.root = node
+        self.__root = node
+
+    def get_root(self):
+        return self.__root
 
     def atualiza_root(self, node):
-        self.root = node
+        self.__root = node
 
     def filho_esq(self, node_filho, node_pai):
 
@@ -22,36 +25,47 @@ class ArvoreB:
 
         return False
 
+    def tio(self, node_pai, node_avo):
+
+        if self.filho_esq(node_pai, node_avo) and node_avo.get_d() != None:
+            return True
+
+        elif self.filho_dir(node_pai, node_avo) and node_avo.get_e() != None:
+            return True
+
+        return False
+
     def buscar_node(self, indice):
 
-        Node = self.root
-        Pai = None
+        node = self.__root
+        pai = None
 
-        while Node and Node.get_i() != indice:
-            Pai = Node
-            if indice > Node.get_i():
-                Node = Node.get_d()
+        while node and node.get_i() != indice:
+            pai = node
+            if indice > node.get_i():
+                node = node.get_d()
 
             else:
-                Node = Node.get_e()
+                node = node.get_e()
 
-        return Node, Pai
+        return node, pai
 
     def inserir_node(self, node):
 
-        if not self.root:
-            self.root = node
+        if not self.__root:
+            self.__root = node
             return True
         
-        busca = self.buscar_node(node.get_i())
-        if busca[0]:
+        existe, pai = self.buscar_node(node.get_i())
+        print("pai: ", pai.get_i(), " node: ", node.get_i())
+        if existe:
             print("Erro! Indice já existente")
             return False
 
-        if node.get_i() > busca[1].get_i():
-            busca[1].set_d(node)
+        if node.get_i() > pai.get_i():
+            pai.set_d(node)
         else:
-            busca[1].set_e(node)
+            pai.set_e(node)
 
         return True
 
@@ -132,6 +146,37 @@ class ArvoreB:
         print(node.get_i(), end=" ")
         self.print_in_order(node.get_e())
         self.print_in_order(node.get_d())
-        
+
+    def balancear_arvore(self, node, pai):
+
+        pai, avo = self.buscar_node(pai)
+
+        if not self.tio(pai, avo):
+            self.deletar_node(avo)
+            avo.set_e(None)
+            avo.set_d(None)
+            self.inserir_node(avo)
+
+        else:
+            avo, bisavo = self.buscar_node(avo)
+            self.deletar_node(pai)
+            pai.set_e(None)
+            pai.set_d(None)
+            self.inserir_node(pai)
+            #substitui Node - Avo
+            if self.filho_dir(node, avo):
+                node.set_e(avo)
+                avo.set_d(None)
+            else:
+                node.set_d(avo)
+                avo.set_e(None)
+
+            if bisavo:
+                if self.filho_dir(avo, bisavo):
+                    bisavo.set_d(node)
+                else:
+                    bisavo.set_e(Node)
+
+
 
     
