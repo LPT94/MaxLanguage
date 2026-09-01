@@ -2,10 +2,19 @@
 2;2;1;Como se diz bom dia em Espanhol?;Como estas|Buenos dias|Buenas noches|Hasta luego|;Buenos dias;3
 3;
 4;
-10;
-21;
-11;
-5;
-7;
+99;
 12;
 77;
+0;
+5;
+7;
+13;
+98;
+15;
+14;
+11;
+100;
+74;
+21;
+56;
+6;

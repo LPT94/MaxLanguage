@@ -60,7 +60,7 @@ class GerenciadorTxt:
                 arquivo.write("-1;")
 
         except FileNotFoundError:
-            print("Aqruivo não encontrado.")
+            print("Arquivo não encontrado.")
 
     def inserir_registro(self, registro):
 

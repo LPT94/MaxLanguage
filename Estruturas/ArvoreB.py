@@ -57,7 +57,6 @@ class ArvoreB:
             return True
         
         existe, pai = self.buscar_node(node.get_i())
-        print("pai: ", pai.get_i(), " node: ", node.get_i())
         if existe:
             print("Erro! Indice já existente")
             return False
@@ -146,6 +145,32 @@ class ArvoreB:
         print(node.get_i(), end=" ")
         self.print_in_order(node.get_e())
         self.print_in_order(node.get_d())
+
+    def print_in_width(self):
+        fila = []
+        if self.__root:
+            fila.append(self.__root)
+
+        else:
+            print("Arvore vazia")
+
+        i = 1
+        j = 1
+
+        while(fila):
+            node = fila.pop(0)
+            print(node.get_i(), end = " ")
+            if(node.get_e()):
+                fila.append(node.get_e())
+            if(node.get_d()):
+                fila.append(node.get_d())
+            if 2**j-1 == i:
+                print()
+                j += 1
+            i += 1
+
+                   
+
 
     def balancear_arvore(self, node, pai):
 
