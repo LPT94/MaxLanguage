@@ -2,9 +2,15 @@ from Estruturas.GerenciadorTxt import GerenciadorTxt
 from Estruturas.Nodes import Node
 from Estruturas.ArvoreB import ArvoreB
 from Estruturas.Controlador import Controlador
-from Estruturas.Registro import Registro
+from Estruturas.RegistroExercicios import RegistroExercicios
+from Estruturas.ControladorExercicios import ControladorExercicios
 
-try:
-    R = Registro(10,2,3,4,2,1)
-except TypeError:
-    print("Registro invalido, está faltando preencher todas as colunas")
+CL = Controlador("licoes.txt")
+CE = ControladorExercicios("exercicios.txt")
+
+CE.contruir_arvore_indices()
+
+CE.ordenar_arquivo()
+
+
+CE.mostrar_arvore()

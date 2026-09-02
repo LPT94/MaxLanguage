@@ -14,6 +14,9 @@ class GerenciadorTxt:
             self.__tabela_vazia = False
             
         self.__ultimos_offsets_deletados = []
+
+    def get_nome_arq(self):
+        return self.__nome_arquivo
         
     def listar_offsets(self):
     #Responsável por abrir a tabela.txt e retornar uma lista com todos os offsets de cada linha
@@ -28,6 +31,25 @@ class GerenciadorTxt:
                         break
 
                     lista_offsets.append(posicao)
+
+        except FileNotFoundError:
+            print("Arquivo não encontrado.")
+
+        return lista_offsets
+
+    def listar_offsets_validos(self):
+        lista_offsets = []
+        try:
+            with open("Tabelas/" + self.__nome_arquivo, "r", encoding="utf-8") as arquivo:
+                while True:
+                    posicao = arquivo.tell()
+                    linha = arquivo.readline()
+                    
+                    if not linha:
+                        break
+
+                    if linha.split(";")[0] != "-1":
+                        lista_offsets.append(posicao)
 
         except FileNotFoundError:
             print("Arquivo não encontrado.")
@@ -59,8 +81,11 @@ class GerenciadorTxt:
                 arquivo.seek(offset)
                 arquivo.write("-1;")
 
+            return True
+        
         except FileNotFoundError:
             print("Arquivo não encontrado.")
+            return False
 
     def inserir_registro(self, registro):
 
@@ -76,8 +101,11 @@ class GerenciadorTxt:
                 arquivo.write(registro+'\n')
                 self.__ultimo_offset = novo_offset
 
+            return novo_offset
+
         except FileNotFoundError:
-            print("Aqruivo não encontrado.")
+            print("Arquivo não encontrado.")
+            return -1
 
     def atualizar_arquivo(self):
 
@@ -104,13 +132,10 @@ class GerenciadorTxt:
                     arquivo.seek(pos)
                     arquivo.truncate()
 
+                return True
+            
         except FileNotFoundError:
             print("Aqruivo não encontrado.")
+            return False
 
-    def reordenar_arquivo(self, texto):
     
-        caminho_temp = f"Tabelas/" + self.__nome_arquivo + ".tmp"
-        with open(caminho_temp, "w", encoding="utf-8") as arquivo:
-            arquivo.write(texto)
-
-        os.replace(caminho_temp, "Tabelas/"+self.__nome_arquivo)

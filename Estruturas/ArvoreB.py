@@ -51,7 +51,6 @@ class ArvoreB:
         return node, pai
 
     def inserir_node(self, node):
-
         if not self.__root:
             self.__root = node
             return True
@@ -96,7 +95,7 @@ class ArvoreB:
 
         if not del_node:
             print("Erro! indice não encontrado.")
-            return False
+            return del_node
 
         if del_node.get_e():
             sub, pai_sub = self.buscar_subst_esq(del_node)
@@ -125,7 +124,7 @@ class ArvoreB:
         else:
             self.root = sub
 
-        return True
+        return del_node
 
         
     def print_pre_order(self, node):
@@ -170,8 +169,6 @@ class ArvoreB:
             i += 1
 
                    
-
-
     def balancear_arvore(self, node, pai):
 
         pai, avo = self.buscar_node(pai)
