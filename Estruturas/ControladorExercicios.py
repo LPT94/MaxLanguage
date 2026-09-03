@@ -4,14 +4,21 @@ from Estruturas.Nodes import Node
 
 class ControladorExercicios(Controlador):
 
-    def __init__(self, nome_arquivo):
+    def __init__(self, nome_arquivo, controlador_licoes):
         super().__init__(nome_arquivo)
+        self._controlador_licoes = controlador_licoes
 
-    def __validacoes(self, registro, controlador_licoes):
-        no_estrangeiro = controlador_licoes.buscar_indice(registro.get_licao())
+    def validar(self, registro):
+        if registro.get_id() < 1:
+            print("Erro! Primary key inválida.")
+            return False
+        
+        no_estrangeiro = self._controlador_licoes.buscar_node(registro.get_licao())
         if not no_estrangeiro:
             print("Erro! Foreign Key não encontrada na tabela lições.")
             return False
+
+        #TODO: verificar se nivel <= total_niveis do registro lição. No entanto, antes é necessário criar a classe ControladorLicoes
 
         op_correta = registro.get_op_correta()
         if op_correta > 7 or op_correta < 4:
@@ -19,10 +26,17 @@ class ControladorExercicios(Controlador):
             return False 
 
         return True
-    
-    def inserir(self, registro, controlador_licoes):
 
-        if not self.__validacoes(registro, controlador_licoes):
-            return False
+    def get_registro(self, indice):
+
+        node = self.buscar_node(indice)
+        if not node:
+            return None
         
-        return self.inserir_node_reg(registro)
+        dados_brutos = self._gerenciador_txt.acessar(node.get_offs())
+        dados = dados_brutos.split(";")
+        registro = RegistroExercicios(dados[0], dados[1], dados[2], dados[3], dados[4], dados[5], 
+                                      dados[6], dados[7], dados[8], dados[9])
+
+        return registro
+

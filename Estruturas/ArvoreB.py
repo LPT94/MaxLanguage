@@ -3,13 +3,13 @@ from Estruturas.Nodes import Node
 class ArvoreB:
 
     def __init__(self, node):
-        self.__root = node
+        self._root = node
 
     def get_root(self):
-        return self.__root
+        return self._root
 
     def atualiza_root(self, node):
-        self.__root = node
+        self._root = node
 
     def filho_esq(self, node_filho, node_pai):
 
@@ -35,9 +35,9 @@ class ArvoreB:
 
         return False
 
-    def buscar_node(self, indice):
+    def buscar(self, indice):
 
-        node = self.__root
+        node = self._root
         pai = None
 
         while node and node.get_i() != indice:
@@ -50,12 +50,12 @@ class ArvoreB:
 
         return node, pai
 
-    def inserir_node(self, node):
-        if not self.__root:
-            self.__root = node
+    def inserir(self, node):
+        if not self._root:
+            self._root = node
             return True
         
-        existe, pai = self.buscar_node(node.get_i())
+        existe, pai = self.buscar(node.get_i())
         if existe:
             print("Erro! Indice já existente")
             return False
@@ -89,9 +89,9 @@ class ArvoreB:
 
         return sub, pai_sub   
 
-    def deletar_node(self, indice):
+    def deletar(self, indice):
 
-        del_node, pai_master = self.buscar_node(indice)
+        del_node, pai_master = self.buscar(indice)
 
         if not del_node:
             print("Erro! indice não encontrado.")
@@ -147,8 +147,8 @@ class ArvoreB:
 
     def print_in_width(self):
         fila = []
-        if self.__root:
-            fila.append(self.__root)
+        if self._root:
+            fila.append(self._root)
 
         else:
             print("Arvore vazia")
@@ -169,9 +169,9 @@ class ArvoreB:
             i += 1
 
                    
-    def balancear_arvore(self, node, pai):
+    def balancear(self, node, pai):
 
-        pai, avo = self.buscar_node(pai)
+        pai, avo = self.buscar(pai)
 
         if not self.tio(pai, avo):
             self.deletar_node(avo)
@@ -180,7 +180,7 @@ class ArvoreB:
             self.inserir_node(avo)
 
         else:
-            avo, bisavo = self.buscar_node(avo)
+            avo, bisavo = self.buscar(avo)
             self.deletar_node(pai)
             pai.set_e(None)
             pai.set_d(None)

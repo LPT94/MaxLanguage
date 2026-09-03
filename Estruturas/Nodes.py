@@ -1,30 +1,30 @@
 class Node:
     def __init__(self, indice, offset):
-        self.__indice = indice
-        self.__offset = offset
-        self.__esquerda = None
-        self.__direita = None
+        self._indice = indice
+        self._offset = offset
+        self._esquerda = None
+        self._direita = None
 
     def get_i(self):
-        return self.__indice
+        return self._indice
 
     def get_offs(self):
-        return self.__offset
+        return self._offset
 
     def get_e(self):
-        return self.__esquerda
+        return self._esquerda
 
     def get_d(self):
-        return self.__direita
+        return self._direita
 
     def set_e(self, Node):
-        self.__esquerda = Node
+        self._esquerda = Node
 
     def set_d(self, Node):
-        self.__direita = Node
+        self._direita = Node
 
     def set_i(self, indice):
-        self.__indice = indice
+        self._indice = indice
 
     def set_off(self, offset):
-        self.__offset = offset
+        self._offset = offset
