@@ -5,10 +5,10 @@ class RegistroIdiomas:
         self._descricao = descricao
 
     def get_id(self):
-        return self._id
+        return int(self._id)
 
     def get_descricao(self):
-        return self._descricao
+        return int(self._descricao)
 
     def formatar(self):
         return str(self._id)+";"+str(self._descricao)

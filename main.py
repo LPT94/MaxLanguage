@@ -17,18 +17,18 @@ from Estruturas.ControladorLicoes import ControladorLicoes
 from Estruturas.RegistroExercicios import RegistroExercicios
 from Estruturas.ControladorExercicios import ControladorExercicios
 
+from Estruturas.RegistroExerciciosFeitos import RegistroExerciciosFeitos
+from Estruturas.ControladorExerciciosFeitos import ControladorExerciciosFeitos
 
 ############################# MAIN ###############################
 CI = ControladorIdiomas("idiomas.txt")
 CL = ControladorLicoes("licoes.txt", CI)
 CE = ControladorExercicios("exercicios.txt", CL)
+CU = ControladorUsuarios("usuarios.txt", CI)
+CEF = ControladorExerciciosFeitos("exercicios_feitos.txt", CU, CE)
 
 CI.contruir_arvore_indices()
 CL.contruir_arvore_indices()
 CE.contruir_arvore_indices()
-
-CE.mostrar_arvore()
-
-RE = RegistroExercicios(3, 3, 3, "DESC", "A", "B", "C", "D", 6, 10)
-
-CE.inserir_registro(RE)
+CU.contruir_arvore_indices()
+CEF.contruir_arvore_indices()

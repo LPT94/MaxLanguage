@@ -14,34 +14,34 @@ class RegistroExercicios:
         self._pontuacao = pontuacao
 
     def get_id(self):
-        return self._id
+        return int(self._id)
 
     def get_licao(self):
-        return self._cod_licao
+        return int(self._cod_licao)
 
     def get_nivel(self):
         return int(self._nivel)
 
     def get_descricao(self):
-        return self._descricao
+        return str(self._descricao)
 
     def get_op_a(self):
-        return self._a
+        return str(self._a)
 
     def get_op_b(self):
-        return self._b
+        return str(self._b)
 
     def get_op_c(self):
-        return self._c
+        return str(self._c)
 
     def get_op_d(self):
-        return self._d
+        return str(self._d)
 
     def get_op_correta(self):
-        return self._opcao_correta
+        return int(self._opcao_correta)
 
     def get_pontuacao(self):
-        return self._pontuacao
+        return int(self._pontuacao)
 
     def formatar(self):
         reg = str(self._id)+";"+str(self._cod_licao)+";"+str(self._nivel)+";"+str(self._descricao)+";"+str(self._a)+";"+str(self._b)+";"+str(self._c)+";"+str(self._d)+";"+str(self._opcao_correta)+";"+str(self._pontuacao)

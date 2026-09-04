@@ -11,28 +11,28 @@ class RegistroUsuarios:
         self._tipo = tipo                           #tipo: 0 ->admin || 1->usuario comum
 
     def get_id(self):
-        return self._id
+        return int(self._id)
 
     def get_cod_idioma(self):
-        return self._cod_idioma
+        return int(self._cod_idioma)
 
     def get_nome(self):
-        return self._nome
+        return str(self._nome)
 
     def get_login(self):
-        return self._login
+        return str(self._login)
 
     def get_senha(self):
-        return self._senha
+        return str(self._senha)
 
     def get_nivel_atual(self):
-        return self._nivel_atual
+        return int(self._nivel_atual)
 
     def get_pontuacao(self):
-        return self._pontuacao
+        return int(self._pontuacao)
 
     def get_tipo(self):
-        return self._tipo
+        return str(self._tipo)
 
     def formatar(self):
             return str(self._id)+";"+str(self._cod_idioma)+";"+str(self._nome)+";"+str(self._login)+";"+str(self._senha)+";"+str(self._nivel_atual)+";"+str(self._pontuacao)+";"+str(self._tipo)
