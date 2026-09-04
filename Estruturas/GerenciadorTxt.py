@@ -98,7 +98,6 @@ class GerenciadorTXT:
             with open(self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
                 arquivo.seek(novo_offset)
                 arquivo.write(registro+'\n')
-                print(novo_offset)
                 self._ultimo_offset = novo_offset
 
             return novo_offset

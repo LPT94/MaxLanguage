@@ -1,0 +1,15 @@
+class RegistroIdiomas:
+
+    def __init__(self, codigo, descricao):
+        self._id = codigo
+        self._descricao = descricao
+
+    def get_id(self):
+        return self._id
+
+    def get_descricao(self):
+        return self._descricao
+
+    def formatar(self):
+        return str(self._id)+";"+str(self._descricao)
+        

@@ -36,14 +36,27 @@ class Controlador:
         elif tipo == "Width":
             self._arvore_indices.print_in_width()
 
+        print()
+
     def buscar_node(self, indice):        #TODO: verificar depois se esta função é útil
 
         node, pai = self._arvore_indices.buscar(indice)
         return node
 
+    def validar_pk(self, registro):
+
+        if registro.get_id() < 1:
+            print("Erro! Primary key inválida.")
+            return False
+        
+        return True
+
     def inserir_registro(self, registro):
 
-        if not self.validar(registro):
+        if not self.validar_pk(registro):
+            return False
+        
+        if not self.validar_constraints(registro):
             return False
 
         node = Node(registro.get_id(), -1)
@@ -56,6 +69,7 @@ class Controlador:
         offset = self._gerenciador_txt.inserir(reg_formatado)
 
         if offset == -1:
+            self._arvore_indices.deletar(registro.get_id())
             return False
 
         node.set_off(offset)
@@ -69,9 +83,25 @@ class Controlador:
 
         return self._gerenciador_txt.deletar(deletado.get_offs())
 
+    def unique(self, atributo, indice_atributo ):
+        
+        lista_registros = self._gerenciador_txt.listar_offsets_validos()
+        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
+
+        for offset in lista_registros:
+            arquivo.seek(offset)
+            dados = arquivo.readline().strip().split(";")
+            if dados[indice_atributo] == atributo:
+                arquivo.close()
+                return False
+
+        arquivo.close()
+        return True
+
+
     def atualizar_arquivo(self):
         #Após atualizar o arquivo se for continuar atualizando a classe 
-        # é necessária atualizar a arvore de indices
+        #é necessária atualizar a arvore de indices, pois os offsets estarão desatualizados
         return self._gerenciador_txt.atualizar()
 
     def __escrever_pre_order(self, node, arquivo_atual, arquivo_novo):
@@ -89,8 +119,8 @@ class Controlador:
 
     def ordenar_arquivo(self):
         #Função elaborada para ser chamada quando encerrar o programa.
-        #Após ordernar o arquivo, se for continuar utilizando a classe, para ganho de desempenho
-        #é necessário atualizar a arvore de indices
+        #Após ordernar o arquivo, se for continuar utilizando a classe
+        #é necessário atualizar a arvore de indices, pois os offsets estarão desatualizados
 
         caminho_atual = self._gerenciador_txt.get_nome_arq()
         caminho_tmp = caminho_atual + ".tmp"

@@ -1,8 +1,8 @@
--1;;1;Como se diz olá em Inglês?;Bye;Hey;See you;Hello;7;2
--1;;1;Como se diz bom dia em Espanhol?;Como estas;Buenos dias;Buenas noches;Hasta luego;5;3
--1;;1;Descrição do exercicio aqui!;A - LETRA A;b - LETRA B;C - LETRA C;D - LETRA D;6;4
+17;2;3;aa;bb;cc;dd;ee;5;2
 38;2;12;Descrição do exercicio aqui!2;A - LETRA A2;b - LETRA B2;C - LETRA C2;D - LETRA D2;5;10
-121;1;1;Descrição do exercicio aqui!;A - LETRA A;b - LETRA B;C - LETRA C;D - LETRA D;6;4
--1;;1;1;Descrição do exercicio aqui!;A - LETRA A;b - LETRA B;C - LETRA C;D - LETRA D;6;4
-171;1;1;Descrição do exercicio aqui!;A - LETRA A;b - LETRA B;C - LETRA C;D - LETRA D;6;4
 99;2;3;a;b;c;d;e;5;3
+121;1;1;Descrição do exercicio aqui!;A - LETRA A;b - LETRA B;C - LETRA C;D - LETRA D;6;4
+171;1;1;Descrição do exercicio aqui!;A - LETRA A;b - LETRA B;C - LETRA C;D - LETRA D;6;4
+1;3;2;DESC;A;B;C;D;6;10
+2;3;0;DESC;A;B;C;D;6;10
+3;3;3;DESC;A;B;C;D;6;10

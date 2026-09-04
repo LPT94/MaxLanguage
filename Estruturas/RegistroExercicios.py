@@ -20,7 +20,7 @@ class RegistroExercicios:
         return self._cod_licao
 
     def get_nivel(self):
-        return self._nivel
+        return int(self._nivel)
 
     def get_descricao(self):
         return self._descricao

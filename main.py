@@ -1,28 +1,34 @@
+import hashlib
+
 from Estruturas.GerenciadorTXT import GerenciadorTXT
 from Estruturas.Nodes import Node
 from Estruturas.ArvoreB import ArvoreB
 from Estruturas.Controlador import Controlador
+
+from Estruturas.RegistroIdiomas import RegistroIdiomas
+from Estruturas.ControladorIdiomas import ControladorIdiomas
+
+from Estruturas.RegistroUsuarios import RegistroUsuarios
+from Estruturas.ControladorUsuarios import ControladorUsuarios
+
+from Estruturas.RegistroLicoes import RegistroLicoes
+from Estruturas.ControladorLicoes import ControladorLicoes
+
 from Estruturas.RegistroExercicios import RegistroExercicios
 from Estruturas.ControladorExercicios import ControladorExercicios
 
 
-CL = Controlador("licoes.txt")
+############################# MAIN ###############################
+CI = ControladorIdiomas("idiomas.txt")
+CL = ControladorLicoes("licoes.txt", CI)
 CE = ControladorExercicios("exercicios.txt", CL)
 
-        
-
+CI.contruir_arvore_indices()
 CL.contruir_arvore_indices()
 CE.contruir_arvore_indices()
 
+CE.mostrar_arvore()
 
-CE.mostrar_arvore("Width")
+RE = RegistroExercicios(3, 3, 3, "DESC", "A", "B", "C", "D", 6, 10)
 
-print(CE._gerenciador_txt.listar_offsets())
-R = RegistroExercicios(17,2,3,"aa", "bb", "cc", "dd", "ee", 5, 2)
-
-CE.inserir_registro(R)
-
-CE.ordenar_arquivo()      
-
-
-print(CE._gerenciador_txt.listar_offsets())
+CE.inserir_registro(RE)
