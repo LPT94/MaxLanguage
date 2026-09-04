@@ -52,6 +52,7 @@ class Controlador:
             return False
 
         reg_formatado = registro.formatar()
+
         offset = self._gerenciador_txt.inserir(reg_formatado)
 
         if offset == -1:
@@ -69,6 +70,8 @@ class Controlador:
         return self._gerenciador_txt.deletar(deletado.get_offs())
 
     def atualizar_arquivo(self):
+        #Após atualizar o arquivo se for continuar atualizando a classe 
+        # é necessária atualizar a arvore de indices
         return self._gerenciador_txt.atualizar()
 
     def __escrever_pre_order(self, node, arquivo_atual, arquivo_novo):
@@ -85,14 +88,18 @@ class Controlador:
         self.__escrever_pre_order(node.get_d(), arquivo_atual, arquivo_novo)
 
     def ordenar_arquivo(self):
+        #Função elaborada para ser chamada quando encerrar o programa.
+        #Após ordernar o arquivo, se for continuar utilizando a classe, para ganho de desempenho
+        #é necessário atualizar a arvore de indices
 
-        caminho_atual = "Tabelas/" + self._gerenciador_txt.get_nome_arq()
+        caminho_atual = self._gerenciador_txt.get_nome_arq()
         caminho_tmp = caminho_atual + ".tmp"
         arquivo_atual = open(caminho_atual, "r", encoding="utf-8")
         arquivo_sub = open(caminho_tmp, "w", encoding="utf-8")
         self.__escrever_pre_order(self._arvore_indices.get_root(), arquivo_atual, arquivo_sub)
         arquivo_atual.close()
         arquivo_sub.close()
-                
+
         os.replace(caminho_tmp, caminho_atual)
+        self._gerenciador_txt._ordenar_offsets()
     

@@ -1,19 +1,19 @@
-import os
-
 class GerenciadorTXT:
 
     def __init__(self, nome_arquivo: str):
-        self._nome_arquivo = nome_arquivo
+        self._nome_arquivo = "Tabelas/" + nome_arquivo
+        self._ultimo_offset = None
+        self._tabela_vazia = True
+        self._ordenar_offsets()
 
+    def _ordenar_offsets(self):
         lista = self.listar_offsets()
         if not lista:
-            self.__ultimo_offset = 0
-            self.__tabela_vazia = True
+            self._ultimo_offset = 0
+            self._tabela_vazia = True
         else:
-            self.__ultimo_offset = lista[-1]
-            self.__tabela_vazia = False
-            
-        self.__ultimos_offsets_deletados = []
+            self._ultimo_offset = lista[-1]
+            self._tabela_vazia = False
 
     def get_nome_arq(self):
         return self._nome_arquivo
@@ -22,7 +22,7 @@ class GerenciadorTXT:
     #Responsável por abrir a tabela.txt e retornar uma lista com todos os offsets de cada linha
         lista_offsets = []
         try:
-            with open("Tabelas/" + self._nome_arquivo, "r", encoding="utf-8") as arquivo:
+            with open(self._nome_arquivo, "r", encoding="utf-8") as arquivo:
                 while True:
                     posicao = arquivo.tell()
                     linha = arquivo.readline()
@@ -40,7 +40,7 @@ class GerenciadorTXT:
     def listar_offsets_validos(self):
         lista_offsets = []
         try:
-            with open("Tabelas/" + self._nome_arquivo, "r", encoding="utf-8") as arquivo:
+            with open(self._nome_arquivo, "r", encoding="utf-8") as arquivo:
                 while True:
                     posicao = arquivo.tell()
                     linha = arquivo.readline()
@@ -60,7 +60,7 @@ class GerenciadorTXT:
     #Responsável por retornar uma string com uma linha completa do offset
         registro = ""
         try:
-            with open("Tabelas/" + self._nome_arquivo, "r", encoding="utf-8") as arquivo:
+            with open(self._nome_arquivo, "r", encoding="utf-8") as arquivo:
                 arquivo.seek(offset)
                 registro = arquivo.readline()
 
@@ -75,9 +75,8 @@ class GerenciadorTXT:
     def deletar(self, offset):
 
         try:
-            with open("Tabelas/" + self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
+            with open(self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
                 arquivo.seek(offset)
-                self.__ultimos_offsets_deletados.append(arquivo.readline())
                 arquivo.seek(offset)
                 arquivo.write("-1;")
 
@@ -89,17 +88,18 @@ class GerenciadorTXT:
 
     def inserir(self, registro):
 
-        if self.__tabela_vazia:
+        if self._tabela_vazia:
             novo_offset = 0
-            self.__tabela_vazia = False
+            self._tabela_vazia = False
         else:
-            novo_offset =  self.__ultimo_offset + self.tamanho(self.__ultimo_offset) + 1
+            novo_offset =  self._ultimo_offset + self.tamanho(self._ultimo_offset) + 1
 
         try:
-            with open("Tabelas/" + self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
+            with open(self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
                 arquivo.seek(novo_offset)
                 arquivo.write(registro+'\n')
-                self.__ultimo_offset = novo_offset
+                print(novo_offset)
+                self._ultimo_offset = novo_offset
 
             return novo_offset
 
@@ -111,7 +111,7 @@ class GerenciadorTXT:
 
         atualizar = False
         try:
-            with open("Tabelas/" + self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
+            with open(self._nome_arquivo, "r+", encoding="utf-8") as arquivo:
                 lista = self.listar_offsets()
                 for i in range(len(lista)):
                     arquivo.seek(lista[i])
@@ -131,11 +131,12 @@ class GerenciadorTXT:
                 if atualizar:
                     arquivo.seek(pos)
                     arquivo.truncate()
+                    self._ordenar_offsets()
 
                 return True
             
         except FileNotFoundError:
-            print("Aqruivo não encontrado.")
+            print("Arquivo não encontrado.")
             return False
 
     
