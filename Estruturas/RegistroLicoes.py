@@ -14,5 +14,11 @@ class RegistroLicoes:
     def get_total_niveis(self):
         return int(self._total_niveis)
 
+    def set_cod_idioma(self, cod_idioma):
+        self._cod_idioma = cod_idioma
+
+    def set_total_niveis(self, total_niveis):
+        self._total_niveis = total_niveis
+
     def formatar(self):
         return str(self._id)+";"+str(self._cod_idioma)+";"+str(self._total_niveis)

@@ -34,5 +34,26 @@ class RegistroUsuarios:
     def get_tipo(self):
         return str(self._tipo)
 
+    def set_cod_idioma(self, cod_idioma):
+        self._cod_idioma = cod_idioma
+
+    def set_nome(self, nome):
+        self._nome = nome
+
+    def set_login(self, login):
+        self._login = login
+
+    def set_senha(self, senha):
+        self._senha = senha
+
+    def set_nivel_atual(self, nivel_atual):
+        self._nivel_atual = nivel_atual
+
+    def set_pontuacao(self, pontuacao):
+        self._pontuacao = pontuacao
+
+    def set_tipo(self, tipo):
+        self._tipo = tipo
+
     def formatar(self):
             return str(self._id)+";"+str(self._cod_idioma)+";"+str(self._nome)+";"+str(self._login)+";"+str(self._senha)+";"+str(self._nivel_atual)+";"+str(self._pontuacao)+";"+str(self._tipo)

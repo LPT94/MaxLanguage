@@ -75,6 +75,24 @@ class Controlador:
         node.set_off(offset)
         return True
 
+    def atualizar_registro(self, registro, node):
+
+        if not self.validar_pk(registro):
+            return False
+
+        if not self.validar_constraints(registro):
+            return False
+
+        reg_formatado = registro.fomartar()
+
+        offset = self._gerenciador_txt.inserir(reg_formatado)
+
+        if offset == -1:
+            return False
+
+        node.set_off(offset)
+        return True
+
     def del_registro(self, indice):
 
         deletado = self._arvore_indices.deletar(indice)
@@ -83,7 +101,7 @@ class Controlador:
 
         return self._gerenciador_txt.deletar(deletado.get_offs())
 
-    def unique(self, atributo, indice_atributo ):
+    def unique(self, atributo, indice_atributo):
         
         lista_registros = self._gerenciador_txt.listar_offsets_validos()
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
@@ -97,6 +115,22 @@ class Controlador:
 
         arquivo.close()
         return True
+
+    def listar_atributos(self, atributos):
+
+        matriz_dados = []
+
+        lista_registros = self._gerenciador_txt.listar_offsets_validos()
+        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
+
+        for offset in lista_registros:
+            arquivo.seek(offset)
+            dados = arquivo.readline().strip().split(";")
+            for i in range(len(atributos)):
+                matriz_dados[i].append(dados[atributos[i]])
+
+        arquivo.close()
+        return matriz_dados
 
 
     def atualizar_arquivo(self):

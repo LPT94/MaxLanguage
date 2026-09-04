@@ -26,10 +26,10 @@ class ControladorExerciciosFeitos(Controlador):
 
         node = self.buscar_node(indice)
         if not node:
-            return None
+            return None, node
         
         dados_brutos = self._gerenciador_txt.acessar(node.get_offs())
         dados = dados_brutos.strip().split(";")
         registro = RegistroExerciciosFeitos(dados[0], dados[1], dados[2])
 
-        return registro
+        return registro, node
