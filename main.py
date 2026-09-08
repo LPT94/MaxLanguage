@@ -20,6 +20,8 @@ from Estruturas.ControladorExercicios import ControladorExercicios
 from Estruturas.RegistroExerciciosFeitos import RegistroExerciciosFeitos
 from Estruturas.ControladorExerciciosFeitos import ControladorExerciciosFeitos
 
+import flet as ft
+
 ############################# MAIN ###############################
 CI = ControladorIdiomas("idiomas.txt")
 CL = ControladorLicoes("licoes.txt", CI)
@@ -32,3 +34,26 @@ CL.contruir_arvore_indices()
 CE.contruir_arvore_indices()
 CU.contruir_arvore_indices()
 CEF.contruir_arvore_indices()
+
+mat = CI.listar_atributos([1])
+print(mat)
+
+def main(page: ft.Page):
+
+    texto_login = ft.Text("Login: ")
+    login = ft.TextField(hint_text='digite aqui..', expand=True)
+
+    elements = ft.Column(
+        controls=[
+            ft.Row(
+                controls=[
+                    texto_login,
+                    login
+                ]
+            )
+        ]
+    )
+
+    page.add(elements)
+
+ft.app(target=main)

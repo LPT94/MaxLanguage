@@ -117,18 +117,19 @@ class Controlador:
         return True
 
     def listar_atributos(self, atributos):
-
-        matriz_dados = []
-
+        
         lista_registros = self._gerenciador_txt.listar_offsets_validos()
-        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
+        matriz_dados = [[0] * len(lista_registros) for _ in range(len(atributos))]
+        j = 0
 
+        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
         for offset in lista_registros:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             for i in range(len(atributos)):
-                matriz_dados[i].append(dados[atributos[i]])
+                matriz_dados[i][j] = (dados[atributos[i]])
 
+            j+= 1
         arquivo.close()
         return matriz_dados
 
