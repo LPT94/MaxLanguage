@@ -1,5 +1,5 @@
 from Estruturas.ArvoreB import ArvoreB
-from Estruturas.GerenciadorTXT import GerenciadorTXT
+from Estruturas.GerenciadorTxt import GerenciadorTXT
 from Estruturas.Nodes import Node
 import os
 
@@ -8,6 +8,23 @@ class Controlador:
     def __init__(self, nome_arquivo):
         self._gerenciador_txt = GerenciadorTXT(nome_arquivo)
         self._arvore_indices = ArvoreB(None)
+        self._proximo_id = self._calcular_proximo_id()
+
+    def get_proximo_id(self):
+        return self._proximo_id
+
+    def _calcular_proximo_id(self):
+
+        self._construir_arvore_indices()
+        node = self._arvore_indices.get_root()
+
+        if not node:
+            return 1
+
+        while node.get_d():
+            node = node.get_d()
+
+        return node.get_i()+1
 
     def __recursao(self, vetor, inicio, fim):
             if inicio > fim:
@@ -22,7 +39,7 @@ class Controlador:
             self.__recursao(vetor, inicio, meio-1)
             self.__recursao(vetor, meio+1, fim)
 
-    def contruir_arvore_indices(self):
+    def _construir_arvore_indices(self):
 
         lista_offsets = self._gerenciador_txt.listar_offsets_validos()
         self.__recursao(lista_offsets, 0, len(lista_offsets)-1)
@@ -73,6 +90,7 @@ class Controlador:
             return False
 
         node.set_off(offset)
+        self._proximo_id += 1
         return True
 
     def atualizar_registro(self, registro, node):
@@ -118,12 +136,12 @@ class Controlador:
 
     def listar_atributos(self, atributos):
         
-        lista_registros = self._gerenciador_txt.listar_offsets_validos()
-        matriz_dados = [[0] * len(lista_registros) for _ in range(len(atributos))]
+        lista_offsets = self._gerenciador_txt.listar_offsets_validos()
+        matriz_dados = [[0] * len(lista_offsets) for _ in range(len(atributos))]
         j = 0
 
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
-        for offset in lista_registros:
+        for offset in lista_offsets:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             for i in range(len(atributos)):
@@ -133,7 +151,20 @@ class Controlador:
         arquivo.close()
         return matriz_dados
 
-    def listar_registros_por_criterio(self, criterios):
+    def listar_dados(self):
+        lista_offsets = self._gerenciador_txt.listar_offsets_validos()
+        lista_dados = []
+
+        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
+        for offset in lista_offsets:
+            arquivo.seek(offset)
+            dados = arquivo.readline().strip().split(";")
+            lista_dados.append(dados)
+
+        return lista_dados
+
+
+    def registros_com_criterio(self, criterios):
 
         lista_registros = self._gerenciador_txt.listar_offsets_validos()
         resultados = []

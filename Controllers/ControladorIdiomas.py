@@ -1,5 +1,5 @@
-from Estruturas.Controlador import Controlador
-from Estruturas.RegistroIdiomas import RegistroIdiomas
+from Controllers.Controlador import Controlador
+from Registers.RegistroIdiomas import RegistroIdiomas
 
 class ControladorIdiomas(Controlador):
 
@@ -25,4 +25,14 @@ class ControladorIdiomas(Controlador):
         registro = RegistroIdiomas(dados[0], dados[1])
 
         return registro, node
+
+    def listar_registros(self):
+
+        lista_registros = []
+        lista_dados = self.listar_dados()
+
+        for i in range(len(lista_dados)):
+            lista_registros.append(RegistroIdiomas(lista_dados[i][0], lista_dados[i][1]))
+
+        return lista_registros
     

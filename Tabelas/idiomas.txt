@@ -1,3 +1,4 @@
 1;Inglês
 2;Espanhol
 3;Guarani
+4;Alemão

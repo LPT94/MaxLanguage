@@ -1,5 +1,5 @@
-from Estruturas.Controlador import Controlador
-from Estruturas.RegistroUsuarios import RegistroUsuarios
+from Controllers.Controlador import Controlador
+from Registers.RegistroUsuarios import RegistroUsuarios
 import hashlib
 
 class ControladorUsuarios(Controlador):
@@ -23,6 +23,8 @@ class ControladorUsuarios(Controlador):
 
     def get_registro(self, indice):
 
+        #TODO: VERIFICAR SE RETORNAR NODE É REALMENTE NECESSÁRIO
+
         node = self.buscar_node(indice)
         if not node:
             return None, node
@@ -36,7 +38,7 @@ class ControladorUsuarios(Controlador):
 
     def autenticar(self, login, senha):
         senha = hashlib.sha256(senha.encode("utf-8")).hexdigest()
-        lista_elements = self.pegar_registro_criterio({3: login, 4: senha})
+        lista_elements = self.registros_com_criterio({3: login, 4: senha})
         if not lista_elements:
             return None
 

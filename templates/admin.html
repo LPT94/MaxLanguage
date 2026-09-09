@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaxLanguage - Administração</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                MaxLanguage
+            </div>
+
+            <nav>
+
+                <a href="/admin">
+                    Início
+                </a>
+
+                <a href="#">
+                    Usuários
+                </a>
+
+                <a href="#">
+                    Idiomas
+                </a>
+
+                <a href="#">
+                    Lições
+                </a>
+
+                <a href="#">
+                    Exercícios
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="/">
+                    Sair
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Olá, {{ usuario.get_nome() }}! 👋</h1>
+                    <p>Painel administrativo</p>
+                </div>
+
+            </header>
+
+
+            <section class="dashboard">
+
+                <div class="card">
+                    <h3>Usuários</h3>
+                    <p>Gerencie os usuários da plataforma.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Idiomas</h3>
+                    <p>Gerencie os idiomas disponíveis.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Lições</h3>
+                    <p>Gerencie as lições dos cursos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Exercícios</h3>
+                    <p>Gerencie os exercícios.</p>
+                </div>
+
+            </section>
+
+
+            <section class="welcome">
+
+                <h2>Área administrativa</h2>
+
+                <p>
+                    Utilize o menu lateral para gerenciar
+                    usuários, idiomas, lições e exercícios.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

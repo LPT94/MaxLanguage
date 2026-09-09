@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaxLanguage - Cadastro</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <section class="login-brand">
+
+            <h1>MaxLanguage</h1>
+
+            <p>
+                Comece sua jornada de aprendizado.
+            </p>
+
+        </section>
+
+
+        <section class="login-card">
+
+            <h2>Criar conta</h2>
+
+            <p class="login-description">
+                Preencha seus dados para começar a aprender.
+            </p>
+
+
+            <form method="POST">
+
+                <div class="form-group">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="login">
+                        Login
+                    </label>
+
+                    <input
+                        type="text"
+                        id="login"
+                        name="login"
+                        placeholder="Escolha um login"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Crie uma senha"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cod_idioma">
+                        Idioma de aprendizado
+                    </label>
+
+                    <select
+                        id="cod_idioma"
+                        name="cod_idioma"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione um idioma
+                        </option>
+
+                        {% for idioma in idiomas %}
+                        
+                        <option value="{{ idioma.get_id() }}">
+                            {{ idioma.get_descricao() }}
+                        </option>
+
+                        {% endfor %}
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Criar conta
+                </button>
+
+            </form>
+
+
+            <div class="register-area">
+
+                <p>
+                    Já possui uma conta?
+                </p>
+
+                <a href="/">
+                    Voltar para o login
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

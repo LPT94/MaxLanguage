@@ -1,5 +1,5 @@
-from Estruturas.Controlador import Controlador
-from Estruturas.RegistroLicoes import RegistroLicoes
+from Controllers.Controlador import Controlador
+from Registers.RegistroLicoes import RegistroLicoes
 
 class ControladorLicoes(Controlador):
 

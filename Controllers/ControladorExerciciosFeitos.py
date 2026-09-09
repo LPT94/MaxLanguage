@@ -1,5 +1,5 @@
-from Estruturas.Controlador import Controlador
-from Estruturas.RegistroExerciciosFeitos import RegistroExerciciosFeitos
+from Controllers.Controlador import Controlador
+from Registers.RegistroExerciciosFeitos import RegistroExerciciosFeitos
 
 class ControladorExerciciosFeitos(Controlador):
 

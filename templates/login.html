@@ -1,0 +1,105 @@
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaxLanguage - Login</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <section class="login-brand">
+
+            <h1>MaxLanguage</h1>
+
+            <p>
+                Aprenda. Pratique. Evolua.
+            </p>
+
+        </section>
+
+
+        <section class="login-card">
+
+            <h2>Bem-vindo! 👋</h2>
+
+            <p class="login-description">
+                Entre na sua conta para continuar aprendendo.
+            </p>
+
+
+            <form method="POST">
+
+                <div class="form-group">
+
+                    <label for="login">
+                        Login
+                    </label>
+
+                    <input
+                        type="text"
+                        id="login"
+                        name="login"
+                        placeholder="Digite seu login"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+
+            <div class="register-area">
+
+                <p>
+                    Ainda não possui uma conta?
+                </p>
+
+                <a href="/cadastro">
+                    Cadastre-se
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
