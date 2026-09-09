@@ -1,5 +1,6 @@
 from Estruturas.Controlador import Controlador
 from Estruturas.RegistroUsuarios import RegistroUsuarios
+import hashlib
 
 class ControladorUsuarios(Controlador):
 
@@ -33,4 +34,13 @@ class ControladorUsuarios(Controlador):
 
         return registro, node
 
+    def autenticar(self, login, senha):
+        senha = hashlib.sha256(senha.encode("utf-8")).hexdigest()
+        lista_elements = self.pegar_registro_criterio({3: login, 4: senha})
+        if not lista_elements:
+            return None
+
+        return RegistroUsuarios(lista_elements[0][0], lista_elements[0][1], lista_elements[0][2], lista_elements[0][3],
+                                    lista_elements[0][4], lista_elements[0][5], lista_elements[0][6], lista_elements[0][7])
+            
         

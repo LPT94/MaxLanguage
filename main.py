@@ -35,25 +35,17 @@ CE.contruir_arvore_indices()
 CU.contruir_arvore_indices()
 CEF.contruir_arvore_indices()
 
-mat = CI.listar_atributos([1])
-print(mat)
+R = CU.autenticar("LPT94", "root")
+
+print(R.get_nome())
+#######################  FLET - FRONT ###############################
+import flet as ft
+
+from Views.login import login_view
+
 
 def main(page: ft.Page):
+    login_view(page)
 
-    texto_login = ft.Text("Login: ")
-    login = ft.TextField(hint_text='digite aqui..', expand=True)
-
-    elements = ft.Column(
-        controls=[
-            ft.Row(
-                controls=[
-                    texto_login,
-                    login
-                ]
-            )
-        ]
-    )
-
-    page.add(elements)
 
 ft.app(target=main)

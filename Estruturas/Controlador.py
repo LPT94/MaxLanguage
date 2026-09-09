@@ -127,11 +127,33 @@ class Controlador:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             for i in range(len(atributos)):
-                matriz_dados[i][j] = (dados[atributos[i]])
+                matriz_dados[j][i] = dados[atributos[i]]
 
             j+= 1
         arquivo.close()
         return matriz_dados
+
+    def listar_registros_por_criterio(self, criterios):
+
+        lista_registros = self._gerenciador_txt.listar_offsets_validos()
+        resultados = []
+        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
+        for offset in lista_registros:
+            flag = True
+            arquivo.seek(offset)
+            dados = arquivo.readline().strip().split(";")
+            for chave in criterios.keys():
+                if dados[chave] != criterios[chave]:
+                    flag = False
+                    break
+
+                flag = True  
+
+            if flag:
+                resultados.append(dados)
+
+        arquivo.close()
+        return resultados
 
 
     def atualizar_arquivo(self):
