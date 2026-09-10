@@ -8,7 +8,24 @@ class ControladorUsuarios(Controlador):
         super().__init__(nome_arquivo)
         self._controlador_idiomas = controlador_idiomas
 
+    def validar_dados(self, registro):
+        nome = registro.get_nome()
+        login = registro.get_login()
+
+        if ";" in nome or "\n" in nome or "\r" in nome:
+            print("Erro! Nome contém caracteres inválidos")
+            return False
+
+        if ";" in login or "\n" in login or "\r" in nome:
+            print("Erro! Login contém caracteres inváldos")
+            return False
+
+        return True
+
     def validar_constraints(self, registro):
+
+        if not self.validar_dados(registro):
+            return False
     
         no_estrangeiro = self._controlador_idiomas.buscar_node(registro.get_cod_idioma())
         if not no_estrangeiro:

@@ -68,6 +68,7 @@ class Controlador:
         
         return True
 
+
     def inserir_registro(self, registro):
 
         if not self.validar_pk(registro):

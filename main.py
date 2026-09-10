@@ -36,6 +36,8 @@ app.secret_key = "key"
 @app.route("/", methods=["GET", "POST"])
 def inicio():
 
+    session.pop("usuario_id", None)
+
     if request.method == "POST":
         login = request.form["login"]
         senha = request.form["senha"]
@@ -55,6 +57,13 @@ def inicio():
 
 
     return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+
+    session.pop("usuario_id", None)
+    return redirect("/")
+
 
 @app.route("/usuario")
 def usuario():
@@ -81,6 +90,7 @@ def admin():
     if usuario.get_tipo() != "0":
         return "Acesso negado!"
 
+    print(usuario.get_login())
     return render_template("admin.html", usuario=usuario)
 
 
@@ -111,6 +121,24 @@ def cadastro():
 
     
     return render_template("cadastro.html", idiomas=lista_idiomas)
+
+@app.route("/admin/idiomas")
+def idiomas():
+
+    if "usuario_id" not in session:
+            return "Area restrita, você precisa fazer login!"
+    
+    usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
+    
+    if usuario.get_tipo() != "0":
+        return "Acesso negado!"
+
+    lista_idiomas = ctrl_idiomas.listar_registros()
+
+    return render_template("idiomas.html", usuario=usuario, idiomas=lista_idiomas)
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
