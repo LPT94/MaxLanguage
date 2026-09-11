@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaxLanguage - Novo idioma</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                MaxLanguage
+            </div>
+
+            <nav>
+
+                <a href="/admin">
+                    Início
+                </a>
+
+                <a href="/admin/usuarios">
+                    Usuários
+                </a>
+
+                <a href="/admin/idiomas">
+                    Idiomas
+                </a>
+
+                <a href="/admin/licoes">
+                    Lições
+                </a>
+
+                <a href="/admin/exercicios">
+                    Exercícios
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="/logout">
+                    Sair
+                </a>
+
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Novo idioma</h1>
+
+                    <p>
+                        Cadastre um novo idioma na plataforma.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <section class="form-card">
+
+                <div class="form-header">
+
+                    <h2>Dados do idioma</h2>
+
+                    <p>
+                        Informe a descrição do idioma que deseja cadastrar.
+                    </p>
+
+                </div>
+
+                <form method="POST">
+
+                    <div class="form-group">
+
+                        <label for="descricao">
+                            Descrição
+                        </label>
+
+                        <input
+                            type="text"
+                            id="descricao"
+                            name="descricao"
+                            placeholder="Ex.: Inglês"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <a
+                            href="/admin/idiomas"
+                            class="secondary-button"
+                        >
+                            Cancelar
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="primary-button admin-button"
+                        >
+                            Cadastrar idioma
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

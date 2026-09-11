@@ -9,25 +9,35 @@ class ControladorUsuarios(Controlador):
         self._controlador_idiomas = controlador_idiomas
 
     def validar_dados(self, registro):
-        nome = registro.get_nome()
-        login = registro.get_login()
 
-        if ";" in nome or "\n" in nome or "\r" in nome:
-            print("Erro! Nome contém caracteres inválidos")
+        tipo = registro.get_tipo()
+        nivel_atual = registro.get_nivel_atual()
+        pontuacao = registro.get_pontuacao()
+
+        if not self._eh_int([registro.get_id(), registro.get_cod_idioma(),nivel_atual,
+                            pontuacao, tipo], ['id', 'codigo idioma', 'nivel atual', 'pontuação']):
             return False
 
-        if ";" in login or "\n" in login or "\r" in nome:
-            print("Erro! Login contém caracteres inváldos")
+        if not self._caracter_valido([registro.get_nome(), registro.get_login()], ['nome', 'login']):
             return False
 
+        if int(tipo) != 0 and int(tipo) != 1:
+            print("Erro! Tipo inválido.")
+            return False
+
+        if int(nivel_atual) < 1:
+            print("Erro! Nivel atual menor que 1")
+            return False
+
+        if int(pontuacao) < 0:
+            print("Erro! Pontuação menor que 0")
+            return False
+        
         return True
 
     def validar_constraints(self, registro):
 
-        if not self.validar_dados(registro):
-            return False
-    
-        no_estrangeiro = self._controlador_idiomas.buscar_node(registro.get_cod_idioma())
+        no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
         if not no_estrangeiro:
             print("Erro! Foreign Key não encontrada na tabela lições.")
             return False

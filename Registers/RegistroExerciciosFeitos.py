@@ -1,18 +1,22 @@
 class RegistroExerciciosFeitos:
 
-    def __init__(self, cod_usuario, cod_exercicios):
-        self._id = cod_usuario*10000 + cod_exercicios
+    def __init__(self, cod_usuario: int, cod_exercicios: int):
+        self._id = None
         self._cod_usuario = cod_usuario
         self._cod_exercicio = cod_exercicios
 
     def get_id(self):
-        return int(self._id)
+        return self._id
 
     def get_cod_usuario(self):
-        return int(self._cod_usuario)
+        return self._cod_usuario
 
     def get_cod_exercicio(self):
-        return int(self._cod_exercicio)
+        return self._cod_exercicio
+
+    def set_id(self, cod_usuario, cod_exercicio):
+        self._id = cod_usuario*10000 + cod_exercicio
+
 
     def set_cod_usuario(self, cod_usuario):
         self._cod_usuario = cod_usuario

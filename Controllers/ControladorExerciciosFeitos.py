@@ -8,14 +8,25 @@ class ControladorExerciciosFeitos(Controlador):
         self._controlador_usuarios = controlador_usuarios
         self._controlador_exercicios = controlador_exercicios
 
+    def validar_dados(self, registro):
+
+        cod_usuario = registro.get_cod_usuario()
+        cod_exercicio = registro.get_cod_exercicio()
+        if not self._eh_int([cod_usuario, cod_exercicio],
+                            ['codigo usuario', 'codigo exercicio']):
+            return False
+
+        registro.set_id(int(cod_usuario), int(cod_exercicio))
+        return True
+    
     def validar_constraints(self, registro):
 
-        no_estrangeiro_user = self._controlador_usuarios.buscar_node(registro.get_cod_usuario())
+        no_estrangeiro_user = self._controlador_usuarios.buscar_node(int(registro.get_cod_usuario()))
         if not no_estrangeiro_user:
             print("Erro! Foreign Key não encontrada na tabela usuarios.")
             return False
 
-        no_estrangeiro_exe = self._controlador_exercicios.buscar_node(registro.get_cod_exercicio())
+        no_estrangeiro_exe = self._controlador_exercicios.buscar_node(int(registro.get_cod_exercicio()))
         if not no_estrangeiro_exe:
             print("Erro! Foreign Key não encontrada na tabela exercicios.")
             return False

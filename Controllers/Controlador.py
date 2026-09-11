@@ -62,14 +62,34 @@ class Controlador:
 
     def validar_pk(self, registro):
 
-        if registro.get_id() < 1:
+        if int(registro.get_id()) < 1:
             print("Erro! Primary key inválida.")
             return False
         
         return True
 
+    def _caracter_valido(self, lista_atributo, lista_nome):
+        for i in range(len(lista_atributo)):
+            if ";" in lista_atributo[i] or "\n" in lista_atributo[i] or "\r" in lista_atributo[i]:
+                print(f"Erro! {lista_nome[i]} contém caracteres inváldos")
+                return False
+        return True
+
+    def _eh_int(self, lista_int, lista_nome):
+        for i in range(len(lista_int)):
+            try:
+                int(lista_int[i])
+            except ValueError:
+                print(f"Erro! {lista_nome[i]} não possui valor numérico inteiro")
+                return False
+
+        return True
+
 
     def inserir_registro(self, registro):
+
+        if not self.validar_dados(registro):
+            return False
 
         if not self.validar_pk(registro):
             return False
@@ -77,7 +97,7 @@ class Controlador:
         if not self.validar_constraints(registro):
             return False
 
-        node = Node(registro.get_id(), -1)
+        node = Node(int(registro.get_id()), -1)
 
         if not self._arvore_indices.inserir(node):
             return False

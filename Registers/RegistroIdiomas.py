@@ -5,7 +5,7 @@ class RegistroIdiomas:
         self._descricao = descricao
 
     def get_id(self):
-        return int(self._id)
+        return self._id
 
     def get_descricao(self):
         return str(self._descricao)

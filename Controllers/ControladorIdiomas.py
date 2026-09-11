@@ -6,6 +6,17 @@ class ControladorIdiomas(Controlador):
     def __init__(self, nome_arquivo):
         super().__init__(nome_arquivo)
 
+    def validar_dados(self, registro):
+
+        if not self._eh_int([registro.get_id()], ['id']):
+            return False
+
+        if not self._caracter_valido([registro.get_descricao()], ['descricao']):
+            return False
+
+        return True
+
+
     def validar_constraints(self, registro):
         
         if not self.unique(registro.get_descricao(), 1):

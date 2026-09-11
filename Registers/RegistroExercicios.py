@@ -14,13 +14,13 @@ class RegistroExercicios:
         self._pontuacao = pontuacao
 
     def get_id(self):
-        return int(self._id)
+        return self._id
 
     def get_licao(self):
-        return int(self._cod_licao)
+        return self._cod_licao
 
     def get_nivel(self):
-        return int(self._nivel)
+        return self._nivel
 
     def get_descricao(self):
         return str(self._descricao)
@@ -38,10 +38,10 @@ class RegistroExercicios:
         return str(self._d)
 
     def get_op_correta(self):
-        return int(self._opcao_correta)
+        return self._opcao_correta
 
     def get_pontuacao(self):
-        return int(self._pontuacao)
+        return self._pontuacao
 
     def set_licao(self, licao):
         self._cod_licao = licao

@@ -6,13 +6,13 @@ class RegistroLicoes:
         self._total_niveis = total_niveis
 
     def get_id(self):
-        return int(self._id)
+        return self._id
 
     def get_cod_idioma(self):
-        return int(self._cod_idioma)
+        return self._cod_idioma
 
     def get_total_niveis(self):
-        return int(self._total_niveis)
+        return self._total_niveis
 
     def set_cod_idioma(self, cod_idioma):
         self._cod_idioma = cod_idioma

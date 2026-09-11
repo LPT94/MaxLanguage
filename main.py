@@ -90,16 +90,13 @@ def admin():
     if usuario.get_tipo() != "0":
         return "Acesso negado!"
 
-    print(usuario.get_login())
     return render_template("admin.html", usuario=usuario)
-
 
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
 
     if request.method == "POST":
-
         nome = request.form["nome"]
         login = request.form["login"]
         senha = request.form["senha"]
@@ -119,7 +116,6 @@ def cadastro():
 
     lista_idiomas = ctrl_idiomas.listar_registros()
 
-    
     return render_template("cadastro.html", idiomas=lista_idiomas)
 
 @app.route("/admin/idiomas")
@@ -137,8 +133,31 @@ def idiomas():
 
     return render_template("idiomas.html", usuario=usuario, idiomas=lista_idiomas)
 
+@app.route("/admin/idiomas/novo", methods=["GET", "POST"])
+def idioma_novo():
 
+    if "usuario_id" not in session:
+        return "Area restrita, você precisa fazer login!"
+        
+    usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
+    
+    if usuario.get_tipo() != "0":
+        return "Acesso negado!"
 
+    if request.method == "POST":
+        descricao = request.form["descricao"]
+
+        id = ctrl_idiomas.get_proximo_id()
+        novo_idioma = RegistroIdiomas(id, descricao)
+
+        sucesso = ctrl_idiomas.inserir_registro(novo_idioma)
+
+        if sucesso:
+            return redirect("/admin/idiomas")
+
+        return print("Não foi possível criar o novo idioma.")
+
+    return render_template("novo_idioma.html", usuario=usuario)
 
 if __name__ == "__main__":
     app.run(debug=True)

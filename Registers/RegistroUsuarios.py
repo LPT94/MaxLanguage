@@ -11,10 +11,10 @@ class RegistroUsuarios:
         self._tipo = tipo                           #tipo: 0 ->admin || 1->usuario comum
 
     def get_id(self):
-        return int(self._id)
+        return self._id
 
     def get_cod_idioma(self):
-        return int(self._cod_idioma)
+        return self._cod_idioma
 
     def get_nome(self):
         return str(self._nome)
@@ -26,13 +26,13 @@ class RegistroUsuarios:
         return str(self._senha)
 
     def get_nivel_atual(self):
-        return int(self._nivel_atual)
+        return self._nivel_atual
 
     def get_pontuacao(self):
-        return int(self._pontuacao)
+        return self._pontuacao
 
     def get_tipo(self):
-        return str(self._tipo)
+        return self._tipo
 
     def set_cod_idioma(self, cod_idioma):
         self._cod_idioma = cod_idioma

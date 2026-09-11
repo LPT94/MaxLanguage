@@ -388,3 +388,48 @@ td {
     text-decoration: none;
     padding: 11px 18px;
 }
+
+.form-card {
+    max-width: 650px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.form-header {
+    margin-bottom: 28px;
+}
+
+.form-header h2 {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.form-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 11px 18px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.secondary-button:hover {
+    background-color: #f9fafb;
+}

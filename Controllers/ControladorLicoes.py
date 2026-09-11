@@ -7,9 +7,24 @@ class ControladorLicoes(Controlador):
         super().__init__(nome_arquivo)
         self._controlador_idioma = controlador_idioma
 
+    def validar_dados(self, registro):
+
+        total_niveis = registro.get_total_niveis()
+
+        if not self._eh_int([registro.get_id(), registro.get_cod_idioma(), total_niveis],
+                            ['id', 'codigo idioma', 'total níveis']):
+            return False
+
+        if int(total_niveis) < 1:
+            print("Erro! Total de níveis inválido.")
+            return False
+
+        return True
+
+    
     def validar_constraints(self, registro):
         
-        no_estrangeiro = self._controlador_idioma.buscar_node(registro.get_cod_idioma())
+        no_estrangeiro = self._controlador_idioma.buscar_node(int(registro.get_cod_idioma()))
         if not no_estrangeiro:
             print("Erro! Foreign Key não encontrada na tabela Idioma.")
             return False

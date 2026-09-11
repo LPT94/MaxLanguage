@@ -2,3 +2,8 @@
 2;Espanhol
 3;Guarani
 4;Alemão
+5;add
+6;addb;
+10;Árabe
+11;Russo
+12;Vietnã

@@ -7,28 +7,49 @@ class ControladorExercicios(Controlador):
         super().__init__(nome_arquivo)
         self._controlador_licoes = controlador_licoes
 
+    
+    def validar_dados(self, registro):
+
+        opcao_correta = registro.get_op_correta()
+        pontuacao = registro.get_pontuacao()
+
+        if not self._eh_int([registro.get_id(), registro.get_licao(), registro.get_nivel(), 
+                            opcao_correta, pontuacao],
+                            ['id', 'codigo licao', 'nivel', 'opção correta', 'pontuação']):
+            return False
+
+        if not self._caracter_valido([registro.get_descricao(), registro.get_op_a(), registro.get_op_b(), 
+                                       registro.get_op_c(), registro.get_op_d()],
+                                       ['descricao', 'opção A', 'opção B', 'opção C', 'opção D']):
+            return False
+        
+        if int(opcao_correta) > 7 or int(opcao_correta) < 4:
+            print("Erro! Atributo opção correta inválido.")
+            return False 
+
+        if int(pontuacao) < 1:
+            print("Erro! Pontuação deve ser maior que 0")
+            return False
+
+        return True
+
     def validar_constraints(self, registro):
 
-        no_estrangeiro = self._controlador_licoes.buscar_node(registro.get_licao())
+        no_estrangeiro = self._controlador_licoes.buscar_node(int(registro.get_licao()))
         if not no_estrangeiro:
             print("Erro! Foreign Key não encontrada na tabela lições.")
             return False
 
-        nivel = registro.get_nivel()
+        nivel = int(registro.get_nivel())
+
         if nivel < 1:
             print("Erro! Atributo nivel tem que ser maior que zero.")
             return False
-
-        reg_licoes = self._controlador_licoes.get_registro(no_estrangeiro.get_i())
-        print(reg_licoes.get_total_niveis())
-        if nivel > reg_licoes.get_total_niveis():
+    
+        reg_licoes, node = self._controlador_licoes.get_registro(no_estrangeiro.get_i())
+        if nivel > int(reg_licoes.get_total_niveis()):
             print("Erro! Atributo nivel tem que ser menor ou igual ao total de niveis do registro lição")
             return False
-
-        op_correta = registro.get_op_correta()
-        if op_correta > 7 or op_correta < 4:
-            print("Erro! Atributo opção correta inválido.")
-            return False 
 
         return True
 
