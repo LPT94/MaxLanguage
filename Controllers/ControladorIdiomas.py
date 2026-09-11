@@ -8,22 +8,23 @@ class ControladorIdiomas(Controlador):
 
     def validar_dados(self, registro):
 
-        if not self._eh_int([registro.get_id()], ['id']):
-            return False
+        validacao, mensagem = self._eh_int([registro.get_id()], ['id'])
+        if not validacao:
+            return validacao, mensagem
 
-        if not self._caracter_valido([registro.get_descricao()], ['descricao']):
-            return False
+        validacao, mensagem = self._caracter_valido([registro.get_descricao()], ['descricao'])
+        if not validacao:
+            return validacao, mensagem
 
-        return True
+        return True, "Dados validados."
 
 
     def validar_constraints(self, registro):
         
         if not self.unique(registro.get_descricao(), 1):
-            print("Erro! Atributo descrição deve ser único")
-            return False
+            return False, "Descrição já existente."
 
-        return True
+        return True, "Constraints validadas."
 
     def get_registro(self, indice):
     

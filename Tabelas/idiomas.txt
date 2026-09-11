@@ -8,3 +8,5 @@
 11;Russo
 12;Vietnã
 13;Mandarim
+14;Novo idioma
+15;idioma2

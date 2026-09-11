@@ -14,40 +14,37 @@ class ControladorUsuarios(Controlador):
         nivel_atual = registro.get_nivel_atual()
         pontuacao = registro.get_pontuacao()
 
-        if not self._eh_int([registro.get_id(), registro.get_cod_idioma(),nivel_atual,
-                            pontuacao], ['id', 'codigo idioma', 'nivel atual', 'pontuação']):
-            return False
+        verificacao, mensagem = self._eh_int([registro.get_id(), registro.get_cod_idioma(),nivel_atual,
+                            pontuacao], ['Id', 'Código Idioma', 'Nivel Atual', 'Pontuação'])
+        if not verificacao:
+            return verificacao, mensagem
 
-        if not self._caracter_valido([registro.get_nome(), registro.get_login(), registro.get_tipo()], 
-                                     ['nome', 'login', 'tipo']):
-            return False
+        verificacao, mensagem = self._caracter_valido([registro.get_nome(), registro.get_login(), registro.get_tipo()], 
+                                     ['Nome', 'Login', 'Tipo'])
+        if not verificacao:
+            return verificacao, mensagem
 
         if str(tipo) != "0" and str(tipo) != "1":
-            print("Erro! Tipo inválido.")
-            return False
+            return False, "Tipo deve ser 0 ou 1."
 
         if int(nivel_atual) < 1:
-            print("Erro! Nivel atual menor que 1")
-            return False
+            return False, "Nivel atual deve ser maior ou igual a 1."
 
         if int(pontuacao) < 0:
-            print("Erro! Pontuação menor que 0")
-            return False
+            return False, "Pontuação deve ser maior que 0."
         
-        return True
+        return True, "Dados válidos."
 
     def validar_constraints(self, registro):
 
         no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
         if not no_estrangeiro:
-            print("Erro! Foreign Key não encontrada na tabela idiomas.")
-            return False
+            return False, "Idioma selecionado não encontrado."
 
         if not self.unique(registro.get_login(), 3):
-            print("Erro! Atributo login deve ser único")
-            return False
+            return False, "Login já existente."
 
-        return True
+        return True, "Constraints válidadas."
 
     def get_registro(self, indice):
 

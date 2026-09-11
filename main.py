@@ -46,7 +46,7 @@ def inicio():
 
         if usuario is None:
             session.pop("usuario_id", None)
-            return "Login ou senha inválidos!"
+            return render_template("erro.html", titulo="Não foi possível realizar o login", mensagem="Login ou senha inválidos!", voltar="/" )
 
         session["usuario_id"] = usuario.get_id()
 
@@ -76,6 +76,9 @@ def usuario():
     if usuario.get_tipo() == "0":
        return redirect("/admin")
 
+    if usuario.get_tipo() != "1":
+        return redirect("/")
+    
     return render_template("usuario.html", usuario=usuario)
 
 
@@ -88,7 +91,7 @@ def admin():
     usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
 
     if usuario.get_tipo() != "0":
-        return "Acesso negado!"
+        return redirect("/usuario")
 
     return render_template("admin.html", usuario=usuario)
 
@@ -107,12 +110,12 @@ def cadastro():
 
         novo_usuario = RegistroUsuarios(id, cod_idioma, nome, login, senha_hash, 1, 0, 1)
 
-        sucesso = ctrl_usuarios.inserir_registro(novo_usuario)
+        sucesso, mensagem = ctrl_usuarios.inserir_registro(novo_usuario)
 
         if sucesso:
             return redirect("/")
 
-        return "Não foi possível criar a conta."
+        return render_template("erro.html", titulo="Não foi possível realizar o cadastro", mensagem=mensagem, voltar="/")
 
     lista_idiomas = ctrl_idiomas.listar_registros()
 
@@ -127,7 +130,7 @@ def idiomas():
     usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
     
     if usuario.get_tipo() != "0":
-        return "Acesso negado!"
+        return redirect("/usuario")
 
     lista_idiomas = ctrl_idiomas.listar_registros()
 
@@ -142,7 +145,7 @@ def idioma_novo():
     usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
     
     if usuario.get_tipo() != "0":
-        return "Acesso negado!"
+        return redirect("/usuario")
 
     if request.method == "POST":
         descricao = request.form["descricao"]
@@ -150,12 +153,12 @@ def idioma_novo():
         id = ctrl_idiomas.get_proximo_id()
         novo_idioma = RegistroIdiomas(id, descricao)
 
-        sucesso = ctrl_idiomas.inserir_registro(novo_idioma)
+        sucesso, mensagem = ctrl_idiomas.inserir_registro(novo_idioma)
 
         if sucesso:
             return redirect("/admin/idiomas")
 
-        return print("Não foi possível criar o novo idioma.")
+        return render_template("erro.html", titulo="Não foi possível cadastrar o idioma", mensagem=mensagem, voltar="/admin/idiomas/novo")
 
     return render_template("novo_idioma.html", usuario=usuario)
 

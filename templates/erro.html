@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>MaxLanguage - Erro</title> <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    </head> <body class="error-page"> 
+        <main class="error-container"> 
+            <section class="error-card"> 
+                <div class="error-icon"> ⚠️ </div> 
+                <h1>{{ titulo }}</h1> 
+                <p class="error-message"> {{ mensagem }} </p> 
+                <a href="{{ voltar }}" class="primary-button error-button"> Voltar </a> 
+            </section> 
+        </main> 
+    </body> 
+    </html>

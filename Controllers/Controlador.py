@@ -63,44 +63,45 @@ class Controlador:
     def validar_pk(self, registro):
 
         if int(registro.get_id()) < 1:
-            print("Erro! Primary key inválida.")
-            return False
+            return False, "Id inválida."
         
-        return True
+        return True, "Id válida."
 
     def _caracter_valido(self, lista_atributo, lista_nome):
         for i in range(len(lista_atributo)):
             if ";" in lista_atributo[i] or "\n" in lista_atributo[i] or "\r" in lista_atributo[i]:
-                print(f"Erro! {lista_nome[i]} contém caracteres inváldos")
-                return False
-        return True
+                return False, f"{lista_nome[i]} contém caracteres inválidos."
+            
+        return True, "Caracteres válidos."
 
     def _eh_int(self, lista_int, lista_nome):
         for i in range(len(lista_int)):
             try:
                 int(lista_int[i])
             except ValueError:
-                print(f"Erro! {lista_nome[i]} não possui valor numérico inteiro")
-                return False
+                return False, f"{lista_nome[i]} deve ser um número inteiro positivo."
 
-        return True
+        return True, "Valor válido."
 
 
     def inserir_registro(self, registro):
 
-        if not self.validar_dados(registro):
-            return False
+        verificacao, mensagem = self.validar_dados(registro)
+        if not verificacao:
+            return verificacao, mensagem
 
-        if not self.validar_pk(registro):
-            return False
-        
-        if not self.validar_constraints(registro):
-            return False
+        verificacao, mensagem = self.validar_dados(registro)
+        if not verificacao:
+            return verificacao, mensagem
+
+        verificacao, mensagem = self.validar_constraints(registro)
+        if not verificacao:
+            return verificacao, mensagem
 
         node = Node(int(registro.get_id()), -1)
 
         if not self._arvore_indices.inserir(node):
-            return False
+            return False, "Indice já existente."
 
         reg_formatado = registro.formatar()
 
@@ -108,40 +109,47 @@ class Controlador:
 
         if offset == -1:
             self._arvore_indices.deletar(int(registro.get_id()))
-            return False
+            return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
 
         node.set_off(offset)
         self._proximo_id += 1
-        return True
+        return True, "Registro inserido com sucesso."
 
     def atualizar_registro(self, registro, node):
 
-        if not self.validar_dados(registro):
-            return False
-        
-        if not self.validar_pk(registro):
-            return False
-        
-        if not self.validar_constraints(registro):
-            return False
+        verificacao, mensagem = self.validar_dados(registro)
+        if not verificacao:
+            return verificacao, mensagem
+
+        verificacao, mensagem = self.validar_dados(registro)
+        if not verificacao:
+            return verificacao, mensagem
+
+        verificacao, mensagem = self.validar_constraints(registro)
+        if not verificacao:
+            return verificacao, mensagem
 
         reg_formatado = registro.fomartar()
 
         offset = self._gerenciador_txt.inserir(reg_formatado)
 
         if offset == -1:
-            return False
+            return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
 
         node.set_off(offset)
-        return True
+        return True, "Registro editado com sucesso."
 
     def del_registro(self, indice):
 
-        deletado = self._arvore_indices.deletar(indice)
-        if not deletado:
-            return False
+        indice_del = self._arvore_indices.deletar(int(indice))
+        if not indice_del:
+            return False, "Indice não encontrado."
 
-        return self._gerenciador_txt.deletar(deletado.get_offs())
+        sucesso = self._gerenciador_txt.deletar(indice_del.get_offs())
+        if not sucesso:
+            return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
+
+        return True, "Registro deletado com sucesso."
 
     def unique(self, atributo, indice_atributo):
         

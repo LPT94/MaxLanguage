@@ -12,14 +12,13 @@ class ControladorLicoes(Controlador):
         total_niveis = registro.get_total_niveis()
 
         if not self._eh_int([registro.get_id(), registro.get_cod_idioma(), total_niveis],
-                            ['id', 'codigo idioma', 'total níveis']):
+                            ['Id', 'Codigo Idioma', 'Total Níveis']):
             return False
 
         if int(total_niveis) < 1:
-            print("Erro! Total de níveis inválido.")
-            return False
+            return False, "Total Níveis deve ser maior que 0"
 
-        return True
+        return True, "Dados válidos."
 
     
     def validar_constraints(self, registro):
@@ -27,9 +26,9 @@ class ControladorLicoes(Controlador):
         no_estrangeiro = self._controlador_idioma.buscar_node(int(registro.get_cod_idioma()))
         if not no_estrangeiro:
             print("Erro! Foreign Key não encontrada na tabela Idioma.")
-            return False
+            return False, "Idioma selecionado não encontrado."
 
-        return True
+        return True, "Constraints válidadas."
 
     def get_registro(self, indice):
     

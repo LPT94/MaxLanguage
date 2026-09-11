@@ -57,7 +57,6 @@ class ArvoreB:
         
         existe, pai = self.buscar(node.get_i())
         if existe:
-            print("Erro! Indice já existente")
             return False
 
         if node.get_i() > pai.get_i():
