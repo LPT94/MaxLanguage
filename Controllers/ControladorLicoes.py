@@ -33,7 +33,7 @@ class ControladorLicoes(Controlador):
 
     def get_registro(self, indice):
     
-        node = self.buscar_node(indice)
+        node = self.buscar_node(int(indice))
         if not node:
             return None, node
         

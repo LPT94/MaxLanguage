@@ -32,7 +32,7 @@ class RegistroUsuarios:
         return self._pontuacao
 
     def get_tipo(self):
-        return self._tipo
+        return str(self._tipo)
 
     def set_cod_idioma(self, cod_idioma):
         self._cod_idioma = cod_idioma

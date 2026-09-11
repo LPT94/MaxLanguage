@@ -15,13 +15,14 @@ class ControladorUsuarios(Controlador):
         pontuacao = registro.get_pontuacao()
 
         if not self._eh_int([registro.get_id(), registro.get_cod_idioma(),nivel_atual,
-                            pontuacao, tipo], ['id', 'codigo idioma', 'nivel atual', 'pontuação']):
+                            pontuacao], ['id', 'codigo idioma', 'nivel atual', 'pontuação']):
             return False
 
-        if not self._caracter_valido([registro.get_nome(), registro.get_login()], ['nome', 'login']):
+        if not self._caracter_valido([registro.get_nome(), registro.get_login(), registro.get_tipo()], 
+                                     ['nome', 'login', 'tipo']):
             return False
 
-        if int(tipo) != 0 and int(tipo) != 1:
+        if str(tipo) != "0" and str(tipo) != "1":
             print("Erro! Tipo inválido.")
             return False
 
@@ -39,7 +40,7 @@ class ControladorUsuarios(Controlador):
 
         no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
         if not no_estrangeiro:
-            print("Erro! Foreign Key não encontrada na tabela lições.")
+            print("Erro! Foreign Key não encontrada na tabela idiomas.")
             return False
 
         if not self.unique(registro.get_login(), 3):
@@ -52,7 +53,7 @@ class ControladorUsuarios(Controlador):
 
         #TODO: VERIFICAR SE RETORNAR NODE É REALMENTE NECESSÁRIO
 
-        node = self.buscar_node(indice)
+        node = self.buscar_node(int(indice))
         if not node:
             return None, node
         

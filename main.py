@@ -20,7 +20,7 @@ from Controllers.ControladorExerciciosFeitos import ControladorExerciciosFeitos
 ctrl_idiomas = ControladorIdiomas("idiomas.txt")
 ctrl_licoes = ControladorLicoes("licoes.txt", ctrl_idiomas)
 ctrl_exercicios = ControladorExercicios("exercicios.txt", ctrl_licoes)
-ctrl_usuarios = ControladorUsuarios("usuarios.txt", ctrl_licoes)
+ctrl_usuarios = ControladorUsuarios("usuarios.txt", ctrl_idiomas)
 ctrl_exe_feitos = ControladorExerciciosFeitos("exercicios_feitos.txt", ctrl_usuarios, ctrl_exercicios)
 
 
@@ -74,7 +74,7 @@ def usuario():
     usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
 
     if usuario.get_tipo() == "0":
-        redirect("/admin")
+       return redirect("/admin")
 
     return render_template("usuario.html", usuario=usuario)
 

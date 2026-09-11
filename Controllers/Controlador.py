@@ -107,7 +107,7 @@ class Controlador:
         offset = self._gerenciador_txt.inserir(reg_formatado)
 
         if offset == -1:
-            self._arvore_indices.deletar(registro.get_id())
+            self._arvore_indices.deletar(int(registro.get_id()))
             return False
 
         node.set_off(offset)
@@ -116,9 +116,12 @@ class Controlador:
 
     def atualizar_registro(self, registro, node):
 
+        if not self.validar_dados(registro):
+            return False
+        
         if not self.validar_pk(registro):
             return False
-
+        
         if not self.validar_constraints(registro):
             return False
 

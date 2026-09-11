@@ -42,9 +42,9 @@ class ArvoreB:
 
         while node and node.get_i() != indice:
             pai = node
+            
             if indice > node.get_i():
                 node = node.get_d()
-
             else:
                 node = node.get_e()
 

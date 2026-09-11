@@ -7,3 +7,4 @@
 10;Árabe
 11;Russo
 12;Vietnã
+13;Mandarim

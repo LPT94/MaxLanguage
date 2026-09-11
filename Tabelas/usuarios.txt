@@ -7,3 +7,8 @@
 7;1;ll;ade;7e9e5ac30f2216fd0fd6f5faed316f2d5983361a4203c3330cfa46ef65bb4767;1;0;1
 66;10;Albert;Abt;senhaqui;1;0;0
 67;10;Albert;p2;senhaqui;1;0;0
+68;1;Isaac Newton;INewton;a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3;1;0;1
+69;10;adw;AA;961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506;1;0;1
+70;10;Produto com novo nome;ADDWS;d1103b4d6d8cfe1d667012b23e9ff32ec54c991db1096bb928ad2da7073ba858;1;0;1
+71;12;Isaac Newton;ISW;96e6102e9841005704ba015e2d6900fb3ea6a10223d2c39e841685931ce251d6;1;0;1
+72;11;Produto com novo nome;INewton2;7e9e5ac30f2216fd0fd6f5faed316f2d5983361a4203c3330cfa46ef65bb4767;1;0;1
