@@ -30,7 +30,7 @@ class ControladorExerciciosFeitos(Controlador):
         no_estrangeiro_exe = self._controlador_exercicios.buscar_node(int(registro.get_cod_exercicio()))
         if not no_estrangeiro_exe:
             return False, "Exercício não encontrado"
-
+        
         return True, "Constraints validadas."
 
     def get_registro(self, indice):

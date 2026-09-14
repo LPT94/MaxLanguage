@@ -8,14 +8,46 @@ class Controlador:
     def __init__(self, nome_arquivo):
         self._gerenciador_txt = GerenciadorTXT(nome_arquivo)
         self._arvore_indices = ArvoreB(None)
+
+        lista_offsets_validos = self._gerenciador_txt.listar_offsets_ids_validos()
+        self.__construir_arvore_indices(lista_offsets_validos, 0, len(lista_offsets_validos)-1)
+
+        self._inseridos = 0
+        self._total = self._gerenciador_txt.get_tamanho_inicial()
+        self._fora_de_ordem = self.__ids_fora_de_ordem(lista_offsets_validos)
+        self._deletados = self._total - len(lista_offsets_validos)
         self._proximo_id = self._calcular_proximo_id()
+
+    def get_total(self):
+        return self._total
+
+    def get_inseridos(self):
+        return self._inseridos
+
+    def get_fora_ordem(self):
+        return self._fora_de_ordem
+
+    def get_deletados(self):
+        return self._deletados
 
     def get_proximo_id(self):
         return self._proximo_id
 
-    def _calcular_proximo_id(self):
+    def __ids_fora_de_ordem(self, lista_offsets):
+        if not lista_offsets:
+            return 0
+        
+        last = -1
+        fora_ordem = 0
 
-        self._construir_arvore_indices()
+        for offset, indice in lista_offsets:
+            if int(indice) < last:
+                fora_ordem += 1
+            last = int(indice)
+
+        return fora_ordem
+
+    def _calcular_proximo_id(self):
         node = self._arvore_indices.get_root()
 
         if not node:
@@ -26,23 +58,19 @@ class Controlador:
 
         return node.get_i()+1
 
-    def __recursao(self, vetor, inicio, fim):
-            if inicio > fim:
-                return
-    
-            meio = (fim - inicio) // 2 + inicio
+    def __construir_arvore_indices(self, vetor, inicio, fim):
+        if inicio > fim:
+            return
 
-            offset = vetor[meio]
-            indice = int(self._gerenciador_txt.acessar(offset).split(";")[0])
-            self._arvore_indices.inserir(Node(indice, offset))
-    
-            self.__recursao(vetor, inicio, meio-1)
-            self.__recursao(vetor, meio+1, fim)
+        meio = (fim - inicio) // 2 + inicio
 
-    def _construir_arvore_indices(self):
+        offset = int(vetor[meio][0])
+        indice = int(vetor[meio][1])
+        self._arvore_indices.inserir(Node(indice, offset))
 
-        lista_offsets = self._gerenciador_txt.listar_offsets_validos()
-        self.__recursao(lista_offsets, 0, len(lista_offsets)-1)
+        self.__construir_arvore_indices(vetor, inicio, meio-1)
+        self.__construir_arvore_indices(vetor, meio+1, fim)
+
 
     def mostrar_arvore(self, tipo="In-Order"):
 
@@ -55,7 +83,7 @@ class Controlador:
 
         print()
 
-    def buscar_node(self, indice):        #TODO: verificar depois se esta função é útil
+    def buscar_node(self, indice):
 
         node, pai = self._arvore_indices.buscar(indice)
         return node
@@ -90,7 +118,7 @@ class Controlador:
         if not verificacao:
             return verificacao, mensagem
 
-        verificacao, mensagem = self.validar_dados(registro)
+        verificacao, mensagem = self.validar_pk(registro)
         if not verificacao:
             return verificacao, mensagem
 
@@ -113,30 +141,55 @@ class Controlador:
 
         node.set_off(offset)
         self._proximo_id += 1
+        self._total += 1
+        self._inseridos += 1
+
+        if self._deve_atualizar_arvore():
+            self._atualizar_arvore()
+
         return True, "Registro inserido com sucesso."
 
-    def atualizar_registro(self, registro, node):
+    def editar_registro(self, registro):
 
         verificacao, mensagem = self.validar_dados(registro)
         if not verificacao:
             return verificacao, mensagem
 
-        verificacao, mensagem = self.validar_dados(registro)
+        verificacao, mensagem = self.validar_pk(registro)
         if not verificacao:
             return verificacao, mensagem
-
+        
         verificacao, mensagem = self.validar_constraints(registro)
         if not verificacao:
             return verificacao, mensagem
 
-        reg_formatado = registro.fomartar()
+        node = self.buscar_node(int(registro.get_id()))
+        if node is None:
+            return False, "Registro não encontrado."
+        
+        reg_formatado = registro.formatar()
 
         offset = self._gerenciador_txt.inserir(reg_formatado)
 
         if offset == -1:
             return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
 
+        sucesso = self._gerenciador_txt.deletar(node.get_offs())
+        if not sucesso:
+            return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
+        
         node.set_off(offset)
+
+        if node.get_i() != self._proximo_id - 1:
+            self._fora_de_ordem += 1
+
+        self._deletados += 1
+        self._total += 1
+
+        if self._deve_ordenar_arquivo():
+            self.ordenar_arquivo()
+            self._atualizar_arvore()
+
         return True, "Registro editado com sucesso."
 
     def del_registro(self, indice):
@@ -149,14 +202,20 @@ class Controlador:
         if not sucesso:
             return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
 
+        self._deletados += 1
+
+        if self._deve_ordenar_arquivo():
+            self.ordenar_arquivo()
+            self._atualizar_arvore()
+
         return True, "Registro deletado com sucesso."
 
     def unique(self, atributo, indice_atributo):
         
-        lista_registros = self._gerenciador_txt.listar_offsets_validos()
+        lista_registros = self._gerenciador_txt.listar_offsets_ids_validos()
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
 
-        for offset in lista_registros:
+        for offset, id in lista_registros:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             if dados[indice_atributo] == atributo:
@@ -168,12 +227,12 @@ class Controlador:
 
     def listar_atributos(self, atributos):
         
-        lista_offsets = self._gerenciador_txt.listar_offsets_validos()
+        lista_offsets = self._gerenciador_txt.listar_offsets_ids_validos()
         matriz_dados = [[0] * len(lista_offsets) for _ in range(len(atributos))]
         j = 0
 
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
-        for offset in lista_offsets:
+        for offset, id in lista_offsets:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             for i in range(len(atributos)):
@@ -184,11 +243,11 @@ class Controlador:
         return matriz_dados
 
     def listar_dados(self):
-        lista_offsets = self._gerenciador_txt.listar_offsets_validos()
+        lista_offsets = self._gerenciador_txt.listar_offsets_ids_validos()
         lista_dados = []
 
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
-        for offset in lista_offsets:
+        for offset, id in lista_offsets:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             lista_dados.append(dados)
@@ -198,10 +257,10 @@ class Controlador:
 
     def registros_com_criterio(self, criterios):
 
-        lista_registros = self._gerenciador_txt.listar_offsets_validos()
+        lista_registros = self._gerenciador_txt.listar_offsets_ids_validos()
         resultados = []
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
-        for offset in lista_registros:
+        for offset, id in lista_registros:
             flag = True
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
@@ -218,11 +277,24 @@ class Controlador:
         arquivo.close()
         return resultados
 
+    def _deve_atualizar_arvore(self):
+        if self._total > 20 and self._inseridos > self._total * 0.2:
+            return True
 
-    def atualizar_arquivo(self):
-        #Após atualizar o arquivo se for continuar atualizando a classe 
-        #é necessária atualizar a arvore de indices, pois os offsets estarão desatualizados
-        return self._gerenciador_txt.atualizar()
+        return False
+
+    def _deve_ordenar_arquivo(self):
+        if self._total > 20 and (self._fora_de_ordem > self._total * 0.2 or self._deletados > self._total * 0.2):
+            return True
+
+        return False
+
+    def _atualizar_arvore(self):
+        self._inseridos = 0
+        lista_offsets_validos = self._gerenciador_txt.listar_offsets_ids_validos()
+        self._arvore_indices.limpar_arvore()
+        self.__construir_arvore_indices(lista_offsets_validos, 0, len(lista_offsets_validos)-1)
+
 
     def __escrever_pre_order(self, node, arquivo_atual, arquivo_novo):
 
@@ -238,9 +310,6 @@ class Controlador:
         self.__escrever_pre_order(node.get_d(), arquivo_atual, arquivo_novo)
 
     def ordenar_arquivo(self):
-        #Função elaborada para ser chamada quando encerrar o programa.
-        #Após ordernar o arquivo, se for continuar utilizando a classe
-        #é necessário atualizar a arvore de indices, pois os offsets estarão desatualizados
 
         caminho_atual = self._gerenciador_txt.get_nome_arq()
         caminho_tmp = caminho_atual + ".tmp"
@@ -251,5 +320,7 @@ class Controlador:
         arquivo_sub.close()
 
         os.replace(caminho_tmp, caminho_atual)
-        self._gerenciador_txt._ordenar_offsets()
+        self._gerenciador_txt._start()
+        self._deletados = 0
+        self._fora_de_ordem = 0
     

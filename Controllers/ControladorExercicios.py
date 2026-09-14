@@ -50,6 +50,9 @@ class ControladorExercicios(Controlador):
         if nivel > int(reg_licoes.get_total_niveis()):
             return False, "Nível deve ser maior ou igual ao total de nível da Lição."
 
+        if not self.unique(registro.get_descricao(), 3):
+            return False, "Exercício já existente."
+        
         return True, "Constraints validadas."
 
     def get_registro(self, indice):

@@ -11,6 +11,9 @@ class ArvoreB:
     def atualiza_root(self, node):
         self._root = node
 
+    def limpar_arvore(self):
+        self._root = None
+
     def filho_esq(self, node_filho, node_pai):
 
         if node_filho.get_i() < node_pai.get_i():
@@ -98,6 +101,7 @@ class ArvoreB:
 
         if del_node.get_e():
             sub, pai_sub = self.buscar_subst_esq(del_node)
+
             if pai_sub:
                 pai_sub.set_d(sub.get_e())
                 sub.set_e(del_node.get_e())
@@ -121,7 +125,7 @@ class ArvoreB:
             else:
                 pai_master.set_d(sub)
         else:
-            self.root = sub
+            self._root = sub
 
         return del_node
 
