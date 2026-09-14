@@ -17,7 +17,7 @@ from Controllers.ControladorExerciciosFeitos import ControladorExerciciosFeitos
 
 
 ############################# MAIN ###############################
-ctrl_idiomas = ControladorIdiomas("idiomas.txt")
+ctrl_idiomas = ControladorIdiomas("idiomas.txt", )
 ctrl_licoes = ControladorLicoes("licoes.txt", ctrl_idiomas)
 ctrl_exercicios = ControladorExercicios("exercicios.txt", ctrl_licoes)
 ctrl_usuarios = ControladorUsuarios("usuarios.txt", ctrl_idiomas)
@@ -190,7 +190,32 @@ def editar_idioma(id):
 
     return render_template("editar_idioma.html", usuario=usuario, idioma=idioma)
 
+@app.route("/admin/idiomas/deletar/<int:id>", methods=["GET", "POST"])
+def deletar_idioma(id):
+    if "usuario_id" not in session:
+        return redirect("/")
 
+    usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
+
+    if usuario.get_tipo() != "0":  
+        return "Acesso Negado"
+
+    idioma, node = ctrl_idiomas.get_registro(id)
+
+    if idioma is None:
+        return render_template("erro.html", titulo="Idioma não encontrado", mensagem="Id do idioma solicitado não encontrado", voltar="/admin/idiomas")
+
+    if request.method == "POST":
+
+        sucesso, mensagem = ctrl_idiomas.del_registro(id, [ctrl_licoes.verifica_referencia(1, id), ctrl_usuarios.verifica_referencia(1,id)])
+
+        if sucesso:
+            return redirect("/admin/idiomas")
+
+        return render_template("erro.html", titulo="Não foi possível deletar o idioma", mensagem=mensagem, voltar="/admin/idiomas")
+
+    return render_template("deletar_idioma.html", usuario=usuario, idioma=idioma)
+    
 if __name__ == "__main__":
     app.run(debug=True)
 

@@ -46,6 +46,11 @@ class ControladorUsuarios(Controlador):
 
         return True, "Constraints válidadas."
 
+    def validar_constraints_del(self, registro):
+        if self._controlador_exe_feitos._eh_referenciado(1, str(registro.get_id)):
+            return False, "Não é permitido deletar este usuário pois ele possui exercícios feitos."
+
+
     def get_registro(self, indice):
 
         #TODO: VERIFICAR SE RETORNAR NODE É REALMENTE NECESSÁRIO

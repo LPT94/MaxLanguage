@@ -114,17 +114,17 @@ class Controlador:
 
     def inserir_registro(self, registro):
 
-        verificacao, mensagem = self.validar_dados(registro)
-        if not verificacao:
-            return verificacao, mensagem
+        sucesso, mensagem = self.validar_dados(registro)
+        if not sucesso:
+            return sucesso, mensagem
 
-        verificacao, mensagem = self.validar_pk(registro)
-        if not verificacao:
-            return verificacao, mensagem
+        sucesso, mensagem = self.validar_pk(registro)
+        if not sucesso:
+            return sucesso, mensagem
 
-        verificacao, mensagem = self.validar_constraints(registro)
-        if not verificacao:
-            return verificacao, mensagem
+        sucesso, mensagem = self.validar_constraints(registro)
+        if not sucesso:
+            return sucesso, mensagem
 
         node = Node(int(registro.get_id()), -1)
 
@@ -151,17 +151,17 @@ class Controlador:
 
     def editar_registro(self, registro):
 
-        verificacao, mensagem = self.validar_dados(registro)
-        if not verificacao:
-            return verificacao, mensagem
+        sucesso, mensagem = self.validar_dados(registro)
+        if not sucesso:
+            return sucesso, mensagem
 
-        verificacao, mensagem = self.validar_pk(registro)
-        if not verificacao:
-            return verificacao, mensagem
+        sucesso, mensagem = self.validar_pk(registro)
+        if not sucesso:
+            return sucesso, mensagem
         
-        verificacao, mensagem = self.validar_constraints(registro)
-        if not verificacao:
-            return verificacao, mensagem
+        sucesso, mensagem = self.validar_constraints(registro)
+        if not sucesso:
+            return sucesso, mensagem
 
         node = self.buscar_node(int(registro.get_id()))
         if node is None:
@@ -192,11 +192,15 @@ class Controlador:
 
         return True, "Registro editado com sucesso."
 
-    def del_registro(self, indice):
+    def del_registro(self, indice, lista_referencia):
 
         indice_del = self._arvore_indices.deletar(int(indice))
         if not indice_del:
-            return False, "Indice não encontrado."
+            return False, "Índice não encontrado."
+
+        sucesso, mensagem = self.validar_constraints_del(lista_referencia)
+        if not sucesso:
+            return sucesso, mensagem
 
         sucesso = self._gerenciador_txt.deletar(indice_del.get_offs())
         if not sucesso:
@@ -225,7 +229,7 @@ class Controlador:
         arquivo.close()
         return True
 
-    def listar_atributos(self, atributos):
+    def listar_atributos(self, atributos):      #TODO: verificar se este método realmente é necessário
         
         lista_offsets = self._gerenciador_txt.listar_offsets_ids_validos()
         matriz_dados = [[0] * len(lista_offsets) for _ in range(len(atributos))]
@@ -242,6 +246,29 @@ class Controlador:
         arquivo.close()
         return matriz_dados
 
+    def __recursao(self, node, arquivo, indice_atributo, valor):
+        if node is None:
+            return False
+
+        arquivo.seek(node.get_offs())
+        dados = arquivo.readline().strip().split(";")
+        if dados[indice_atributo] == str(valor):
+            return True
+
+        else:
+            res = self.__recursao(node.get_e(), arquivo, indice_atributo, valor)
+            if not res:
+                return self.__recursao(node.get_d(), arquivo, indice_atributo, valor)
+
+            return res
+        
+    def verifica_referencia(self, indice_atributo, valor):
+        arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
+        res =  self.__recursao(self._arvore_indices.get_root(), arquivo, indice_atributo, valor)
+        arquivo.close()
+        return res
+
+
     def listar_dados(self):
         lista_offsets = self._gerenciador_txt.listar_offsets_ids_validos()
         lista_dados = []
@@ -251,6 +278,8 @@ class Controlador:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             lista_dados.append(dados)
+
+        arquivo.close()
 
         return lista_dados
 

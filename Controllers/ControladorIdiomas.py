@@ -7,7 +7,6 @@ class ControladorIdiomas(Controlador):
         super().__init__(nome_arquivo)
 
     def validar_dados(self, registro):
-
         validacao, mensagem = self._eh_int([registro.get_id()], ['id'])
         if not validacao:
             return validacao, mensagem
@@ -18,13 +17,20 @@ class ControladorIdiomas(Controlador):
 
         return True, "Dados validados."
 
-
     def validar_constraints(self, registro):
-        
         if not self.unique(registro.get_descricao(), 1):
             return False, "Descrição já existente."
 
         return True, "Constraints validadas."
+
+    def validar_constraints_del(self, lista_referencia):
+        if lista_referencia[0]:
+            return False, "Não é permitido deletar este idioma pois existem lições registradas neste idioma."
+
+        if lista_referencia[1]:
+            return False, "Não é permitido deletar este idioma pois existem usuários registrados neste idioma."
+
+        return True, "Constraints validadas"
 
     def get_registro(self, indice):
     
