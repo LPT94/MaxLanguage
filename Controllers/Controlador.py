@@ -296,18 +296,18 @@ class Controlador:
         self.__construir_arvore_indices(lista_offsets_validos, 0, len(lista_offsets_validos)-1)
 
 
-    def __escrever_pre_order(self, node, arquivo_atual, arquivo_novo):
+    def __escrever_in_order(self, node, arquivo_atual, arquivo_novo):
 
         if not node:
             return
         
-        self.__escrever_pre_order(node.get_e(), arquivo_atual, arquivo_novo)
+        self.__escrever_in_order(node.get_e(), arquivo_atual, arquivo_novo)
 
         arquivo_atual.seek(node.get_offs())
         registro = arquivo_atual.readline()
         arquivo_novo.write(registro)
 
-        self.__escrever_pre_order(node.get_d(), arquivo_atual, arquivo_novo)
+        self.__escrever_in_order(node.get_d(), arquivo_atual, arquivo_novo)
 
     def ordenar_arquivo(self):
 
@@ -315,7 +315,7 @@ class Controlador:
         caminho_tmp = caminho_atual + ".tmp"
         arquivo_atual = open(caminho_atual, "r", encoding="utf-8")
         arquivo_sub = open(caminho_tmp, "w", encoding="utf-8")
-        self.__escrever_pre_order(self._arvore_indices.get_root(), arquivo_atual, arquivo_sub)
+        self.__escrever_in_order(self._arvore_indices.get_root(), arquivo_atual, arquivo_sub)
         arquivo_atual.close()
         arquivo_sub.close()
 

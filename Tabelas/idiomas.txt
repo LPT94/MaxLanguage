@@ -1,1 +1,9 @@
-1;Inglês
+1;Espanhol
+-1;nglês2
+3;Russo
+-1;ortugues
+5;Francês
+6;Japoneis
+2;Inglês
+7;Chinês
+4;Português

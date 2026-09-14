@@ -130,23 +130,23 @@ class ArvoreB:
         return del_node
 
         
-    def print_pre_order(self, node):
-
-        if not node:
-            return
-
-        self.print_pre_order(node.get_e())
-        print(node.get_i(), end=" ")
-        self.print_pre_order(node.get_d())
-
     def print_in_order(self, node):
 
         if not node:
             return
 
-        print(node.get_i(), end=" ")
         self.print_in_order(node.get_e())
+        print(node.get_i(), end=" ")
         self.print_in_order(node.get_d())
+
+    def print_pre_order(self, node):
+
+        if not node:
+            return
+
+        print(node.get_i(), end=" ")
+        self.print_pre_order(node.get_e())
+        self.print_pre_order(node.get_d())
 
     def print_in_width(self):
         fila = []
@@ -170,38 +170,3 @@ class ArvoreB:
                 print()
                 j += 1
             i += 1
-
-                   
-    def balancear(self, node, pai):
-
-        pai, avo = self.buscar(pai)
-
-        if not self.tio(pai, avo):
-            self.deletar_node(avo)
-            avo.set_e(None)
-            avo.set_d(None)
-            self.inserir_node(avo)
-
-        else:
-            avo, bisavo = self.buscar(avo)
-            self.deletar_node(pai)
-            pai.set_e(None)
-            pai.set_d(None)
-            self.inserir_node(pai)
-            #substitui Node - Avo
-            if self.filho_dir(node, avo):
-                node.set_e(avo)
-                avo.set_d(None)
-            else:
-                node.set_d(avo)
-                avo.set_e(None)
-
-            if bisavo:
-                if self.filho_dir(avo, bisavo):
-                    bisavo.set_d(node)
-                else:
-                    bisavo.set_e(Node)
-
-
-
-    

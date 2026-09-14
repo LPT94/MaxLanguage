@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaxLanguage - Editar idioma</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <h2>MaxLanguage</h2>
+            <p>Painel administrativo</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="/admin">Início</a>
+            <a href="/admin/usuarios">Usuários</a>
+            <a href="/admin/idiomas" class="active">Idiomas</a>
+            <a href="/admin/licoes">Lições</a>
+            <a href="/admin/exercicios">Exercícios</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="/logout">Sair</a>
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Editar idioma</h1>
+                <p>Altere as informações do idioma selecionado.</p>
+            </div>
+
+        </header>
+
+
+        <section class="form-card">
+
+            <div class="form-header">
+                <h2>Informações do idioma</h2>
+                <p>Atualize a descrição do idioma abaixo.</p>
+            </div>
+
+
+            <form method="POST">
+
+                <div class="form-group">
+
+                    <label for="descricao">
+                        Descrição
+                    </label>
+
+                    <input
+                        type="text"
+                        id="descricao"
+                        name="descricao"
+                        value="{{ idioma.get_descricao() }}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <a
+                        href="/admin/idiomas"
+                        class="secondary-button">
+                        Cancelar
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Salvar alterações
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

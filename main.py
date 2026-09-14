@@ -162,6 +162,35 @@ def idioma_novo():
 
     return render_template("novo_idioma.html", usuario=usuario)
 
+@app.route("/admin/idiomas/editar/<int:id>", methods=["GET", "POST"])
+def editar_idioma(id):
+    if "usuario_id" not in session:
+        return redirect("/")
+
+    usuario, node = ctrl_usuarios.get_registro(session["usuario_id"])
+
+    if usuario.get_tipo() != "0":
+        return "Acesso Negado"
+
+    idioma, node = ctrl_idiomas.get_registro(id)
+
+    if idioma is None:
+        return render_template("erro.html", titulo="Idioma não encontrado", mensagem="Id do idioma solicitado não encontrado", voltar="/admin/idiomas")
+
+    if request.method == "POST":
+        descricao = request.form["descricao"]
+
+        idioma_editado = RegistroIdiomas(id, descricao)
+        sucesso, mensagem = ctrl_idiomas.editar_registro(idioma_editado)
+
+        if sucesso:
+            return redirect("/admin/idiomas")
+
+        return render_template("erro.html", titulo="Não foi possível editar idioma", mensagem=mensagem, voltar=f"/admin/idiomas/editar/{id}")
+
+    return render_template("editar_idioma.html", usuario=usuario, idioma=idioma)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
