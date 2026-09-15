@@ -128,7 +128,7 @@ class Controlador:
         if not sucesso:
             return sucesso, mensagem
 
-        sucesso, mensagem = self.validar_constraints(registro)
+        sucesso, mensagem = self.validar_constraints_insert(registro)
         if not sucesso:
             return sucesso, mensagem
 
@@ -169,7 +169,7 @@ class Controlador:
             return sucesso, mensagem
 
         if controlador:
-            sucesso, mensagem = self._validar_constraints_edit(controlador)
+            sucesso, mensagem = self.validar_constraints_edit(registro, controlador)
             if not sucesso:
                 return sucesso, mensagem
 
@@ -310,7 +310,7 @@ class Controlador:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
             for chave in criterios.keys():
-                if dados[chave] != criterios[chave]:
+                if dados[chave] != str(criterios[chave]):
                     flag = False
                     break
 

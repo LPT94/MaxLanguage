@@ -31,11 +31,11 @@ class ControladorLicoes(Controlador):
 
 
     def validar_constraints_edit(self, registro, controlador):
-        lista_registros = controlador.registros_com_criterio({2:registro.get_id()})
-        novo_nivel = registro.get_total_niveis()
+        lista_registros = controlador.registros_com_criterio({1:registro.get_id()})
+        novo_nivel = int(registro.get_total_niveis())
         for reg in lista_registros:
-            if reg.get_nivel() > novo_nivel:
-                return False, f"O exercício de código {reg.get_id()} pertence à um nível maior que o nível selecionado."
+            if int(reg[2]) > novo_nivel:
+                return False, f"O exercício de código {reg[0]} pertence à um nível maior que o nível selecionado."
 
         return True, "Constraints validadas"
 
