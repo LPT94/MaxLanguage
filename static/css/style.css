@@ -476,3 +476,8 @@ td {
     text-decoration: none; 
     padding: 11px 24px; 
 }
+
+.top_padding_extra {
+    padding-top: 20px;
+
+}

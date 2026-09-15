@@ -9,21 +9,18 @@ class ControladorExercicios(Controlador):
 
     
     def validar_dados(self, registro):
-
         opcao_correta = registro.get_op_correta()
         pontuacao = registro.get_pontuacao()
 
         validacao, mensagem = self._eh_int([registro.get_id(), registro.get_licao(), registro.get_nivel(), 
                             opcao_correta, pontuacao],
                             ['id', 'codigo licao', 'nivel', 'opção correta', 'pontuação'])
-
         if not validacao:
             return validacao, mensagem
 
         validacao, mensagem = self._caracter_valido([registro.get_descricao(), registro.get_op_a(), registro.get_op_b(), 
                                        registro.get_op_c(), registro.get_op_d()],
                                        ['descricao', 'opção A', 'opção B', 'opção C', 'opção D'])
-
         if not validacao:
             return validacao, mensagem
         
@@ -35,14 +32,13 @@ class ControladorExercicios(Controlador):
 
         return True, "Dados validados."
 
-    def validar_constraints(self, registro):
 
+    def validar_constraints_insert(self, registro):
         no_estrangeiro = self._controlador_licoes.buscar_node(int(registro.get_licao()))
         if not no_estrangeiro:
             return False, "Lição não encontrada."
 
         nivel = int(registro.get_nivel())
-
         if nivel < 1:
             return False, "Nível deve ser maior que 0."
     
@@ -55,8 +51,27 @@ class ControladorExercicios(Controlador):
         
         return True, "Constraints validadas."
 
-    def get_registro(self, indice):
+    def __procurar_e_deletar(self, arquivo, node, valor, ctrl_exe_feitos):
+        if node is None:
+            return
 
+        arquivo.seek(node.get_offs())
+        dados = arquivo.readline().strip().split(";")
+        if dados[2] == str(valor):
+            ctrl_exe_feitos.del_registro(dados[0], [])
+
+        self.__procurar_e_deletar(arquivo, node.get_e(), valor, ctrl_exe_feitos)
+        self.__procurar_e_deletar(arquivo, node.get_d(), valor, ctrl_exe_feitos)
+        
+
+    def validar_cascade(self, restricoes_info):
+        arquivo = open(restricoes_info[0].get_nome_arq(), "r", encoding="utf-8")
+        self.__procurar_e_deletar(arquivo, restricoes_info[0]._arvore_indices.get_root(), restricoes_info[1], restricoes_info[0])
+        arquivo.close()
+        return True, "Constraints validadas."
+
+
+    def get_registro(self, indice):
         node = self.buscar_node(int(indice))
         if not node:
             return None, node
@@ -66,5 +81,5 @@ class ControladorExercicios(Controlador):
         registro = RegistroExercicios(dados[0], dados[1], dados[2], dados[3], dados[4], dados[5], 
                                       dados[6], dados[7], dados[8], dados[9])
 
-        return registro, node
+        return registro
 

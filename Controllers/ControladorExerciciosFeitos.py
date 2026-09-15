@@ -8,8 +8,8 @@ class ControladorExerciciosFeitos(Controlador):
         self._controlador_usuarios = controlador_usuarios
         self._controlador_exercicios = controlador_exercicios
 
-    def validar_dados(self, registro):
 
+    def validar_dados(self, registro):
         cod_usuario = registro.get_cod_usuario()
         cod_exercicio = registro.get_cod_exercicio()
 
@@ -20,9 +20,9 @@ class ControladorExerciciosFeitos(Controlador):
 
         registro.set_id(int(cod_usuario), int(cod_exercicio))
         return True, "Dados validados."
-    
-    def validar_constraints(self, registro):
 
+    
+    def validar_constraints_insert(self, registro):
         no_estrangeiro_user = self._controlador_usuarios.buscar_node(int(registro.get_cod_usuario()))
         if not no_estrangeiro_user:
             return False, "Usuário não encontrado."
@@ -33,8 +33,12 @@ class ControladorExerciciosFeitos(Controlador):
         
         return True, "Constraints validadas."
 
-    def get_registro(self, indice):
 
+    def validar_cascade(self, lista_referencia):
+        return True, "Constraints validadas"
+
+
+    def get_registro(self, indice):
         node = self.buscar_node(int(indice))
         if not node:
             return None, node
@@ -43,4 +47,4 @@ class ControladorExerciciosFeitos(Controlador):
         dados = dados_brutos.strip().split(";")
         registro = RegistroExerciciosFeitos(dados[0], dados[1], dados[2])
 
-        return registro, node
+        return registro
