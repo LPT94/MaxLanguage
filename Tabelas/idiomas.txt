@@ -3,11 +3,11 @@
 3;Russo2
 4;Português2
 5;Francês2
-6;Japoneis
+-1;aponeis
 7;Chinês
 8;AHSHAIUDAW
 9;SAS22
-10;DDAS
+-1;DDAS
 11;ADAWD
 12;ASASSA
 13;SSS

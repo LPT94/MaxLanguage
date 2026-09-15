@@ -194,16 +194,17 @@ class Controlador:
 
     def del_registro(self, indice, lista_referencia):
 
-        indice_del = self._arvore_indices.deletar(int(indice))
-        if not indice_del:
-            return False, "Índice não encontrado."
-
         sucesso, mensagem = self.validar_constraints_del(lista_referencia)
         if not sucesso:
             return sucesso, mensagem
+        
+        node_del = self._arvore_indices.deletar(int(indice))
+        if not node_del:
+            return False, "Índice não encontrado."
 
-        sucesso = self._gerenciador_txt.deletar(indice_del.get_offs())
+        sucesso = self._gerenciador_txt.deletar(node_del.get_offs())
         if not sucesso:
+            self._arvore_indices.inserir(node_del)
             return False, "Erro na manipulação do arquivo ou arquivo não encontrado."
 
         self._deletados += 1
@@ -246,7 +247,7 @@ class Controlador:
         arquivo.close()
         return matriz_dados
 
-    def __recursao(self, node, arquivo, indice_atributo, valor):
+    def __existe_referencia(self, node, arquivo, indice_atributo, valor):
         if node is None:
             return False
 
@@ -256,15 +257,15 @@ class Controlador:
             return True
 
         else:
-            res = self.__recursao(node.get_e(), arquivo, indice_atributo, valor)
+            res = self.__existe_referencia(node.get_e(), arquivo, indice_atributo, valor)
             if not res:
-                return self.__recursao(node.get_d(), arquivo, indice_atributo, valor)
+                return self.__existe_referencia(node.get_d(), arquivo, indice_atributo, valor)
 
             return res
         
     def verifica_referencia(self, indice_atributo, valor):
         arquivo = open(self._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
-        res =  self.__recursao(self._arvore_indices.get_root(), arquivo, indice_atributo, valor)
+        res =  self.__existe_referencia(self._arvore_indices.get_root(), arquivo, indice_atributo, valor)
         arquivo.close()
         return res
 
