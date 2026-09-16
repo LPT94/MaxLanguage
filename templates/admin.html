@@ -1,114 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>MaxLanguage - Administração</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
 
-<body>
-
+  <body>
     <div class="layout">
+      <!-- Barra lateral -->
+      <aside class="sidebar">
+        <div class="logo">MaxLanguage</div>
 
-        <!-- Barra lateral -->
-        <aside class="sidebar">
+        <nav>
+          <a href="/admin"> Início </a>
 
-            <div class="logo">
-                MaxLanguage
-            </div>
+          <a href="#"> Usuários </a>
 
-            <nav>
+          <a href="/admin/idiomas"> Idiomas </a>
 
-                <a href="/admin">
-                    Início
-                </a>
+          <a href="/admin/licoes"> Lições </a>
 
-                <a href="#">
-                    Usuários
-                </a>
+          <a href="/admin/exercicios"> Exercícios </a>
+        </nav>
 
-                <a href="/admin/idiomas">
-                    Idiomas
-                </a>
+        <div class="sidebar-bottom">
+          <a href="/logout"> Sair </a>
+        </div>
+      </aside>
 
-                <a href="/admin/licoes">
-                    Lições
-                </a>
+      <!-- Conteúdo principal -->
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Olá, {{ usuario.get_nome() }}! 👋</h1>
+            <p>Painel administrativo</p>
+          </div>
+        </header>
 
-                <a href="#">
-                    Exercícios
-                </a>
+        <section class="dashboard">
+          <div class="card">
+            <h3>Usuários</h3>
+            <p>Gerencie os usuários da plataforma.</p>
+          </div>
 
-            </nav>
+          <div class="card">
+            <h3>Idiomas</h3>
+            <p>Gerencie os idiomas disponíveis.</p>
+          </div>
 
-            <div class="sidebar-bottom">
+          <div class="card">
+            <h3>Lições</h3>
+            <p>Gerencie as lições dos cursos.</p>
+          </div>
 
-                <a href="/logout">
-                    Sair
-                </a>
+          <div class="card">
+            <h3>Exercícios</h3>
+            <p>Gerencie os exercícios.</p>
+          </div>
+        </section>
 
-            </div>
+        <section class="welcome">
+          <h2>Área administrativa</h2>
 
-        </aside>
-
-
-        <!-- Conteúdo principal -->
-        <main class="main-content">
-
-            <header class="topbar">
-
-                <div>
-                    <h1>Olá, {{ usuario.get_nome() }}! 👋</h1>
-                    <p>Painel administrativo</p>
-                </div>
-
-            </header>
-
-
-            <section class="dashboard">
-
-                <div class="card">
-                    <h3>Usuários</h3>
-                    <p>Gerencie os usuários da plataforma.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Idiomas</h3>
-                    <p>Gerencie os idiomas disponíveis.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Lições</h3>
-                    <p>Gerencie as lições dos cursos.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Exercícios</h3>
-                    <p>Gerencie os exercícios.</p>
-                </div>
-
-            </section>
-
-
-            <section class="welcome">
-
-                <h2>Área administrativa</h2>
-
-                <p>
-                    Utilize o menu lateral para gerenciar
-                    usuários, idiomas, lições e exercícios.
-                </p>
-
-            </section>
-
-        </main>
-
+          <p>
+            Utilize o menu lateral para gerenciar usuários, idiomas, lições e
+            exercícios.
+          </p>
+        </section>
+      </main>
     </div>
-
-</body>
-
+  </body>
 </html>

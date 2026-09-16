@@ -38,7 +38,7 @@ class RegistroExercicios:
         return str(self._d)
 
     def get_op_correta(self):
-        return self._opcao_correta
+        return str(self._opcao_correta)
 
     def get_pontuacao(self):
         return self._pontuacao

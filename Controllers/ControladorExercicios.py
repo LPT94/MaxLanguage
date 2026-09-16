@@ -9,7 +9,7 @@ class ControladorExercicios(Controlador):
 
     
     def validar_dados(self, registro):
-        opcao_correta = registro.get_op_correta()
+        opcao_correta = registro.get_op_correta().upper()
         pontuacao = registro.get_pontuacao()
 
         validacao, mensagem = self._eh_int([registro.get_id(), registro.get_licao(), registro.get_nivel(), 
@@ -24,8 +24,8 @@ class ControladorExercicios(Controlador):
         if not validacao:
             return validacao, mensagem
         
-        if int(opcao_correta) > 7 or int(opcao_correta) < 4:
-            return False, "O valor da opção correta deve ser entre 4 e 7."
+        if opcao_correta != 'A' and opcao_correta != 'B' and opcao_correta != 'C' and opcao_correta != 'D' :
+            return False, "A opção correta deve ser A, B, C ou D."
 
         if int(pontuacao) < 1:
             return False, "Pontuação deve ser maior que 0."
@@ -42,9 +42,9 @@ class ControladorExercicios(Controlador):
         if nivel < 1:
             return False, "Nível deve ser maior que 0."
     
-        reg_licoes, node = self._controlador_licoes.get_registro(no_estrangeiro.get_i())
+        reg_licoes = self._controlador_licoes.get_registro(no_estrangeiro.get_i())
         if nivel > int(reg_licoes.get_total_niveis()):
-            return False, "Nível deve ser maior ou igual ao total de nível da Lição."
+            return False, "Nível deve ser menor ou igual ao total de nível da Lição."
 
         if not self.unique(registro.get_descricao(), 3):
             return False, "Exercício já existente."
@@ -83,3 +83,14 @@ class ControladorExercicios(Controlador):
 
         return registro
 
+    def listar_registros(self):
+
+        lista_registros = []
+        lista_dados = self.listar_dados()
+
+        for i in range(len(lista_dados)):
+            lista_registros.append(RegistroExercicios(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3],
+                                                     lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7],
+                                                     lista_dados[i][8], lista_dados[i][9]))
+
+        return lista_registros

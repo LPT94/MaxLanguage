@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>MaxLanguage - Idiomas</title>
-
+    <title>Exercícios</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
@@ -38,61 +34,58 @@
       <main class="main-content">
         <header class="topbar">
           <div>
-            <h1>Idiomas</h1>
-
-            <p>Gerencie os idiomas disponíveis na plataforma.</p>
+            <h1>Exercícios</h1>
+            <p>Gerencie os exercícios das lições.</p>
           </div>
 
-          <a href="/admin/idiomas/novo" class="primary-button admin-button">
-            + Novo idioma
+          <a href="/admin/exercicios/novo" class="primary-button">
+            + Novo exercício
           </a>
         </header>
 
         <section class="table-card">
           <div class="table-header">
-            <h2>Idiomas cadastrados</h2>
-
-            <p>Consulte e gerencie os idiomas do sistema.</p>
+            <h2>Lições cadastradas</h2>
+            <p>Consulte e gerencie as lições do sistema.</p>
           </div>
-
           <div class="table-container">
             <table>
               <thead>
                 <tr>
                   <th>Código</th>
-
+                  <th>Idioma</th>
+                  <th>Lição</th>
+                  <th>Nível</th>
                   <th>Descrição</th>
-
+                  <th>Pontuação</th>
                   <th>Ações</th>
                 </tr>
               </thead>
-
               <tbody>
-                {% for idioma in idiomas %}
-
+                {% for dado in dados %}
                 <tr>
-                  <td>{{ idioma.get_id() }}</td>
-
-                  <td>{{ idioma.get_descricao() }}</td>
-
+                  <td>{{ dado["exercicio"] }}</td>
+                  <td>{{ dado["idioma"] }}</td>
+                  <td>{{ dado["licao"] }}</td>
+                  <td>{{ dado["nivel"] }}</td>
+                  <td>{{ dado["descricao"] }}</td>
+                  <td>{{ dado["pontuacao"] }}</td>
                   <td class="table-actions">
                     <a
-                      href="/admin/idiomas/editar/{{ idioma.get_id() }}"
+                      href="/admin/licoes/editar/{{ dado['exercicio'] }}"
                       class="action-button edit-button"
                     >
                       Editar
                     </a>
-
                     <a
-                      href="/admin/idiomas/excluir/{{ idioma.get_id() }}"
+                      href="/admin/licoes/excluir/{{ dado['exercicio'] }}"
                       class="action-button delete-button"
-                      onclick="return confirm('Tem certeza que deseja excluir este idioma?');"
+                      onclick="return confirm('Tem certeza que deseja excluir esta lição?');"
                     >
                       Excluir
                     </a>
                   </td>
                 </tr>
-
                 {% endfor %}
               </tbody>
             </table>
