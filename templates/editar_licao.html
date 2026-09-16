@@ -51,6 +51,10 @@
                         <div class="form-group"> 
                             <label for="total_niveis"> Total de níveis </label> 
                             <input type="number" id="total_niveis" name="total_niveis" min="1" value="{{ licao.get_total_niveis() }}" required > 
+                        </div>
+                        <div class="form-group"> 
+                            <label for="descricao"> Descricao </label> 
+                            <input type="text" id="descricao" name="descricao" value="{{ licao.get_descricao() }}" required > 
                         </div> 
                         <div class="form-actions"> 
                             <a href="/admin/licoes" class="action-button" > Cancelar </a> 

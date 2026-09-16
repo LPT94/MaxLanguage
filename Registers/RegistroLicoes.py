@@ -1,9 +1,10 @@
 class RegistroLicoes:
 
-    def __init__(self, id, cod_idioma, total_niveis):
+    def __init__(self, id, cod_idioma, total_niveis, descricao):
         self._id = id
         self._cod_idioma = cod_idioma
         self._total_niveis = total_niveis
+        self._descricao = descricao
 
     def get_id(self):
         return self._id
@@ -14,6 +15,9 @@ class RegistroLicoes:
     def get_total_niveis(self):
         return self._total_niveis
 
+    def get_descricao(self):
+        return self._descricao
+
     def set_cod_idioma(self, cod_idioma):
         self._cod_idioma = cod_idioma
 
@@ -21,4 +25,4 @@ class RegistroLicoes:
         self._total_niveis = total_niveis
 
     def formatar(self):
-        return str(self._id)+";"+str(self._cod_idioma)+";"+str(self._total_niveis)
+        return str(self._id)+";"+str(self._cod_idioma)+";"+str(self._total_niveis)+";"+str(self._descricao)

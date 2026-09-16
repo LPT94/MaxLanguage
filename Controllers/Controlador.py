@@ -267,6 +267,7 @@ class Controlador:
             return True
 
         else:
+            
             res = self.__existe_referencia(node.get_e(), arquivo, indice_atributo, valor)
             if not res:
                 return self.__existe_referencia(node.get_d(), arquivo, indice_atributo, valor)

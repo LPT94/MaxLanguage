@@ -1,34 +1,21 @@
 from flask import Blueprint, render_template, redirect, request, session
 from context import ctrl_idiomas, ctrl_licoes, ctrl_usuarios
 from Registers.RegistroIdiomas import RegistroIdiomas
+from Utils.decorators import admin_required
 
 idioma_bp = Blueprint("idioma", __name__, url_prefix="/admin/idiomas")
 
 @idioma_bp.route("")
+@admin_required
 def idiomas():
-
-    if "usuario_id" not in session:
-            return render_template("erro.html", titulo="Área restrita", mensagem="Área restrita, você precisa fazer login!", voltar="/")
-    
-    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
-    
-    if usuario.get_tipo() != "0":
-        return redirect("/usuario")
 
     lista_idiomas = ctrl_idiomas.listar_registros()
     
     return render_template("idiomas.html", usuario=usuario, idiomas=lista_idiomas)
 
 @idioma_bp.route("/novo", methods=["GET", "POST"])
+@admin_required
 def idioma_novo():
-
-    if "usuario_id" not in session:
-         return render_template("erro.html", titulo="Área restrita", mensagem="Área restrita, você precisa fazer login!", voltar="/")
-        
-    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
-    
-    if usuario.get_tipo() != "0":
-        return redirect("/usuario")
 
     if request.method == "POST":
         descricao = request.form["descricao"]
@@ -46,15 +33,8 @@ def idioma_novo():
     return render_template("novo_idioma.html", usuario=usuario)
 
 @idioma_bp.route("/editar/<int:id>", methods=["GET", "POST"])
+@admin_required
 def editar_idioma(id):
-
-    if "usuario_id" not in session:
-        return render_template("erro.html", titulo="Área restrita", mensagem="Área restrita, você precisa fazer login!", voltar="/")
-
-    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
-
-    if usuario.get_tipo() != "0":
-        return redirect("/usuario")
 
     idioma = ctrl_idiomas.get_registro(id)
 
@@ -75,15 +55,8 @@ def editar_idioma(id):
     return render_template("editar_idioma.html", usuario=usuario, idioma=idioma)
 
 @idioma_bp.route("/excluir/<int:id>")
+@admin_required
 def excluir_idioma(id):
-
-    if "usuario_id" not in session:
-        return render_template("erro.html", titulo="Área restrita", mensagem="Área restrita, você precisa fazer login!", voltar="/")
-
-    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
-
-    if usuario.get_tipo() != "0":  
-        return redirect("/usuario")
 
     sucesso, mensagem = ctrl_idiomas.del_registro(id, [ctrl_licoes.verifica_referencia(1, id), ctrl_usuarios.verifica_referencia(1,id)])
 

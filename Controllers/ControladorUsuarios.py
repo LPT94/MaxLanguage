@@ -71,7 +71,7 @@ class ControladorUsuarios(Controlador):
         #TODO: VERIFICAR SE RETORNAR NODE É REALMENTE NECESSÁRIO
         node = self.buscar_node(int(indice))
         if not node:
-            return None, node
+            return None
         
         dados_brutos = self._gerenciador_txt.acessar(node.get_offs())
         dados = dados_brutos.strip().split(";")

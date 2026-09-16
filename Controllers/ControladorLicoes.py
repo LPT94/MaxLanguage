@@ -31,18 +31,18 @@ class ControladorLicoes(Controlador):
 
 
     def validar_constraints_edit(self, registro, controlador):
-        lista_registros = controlador.registros_com_criterio({1:registro.get_id()})
+        lista_dados = controlador.registros_com_criterio({1:registro.get_id()})
         novo_nivel = int(registro.get_total_niveis())
-        for reg in lista_registros:
-            if int(reg[2]) > novo_nivel:
-                return False, f"O exercício de código {reg[0]} pertence à um nível maior que o nível selecionado."
+        for dado in lista_dados:
+            if int(dado[2]) > novo_nivel:
+                return False, f"O exercício de código {dado[0]} pertence à um nível maior que o nível selecionado."
 
         return True, "Constraints validadas"
 
 
     def validar_cascade(self, lista_referencia):
             if lista_referencia[0]:
-                return False, "Não é permitido deletar esta lição pois existem exercícios registrados nela."
+                return False, "Não é permitido deletar esta lição pois existem exercícios registrados nesta lição."
     
             return True, "Constraints validadas"
 
@@ -50,11 +50,11 @@ class ControladorLicoes(Controlador):
     def get_registro(self, indice):
         node = self.buscar_node(int(indice))
         if not node:
-            return None, node
+            return None
         
         dados_brutos = self._gerenciador_txt.acessar(node.get_offs())
         dados = dados_brutos.strip().split(";")
-        registro = RegistroLicoes(dados[0], dados[1], dados[2])
+        registro = RegistroLicoes(dados[0], dados[1], dados[2], dados[3])
 
         return registro
 
@@ -64,6 +64,6 @@ class ControladorLicoes(Controlador):
         lista_dados = self.listar_dados()
 
         for i in range(len(lista_dados)):
-            lista_registros.append(RegistroLicoes(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2]))
+            lista_registros.append(RegistroLicoes(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3]))
 
         return lista_registros

@@ -7,7 +7,7 @@ usuario_bp = Blueprint("usuario", __name__, url_prefix="/usuario")
 def usuario():
 
     if "usuario_id" not in session:
-        return "Para acessar esta página é necessário fazer login"
+        return render_template("erro.html",titulo="Acesso negado!", mensagem="Para acessar esta página é necessário fazer login", voltar="/")
 
     usuario = ctrl_usuarios.get_registro(session["usuario_id"])
 
