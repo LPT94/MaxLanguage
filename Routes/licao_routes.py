@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, session
-from context import ctrl_licoes, ctrl_idiomas, ctrl_usuarios, ctrl_exercicios
+from context import ctrl_licoes, ctrl_idiomas, ctrl_exercicios
 from Registers.RegistroLicoes import RegistroLicoes
 from Utils.decorators import admin_required
 
@@ -17,7 +17,7 @@ def licao():
         idioma = ctrl_idiomas.get_registro(licao.get_cod_idioma()).get_descricao()
         dados_licoes.append({"licao": licao.get_id(), "idioma": idioma, "niveis": licao.get_total_niveis(), "descricao": licao.get_descricao()})
 
-    return render_template("licoes.html", usuario=usuario, dados=dados_licoes)
+    return render_template("licoes.html", dados=dados_licoes)
 
     
 @licao_bp.route("/novo", methods=["GET","POST"])
@@ -62,7 +62,7 @@ def editar_licao(id):
 
         return render_template("erro.html", titulo="Não foi possível editar lição", mensagem=mensagem, voltar=f"/admin/licoes/editar/{id}")
 
-    return render_template("editar_licao.html", licao=licao, idiomas=idiomas, usuario=usuario)
+    return render_template("editar_licao.html", licao=licao, idiomas=idiomas)
 
 @licao_bp.route("/excluir/<int:id>", methods=["GET"])
 @admin_required

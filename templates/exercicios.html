@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Exercícios</title>
+    <title>MaxLanguage - Exercícios</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
@@ -38,7 +38,7 @@
             <p>Gerencie os exercícios das lições.</p>
           </div>
 
-          <a href="/admin/exercicios/novo" class="primary-button">
+          <a href="/admin/exercicios/novo" class="primary-button admin-button">
             + Novo exercício
           </a>
         </header>
@@ -72,13 +72,13 @@
                   <td>{{ dado["pontuacao"] }}</td>
                   <td class="table-actions">
                     <a
-                      href="/admin/licoes/editar/{{ dado['exercicio'] }}"
+                      href="/admin/exercicios/editar/{{ dado['exercicio'] }}"
                       class="action-button edit-button"
                     >
                       Editar
                     </a>
                     <a
-                      href="/admin/licoes/excluir/{{ dado['exercicio'] }}"
+                      href="/admin/exercicios/excluir/{{ dado['exercicio'] }}"
                       class="action-button delete-button"
                       onclick="return confirm('Tem certeza que deseja excluir esta lição?');"
                     >

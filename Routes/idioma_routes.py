@@ -11,7 +11,7 @@ def idiomas():
 
     lista_idiomas = ctrl_idiomas.listar_registros()
     
-    return render_template("idiomas.html", usuario=usuario, idiomas=lista_idiomas)
+    return render_template("idiomas.html", idiomas=lista_idiomas)
 
 @idioma_bp.route("/novo", methods=["GET", "POST"])
 @admin_required
@@ -30,7 +30,7 @@ def idioma_novo():
 
         return render_template("erro.html", titulo="Não foi possível cadastrar o idioma", mensagem=mensagem, voltar="/admin/idiomas/novo")
 
-    return render_template("novo_idioma.html", usuario=usuario)
+    return render_template("novo_idioma.html")
 
 @idioma_bp.route("/editar/<int:id>", methods=["GET", "POST"])
 @admin_required
@@ -52,7 +52,7 @@ def editar_idioma(id):
 
         return render_template("erro.html", titulo="Não foi possível editar idioma", mensagem=mensagem, voltar=f"/admin/idiomas/editar/{id}")
 
-    return render_template("editar_idioma.html", usuario=usuario, idioma=idioma)
+    return render_template("editar_idioma.html", idioma=idioma)
 
 @idioma_bp.route("/excluir/<int:id>")
 @admin_required

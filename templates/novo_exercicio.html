@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaxLanguage - Novo Exercício</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="logo">MaxLanguage</div>
+        <nav>
+          <a href="/admin"> Início </a>
+          <a href="/admin/usuarios"> Usuários </a>
+          <a href="/admin/idiomas"> Idiomas </a>
+          <a href="/admin/licoes"> Lições </a>
+          <a href="/admin/exercicios"> Exercícios </a>
+        </nav>
+        <div class="sidebar-bottom">
+          <a href="/logout"> Sair </a>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Novo Exercício</h1>
+            <p>Cadastre um nov exercício na plataforma.</p>
+          </div>
+        </header>
+        <section class="form-card">
+          <div class="table-header">
+            <h2>Dados do exercício</h2>
+            <p>Preencha as informações abaixo.</p>
+          </div>
+          <form method="POST">
+            <div class="form-group">
+              <label for="cod_licao" class="top_padding_extra"> Lição </label>
+              <select id="cod_licao" name="cod_licao" required>
+                <option value="" disabled selected>Selecione uma lição</option>
+                {% for licao in licoes %}
+                <option value="{{ licao.get_id() }}">
+                  {{ licao.get_descricao() }}
+                </option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="nivel"> Nível </label>
+              <input
+                type="number"
+                id="nivel"
+                name="nivel"
+                min="1"
+                max=""
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="descricao"> Descrição </label>
+              <input type="text" id="descricao" name="descricao" required />
+            </div>
+            <div class="form-group">
+              <label for="a"> Opção A </label>
+              <input type="text" id="a" name="a" required />
+            </div>
+            <div class="form-group">
+              <label for="b"> Opção B </label>
+              <input type="text" id="b" name="b" required />
+            </div>
+            <div class="form-group">
+              <label for="c"> Opção C </label>
+              <input type="text" id="c" name="c" required />
+            </div>
+            <div class="form-group">
+              <label for="d"> Opção D </label>
+              <input type="text" id="d" name="d" required />
+            </div>
+            <div class="form-group">
+              <label for="opcao_correta" class="top_padding_extra"> Resposta </label>
+              <select id="opcao_correta" name="opcao_correta" required>
+                <option value="" disabled selected>Selecione uma resposta</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+            <div class="form-group">
+              <label for="pontuacao"> Pontuação </label>
+              <input
+                type="number"
+                id="pontuacao"
+                name="pontuacao"
+                min="1"
+                max=""
+                required
+              />
+            </div>
+            <div class="form-actions">
+              <a href="/admin/licoes" class="action-button"> Cancelar </a>
+              <button type="submit" class="primary-button">
+                Cadastrar Exercício
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

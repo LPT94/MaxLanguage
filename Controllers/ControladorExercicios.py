@@ -13,8 +13,8 @@ class ControladorExercicios(Controlador):
         pontuacao = registro.get_pontuacao()
 
         validacao, mensagem = self._eh_int([registro.get_id(), registro.get_licao(), registro.get_nivel(), 
-                            opcao_correta, pontuacao],
-                            ['id', 'codigo licao', 'nivel', 'opção correta', 'pontuação'])
+                            pontuacao],
+                            ['id', 'codigo licao', 'nivel', 'pontuação'])
         if not validacao:
             return validacao, mensagem
 
