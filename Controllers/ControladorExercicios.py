@@ -11,18 +11,26 @@ class ControladorExercicios(Controlador):
     def validar_dados(self, registro):
         opcao_correta = registro.get_op_correta().upper()
         pontuacao = registro.get_pontuacao()
+        nivel = registro.get_nivel()
 
-        validacao, mensagem = self._eh_int([registro.get_id(), registro.get_licao(), registro.get_nivel(), 
-                            pontuacao],
-                            ['id', 'codigo licao', 'nivel', 'pontuação'])
+        validacao, mensagem = self._eh_int([registro.get_id(), registro.get_licao(), nivel, pontuacao],
+                                            ['id', 'codigo licao', 'nivel', 'pontuação'])
         if not validacao:
             return validacao, mensagem
 
         validacao, mensagem = self._caracter_valido([registro.get_descricao(), registro.get_op_a(), registro.get_op_b(), 
-                                       registro.get_op_c(), registro.get_op_d()],
-                                       ['descricao', 'opção A', 'opção B', 'opção C', 'opção D'])
+                                       registro.get_op_c(), registro.get_op_d(), opcao_correta],
+                                       ['descricao', 'opção A', 'opção B', 'opção C', 'opção D', 'opção correta'])
         if not validacao:
             return validacao, mensagem
+        
+        validacao, mensagem = self.validar_key(registro.get_id())
+        if not validacao:
+            return validacao, mensagem
+    
+        validacao, mensagem = self.validar_key(registro.get_licao())
+        if not validacao:
+            return validacao, "Código da lição inválido"
         
         if opcao_correta != 'A' and opcao_correta != 'B' and opcao_correta != 'C' and opcao_correta != 'D' :
             return False, "A opção correta deve ser A, B, C ou D."
@@ -30,25 +38,28 @@ class ControladorExercicios(Controlador):
         if int(pontuacao) < 1:
             return False, "Pontuação deve ser maior que 0."
 
-        return True, "Dados validados."
-
-
-    def validar_constraints_insert(self, registro):
         no_estrangeiro = self._controlador_licoes.buscar_node(int(registro.get_licao()))
         if not no_estrangeiro:
             return False, "Lição não encontrada."
 
-        nivel = int(registro.get_nivel())
-        if nivel < 1:
-            return False, "Nível deve ser maior que 0."
-    
-        reg_licoes = self._controlador_licoes.get_registro(no_estrangeiro.get_i())
-        if nivel > int(reg_licoes.get_total_niveis()):
+        nivel_licoes = self._controlador_licoes.get_registro(no_estrangeiro.get_i())
+        if int(nivel) > int(nivel_licoes.get_total_niveis()):
             return False, "Nível deve ser menor ou igual ao total de nível da Lição."
+        
+        return True, "Dados validados."
 
+
+    def validar_constraints_insert(self, registro):
         if not self.unique(registro.get_descricao(), 3):
             return False, "Exercício já existente."
+
+        node = self.buscar_node(int(registro.get_id()))
+        if node:
+            return False, "Id já cadastrado."
         
+        return True, "Constraints validadas."
+
+    def validar_constraints_edit(self, registro, controlador=None):
         return True, "Constraints validadas."
 
     def __procurar_e_deletar(self, arquivo, node, valor, ctrl_exe_feitos):

@@ -4,4 +4,6 @@
 -1;Brailen
 2;Inglês
 3;Russo
+-1;spanhol
+-1;lemão
 1;Espanhol

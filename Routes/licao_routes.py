@@ -38,7 +38,7 @@ def licao_nova():
         if sucesso:
             return redirect("/admin/licoes")
 
-        render_template("erro.html", titulo="Não foi possível cadastrar a lição.", mensagem=mensagem, voltar="/admin/licoes/novo")
+        return render_template("erro.html", titulo="Não foi possível cadastrar a lição.", mensagem=mensagem, voltar="/admin/licoes/novo")
 
     return render_template("nova_licao.html", idiomas=idiomas)
 

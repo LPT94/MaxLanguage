@@ -17,12 +17,7 @@ class ControladorExerciciosFeitos(Controlador):
                             ['codigo usuario', 'codigo exercicio'])
         if not validacao:
             return validacao, mensagem
-
-        registro.set_id(int(cod_usuario), int(cod_exercicio))
-        return True, "Dados validados."
-
-    
-    def validar_constraints_insert(self, registro):
+        
         no_estrangeiro_user = self._controlador_usuarios.buscar_node(int(registro.get_cod_usuario()))
         if not no_estrangeiro_user:
             return False, "Usuário não encontrado."
@@ -30,9 +25,25 @@ class ControladorExerciciosFeitos(Controlador):
         no_estrangeiro_exe = self._controlador_exercicios.buscar_node(int(registro.get_cod_exercicio()))
         if not no_estrangeiro_exe:
             return False, "Exercício não encontrado"
-        
-        return True, "Constraints validadas."
 
+        registro.set_id(int(cod_usuario), int(cod_exercicio))
+        return True, "Dados validados."
+
+    
+    def validar_constraints_edit(self, registro):
+        node = self.buscar_node(int(registro.get_id()))
+        if node:
+            return False, "Id já cadastrado"
+        
+        return True, "Constraints validadas"
+
+
+    def validar_constraints_edit(self, registro, controlador=None):
+        existe = self.buscar_node(int(registro.get_id()))
+        if existe:
+            return False, "Exercício feito já está cadastrado."
+
+        return True, "Constraints validadas."
 
     def validar_cascade(self, lista_referencia):
         return True, "Constraints validadas"

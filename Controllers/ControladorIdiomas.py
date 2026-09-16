@@ -20,9 +20,19 @@ class ControladorIdiomas(Controlador):
 
 
     def validar_constraints_insert(self, registro):
+        node = self.buscar_node(int(registro.get_id()))
+        if node:
+            return False, "Id já cadastrado."
+        
         if not self.unique(registro.get_descricao(), 1):
             return False, "Descrição já existente."
 
+        return True, "Constraints validadas."
+
+
+    def validar_constraints_edit(self, registro, controlador=None):
+        if not self.unique(registro.get_descricao(), 1):
+            return False, "Descrição já existente."
         return True, "Constraints validadas."
 
 

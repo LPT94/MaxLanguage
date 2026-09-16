@@ -94,8 +94,8 @@ class Controlador:
         return node
 
 
-    def validar_pk(self, registro):
-        if int(registro.get_id()) < 1:
+    def validar_key(self, valor):
+        if int(valor) < 1:
             return False, "Id inválida."
         
         return True, "Id válida."
@@ -121,10 +121,6 @@ class Controlador:
 
     def inserir_registro(self, registro):
         sucesso, mensagem = self.validar_dados(registro)
-        if not sucesso:
-            return sucesso, mensagem
-
-        sucesso, mensagem = self.validar_pk(registro)
         if not sucesso:
             return sucesso, mensagem
 
@@ -159,19 +155,10 @@ class Controlador:
         sucesso, mensagem = self.validar_dados(registro)
         if not sucesso:
             return sucesso, mensagem
-
-        sucesso, mensagem = self.validar_pk(registro)
-        if not sucesso:
-            return sucesso, mensagem
         
-        sucesso, mensagem = self.validar_constraints_insert(registro)
+        sucesso, mensagem = self.validar_constraints_edit(registro, controlador)
         if not sucesso:
             return sucesso, mensagem
-
-        if controlador:
-            sucesso, mensagem = self.validar_constraints_edit(registro, controlador)
-            if not sucesso:
-                return sucesso, mensagem
 
         node = self.buscar_node(int(registro.get_id()))
         if node is None:

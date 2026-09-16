@@ -38,9 +38,9 @@
                         <div class="form-group">
                         <label for="cod_licao" class="top_padding_extra"> Lição </label>
                         <select id="cod_licao" name="cod_licao" required>
-                            <option value="" disabled selected>Selecione uma lição</option>
                             {% for licao in licoes %}
-                            <option value="{{ licao.get_id() }}">
+                            <option value="{{ licao.get_id() }}" {% if licao.get_id()|string == exercicio.get_licao()|string %} 
+                            selected {% endif %}>
                             {{ licao.get_descricao() }}
                             </option>
                             {% endfor %}
@@ -54,37 +54,46 @@
                             name="nivel"
                             min="1"
                             max=""
+                            value="{{ exercicio.get_nivel() }}"
                             required
                         />
                         </div>
                         <div class="form-group">
                         <label for="descricao"> Descrição </label>
-                        <input type="text" id="descricao" name="descricao" required />
+                        <input type="text" id="descricao" name="descricao" value="{{ exercicio.get_descricao() }}" required />
                         </div>
                         <div class="form-group">
                         <label for="a"> Opção A </label>
-                        <input type="text" id="a" name="a" required />
+                        <input type="text" id="a" name="a" value="{{ exercicio.get_op_a() }}" required />
                         </div>
                         <div class="form-group">
                         <label for="b"> Opção B </label>
-                        <input type="text" id="b" name="b" required />
+                        <input type="text" id="b" name="b" value="{{ exercicio.get_op_b() }}" required />
                         </div>
                         <div class="form-group">
                         <label for="c"> Opção C </label>
-                        <input type="text" id="c" name="c" required />
+                        <input type="text" id="c" name="c" value="{{ exercicio.get_op_c() }}" required />
                         </div>
                         <div class="form-group">
                         <label for="d"> Opção D </label>
-                        <input type="text" id="d" name="d" required />
+                        <input type="text" id="d" name="d" value="{{ exercicio.get_op_d() }}" required />
                         </div>
                         <div class="form-group">
                         <label for="opcao_correta" class="top_padding_extra"> Resposta </label>
                         <select id="opcao_correta" name="opcao_correta" required>
-                            <option value="" disabled selected>Selecione uma resposta</option>
+                            <option value="{{ exercicio.get_op_correta() }}" selected>{{ exercicio.get_op_correta() }}</option>
+                            {% if exercicio.get_op_correta() != 'A' %}
                             <option value="A">A</option>
+                            {% endif %}
+                            {% if exercicio.get_op_correta() != 'B' %}
                             <option value="B">B</option>
+                            {% endif %}
+                            {% if exercicio.get_op_correta() != 'C' %}
                             <option value="C">C</option>
+                            {% endif %}
+                            {% if exercicio.get_op_correta() != 'D' %}
                             <option value="D">D</option>
+                            {% endif %}
                         </select>
                         <div class="form-group">
                         <label for="pontuacao"> Pontuação </label>
@@ -94,11 +103,12 @@
                             name="pontuacao"
                             min="1"
                             max=""
+                            value="{{ exercicio.get_pontuacao() }}"
                             required
                         />
                         </div>
                         <div class="form-actions">
-                        <a href="/admin/licoes" class="action-button"> Cancelar </a>
+                        <a href="/admin/exercicios" class="action-button"> Cancelar </a>
                         <button type="submit" class="primary-button">
                             Cadastrar Exercício
                         </button>

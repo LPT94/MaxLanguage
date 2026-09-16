@@ -32,19 +32,22 @@ class ControladorUsuarios(Controlador):
 
         if int(pontuacao) < 0:
             return False, "Pontuação deve ser maior que 0."
+
+        no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
+        if not no_estrangeiro:
+            return False, "Idioma selecionado não encontrado."
         
         return True, "Dados válidos."
 
 
     def validar_constraints_insert(self, registro):
-        no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
-        if not no_estrangeiro:
-            return False, "Idioma selecionado não encontrado."
-
         if not self.unique(registro.get_login(), 3):
             return False, "Login já existente."
 
-        return True, "Constraints válidadas."
+        return True, "Constraints validadas."
+
+    def validar_constraints_edit(self, registro, controlador=None):
+        return True, "Constraints validadas."
 
 
     def __procurar_e_deletar(self, arquivo, node, valor, ctrl_exe_feitos):

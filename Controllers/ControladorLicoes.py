@@ -18,14 +18,22 @@ class ControladorLicoes(Controlador):
         if int(total_niveis) < 1:
             return False, "Total Níveis deve ser maior que 0"
 
+        no_estrangeiro = self._controlador_idioma.buscar_node(int(registro.get_cod_idioma()))
+        if not no_estrangeiro:
+            return False, "Idioma selecionado não encontrado."
+        
         return True, "Dados válidos."
 
 
     def validar_constraints_insert(self, registro):
-        no_estrangeiro = self._controlador_idioma.buscar_node(int(registro.get_cod_idioma()))
-        if not no_estrangeiro:
-            print("Erro! Foreign Key não encontrada na tabela Idioma.")
-            return False, "Idioma selecionado não encontrado."
+        node = self.buscar_node(int(registro.get_id()))
+        if node:
+            return False, "Id já cadastrado."
+
+        descricao_unica = self.unique(registro.get_descricao(), 3)
+        idioma_unico = self.unique(registro.get_cod_idioma(), 1)
+        if not descricao_unica and not idioma_unico:
+            return False, "Lição com esta descrição já existe neste idioma."
 
         return True, "Constraints validadas."
 
@@ -37,6 +45,11 @@ class ControladorLicoes(Controlador):
             if int(dado[2]) > novo_nivel:
                 return False, f"O exercício de código {dado[0]} pertence à um nível maior que o nível selecionado."
 
+        descricao_unica = self.unique(registro.get_descricao(), 3)
+        idioma_unico = self.unique(registro.get_cod_idioma(), 1)
+        if not descricao_unica and not idioma_unico:
+            return False, "Lição com esta descrição já existe neste idioma"
+        
         return True, "Constraints validadas"
 
 

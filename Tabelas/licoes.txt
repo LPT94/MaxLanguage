@@ -1,4 +1,8 @@
 -1;;10;Lesson 1
-2;2;11;Lesson 1 Inglês
+-1;;11;Lesson 1 Inglês
 3;1;9;Descricao_lição
 -1;;10;Descricao lição russo
+-1;;11;Lesson 1 Inglês
+2;2;11;Lesson 1 Inglês
+-1;;12;Nova descrição
+-1;;12;Nova descrição2

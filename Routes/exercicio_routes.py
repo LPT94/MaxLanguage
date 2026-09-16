@@ -19,7 +19,6 @@ def exercicio():
         dados.append({"exercicio": exercicio.get_id(), "idioma": idioma.get_descricao(), "licao": licao.get_descricao(), 
                       "nivel": exercicio.get_nivel(), "descricao":exercicio.get_descricao(), "pontuacao": exercicio.get_pontuacao()})
 
-        print(dados)
     return render_template("exercicios.html", dados=dados)
 
 @exercicio_bp.route("/novo", methods=["GET", "POST"])
