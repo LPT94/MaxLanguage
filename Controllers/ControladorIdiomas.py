@@ -31,6 +31,10 @@ class ControladorIdiomas(Controlador):
 
 
     def validar_constraints_edit(self, registro, controlador=None):
+        registro_antigo = self.get_registro((registro.get_id()))
+        if registro.formatar() == registro_antigo.formatar():
+            return False, "Nenhuma alteração foi realizada."
+        
         if not self.unique(registro.get_descricao(), 1):
             return False, "Descrição já existente."
         return True, "Constraints validadas."

@@ -1,9 +1,3 @@
--1;spanhol1
--1;nglês442
--1;usso5533
--1;Brailen
-2;Inglês
-3;Russo
+1;Inglês
 -1;spanhol
--1;lemão
-1;Espanhol
+3;Russo

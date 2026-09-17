@@ -30,7 +30,7 @@ class ControladorExerciciosFeitos(Controlador):
         return True, "Dados validados."
 
     
-    def validar_constraints_edit(self, registro):
+    def validar_constraints_insert(self, registro):
         node = self.buscar_node(int(registro.get_id()))
         if node:
             return False, "Id já cadastrado"

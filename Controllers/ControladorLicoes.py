@@ -15,6 +15,10 @@ class ControladorLicoes(Controlador):
                             ['Id', 'Codigo Idioma', 'Total Níveis']):
             return False
 
+        verificacao, mensagem = self._caracter_valido([registro.get_descricao()], ['descricao'])
+        if not verificacao:
+            return verificacao, mensagem
+
         if int(total_niveis) < 1:
             return False, "Total Níveis deve ser maior que 0"
 
@@ -39,6 +43,10 @@ class ControladorLicoes(Controlador):
 
 
     def validar_constraints_edit(self, registro, controlador):
+        registro_antigo = self.get_registro((registro.get_id()))
+        if registro.formatar() == registro_antigo.formatar():
+            return False, "Nenhuma alteração foi realizada."
+        
         lista_dados = controlador.registros_com_criterio({1:registro.get_id()})
         novo_nivel = int(registro.get_total_niveis())
         for dado in lista_dados:

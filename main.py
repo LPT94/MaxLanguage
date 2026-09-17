@@ -14,6 +14,7 @@ from Routes.admin import admin_bp
 from Routes.usuario import usuario_bp
 from Routes.licao_routes import licao_bp
 from Routes.exercicio_routes import exercicio_bp
+from Routes.usuario_routes import usuarios_bp
 
 
 #######################  FLASK  ###############################
@@ -26,6 +27,7 @@ app.register_blueprint(admin_bp)
 app.register_blueprint(usuario_bp)
 app.register_blueprint(licao_bp)
 app.register_blueprint(exercicio_bp)
+app.register_blueprint(usuarios_bp)
 
 
     

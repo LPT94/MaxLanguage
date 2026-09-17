@@ -28,7 +28,7 @@ def exercicio_novo():
     licoes = ctrl_licoes.listar_registros()
 
     if request.method == "POST":
-        id = ctrl_exercicios.get_proximo_id()
+        codigo = ctrl_exercicios.get_proximo_id()
         cod_licao = request.form["cod_licao"]
         nivel = request.form["nivel"]
         descricao = request.form["descricao"]
@@ -39,7 +39,7 @@ def exercicio_novo():
         opcao_correta = request.form["opcao_correta"]
         pontuacao = request.form["pontuacao"]
 
-        novo_registro = RegistroExercicios(id, cod_licao, nivel, descricao, op_a, op_b, 
+        novo_registro = RegistroExercicios(codigo, cod_licao, nivel, descricao, op_a, op_b, 
                                            op_c, op_d, opcao_correta, pontuacao)
 
         sucesso, mensagem = ctrl_exercicios.inserir_registro(novo_registro)

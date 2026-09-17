@@ -10,8 +10,14 @@ idioma_bp = Blueprint("idioma", __name__, url_prefix="/admin/idiomas")
 def idiomas():
 
     lista_idiomas = ctrl_idiomas.listar_registros()
+    idiomas = []
+
+    for idioma in lista_idiomas:
+        id = idioma.get_id()
+        descricao = idioma.get_descricao()
+        idiomas.append({"id": id, "descricao": descricao})
     
-    return render_template("idiomas.html", idiomas=lista_idiomas)
+    return render_template("idiomas.html", idiomas=idiomas)
 
 @idioma_bp.route("/novo", methods=["GET", "POST"])
 @admin_required
@@ -20,8 +26,8 @@ def idioma_novo():
     if request.method == "POST":
         descricao = request.form["descricao"]
 
-        id = ctrl_idiomas.get_proximo_id()
-        novo_idioma = RegistroIdiomas(id, descricao)
+        codigo = ctrl_idiomas.get_proximo_id()
+        novo_idioma = RegistroIdiomas(codigo, descricao)
 
         sucesso, mensagem = ctrl_idiomas.inserir_registro(novo_idioma)
 

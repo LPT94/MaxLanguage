@@ -71,20 +71,20 @@
                 {% for idioma in idiomas %}
 
                 <tr>
-                  <td>{{ idioma.get_id() }}</td>
+                  <td>{{ idioma['id'] }}</td>
 
-                  <td>{{ idioma.get_descricao() }}</td>
+                  <td>{{ idioma['descricao'] }}</td>
 
                   <td class="table-actions">
                     <a
-                      href="/admin/idiomas/editar/{{ idioma.get_id() }}"
+                      href="/admin/idiomas/editar/{{ idioma['id'] }}"
                       class="action-button edit-button"
                     >
                       Editar
                     </a>
 
                     <a
-                      href="/admin/idiomas/excluir/{{ idioma.get_id() }}"
+                      href="/admin/idiomas/excluir/{{ idioma['descricao'] }}"
                       class="action-button delete-button"
                       onclick="return confirm('Tem certeza que deseja excluir este idioma?');"
                     >

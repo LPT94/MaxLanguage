@@ -59,8 +59,13 @@ class ControladorExercicios(Controlador):
         
         return True, "Constraints validadas."
 
+
     def validar_constraints_edit(self, registro, controlador=None):
+        registro_antigo = self.get_registro((registro.get_id()))
+        if registro.formatar() == registro_antigo.formatar():
+            return False, "Nenhuma alteração foi realizada."
         return True, "Constraints validadas."
+
 
     def __procurar_e_deletar(self, arquivo, node, valor, ctrl_exe_feitos):
         if node is None:

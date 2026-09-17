@@ -28,10 +28,10 @@ class ControladorUsuarios(Controlador):
             return False, "Tipo deve ser 0 ou 1."
 
         if int(nivel_atual) < 1:
-            return False, "Nivel atual deve ser maior ou igual a 1."
+            return False, "Nivel atual deve ser maior ou igual à 1."
 
         if int(pontuacao) < 0:
-            return False, "Pontuação deve ser maior que 0."
+            return False, "Pontuação deve ser maior ou igual à 0."
 
         no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
         if not no_estrangeiro:
@@ -47,6 +47,9 @@ class ControladorUsuarios(Controlador):
         return True, "Constraints validadas."
 
     def validar_constraints_edit(self, registro, controlador=None):
+        registro_antigo = self.get_registro((registro.get_id()))
+        if registro.formatar() == registro_antigo.formatar():
+            return False, "Nenhuma alteração foi realizada."
         return True, "Constraints validadas."
 
 
@@ -93,3 +96,13 @@ class ControladorUsuarios(Controlador):
                                     lista_elements[0][4], lista_elements[0][5], lista_elements[0][6], lista_elements[0][7])
             
         
+    def listar_registros(self):
+        
+            lista_registros = []
+            lista_dados = self.listar_dados()
+    
+            for i in range(len(lista_dados)):
+                lista_registros.append(RegistroUsuarios(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3],
+                                                        lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7],))
+    
+            return lista_registros

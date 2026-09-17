@@ -27,12 +27,12 @@ def licao_nova():
     idiomas = ctrl_idiomas.listar_registros()
 
     if request.method == "POST":
-        id = ctrl_licoes.get_proximo_id()
+        codigo = ctrl_licoes.get_proximo_id()
         cod_idioma = request.form["cod_idioma"]
         total_niveis = request.form["total_niveis"]
         descricao = request.form["descricao"]
 
-        nova_licao = RegistroLicoes(id, cod_idioma, total_niveis, descricao)
+        nova_licao = RegistroLicoes(codigo, cod_idioma, total_niveis, descricao)
 
         sucesso, mensagem = ctrl_licoes.inserir_registro(nova_licao)
         if sucesso:

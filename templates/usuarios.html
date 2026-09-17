@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+        <div class="logo">MaxLanguage</div>
+
+        <nav>
+          <a href="/admin"> Início </a>
+
+          <a href="/admin/usuarios"> Usuários </a>
+
+          <a href="/admin/idiomas"> Idiomas </a>
+
+          <a href="/admin/licoes"> Lições </a>
+
+          <a href="/admin/exercicios"> Exercícios </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="/logout"> Sair </a>
+        </div>
+      </aside>
+
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Usuários</h1>
+                    <p>Gerencie as contas cadastradas na plataforma.</p>
+                </div>
+
+                <a href="/admin/usuarios/novo" class="primary-button admin-button">
+                    + Novo usuário
+                </a>
+
+            </header>
+
+
+            <section class="users-grid">
+
+                {% for usuario in usuarios %}
+
+                    <article class="user-card">
+
+                        <div class="user-card-header">
+
+                            <div class="user-avatar">
+                                {{ usuario["nome"][0]|upper }}
+                            </div>
+
+                            <div class="user-identification">
+
+                                <h2>
+                                    {{ usuario["nome"] }}
+                                </h2>
+
+                                <span>
+                                    @{{ usuario["login"] }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="user-card-divider"></div>
+
+
+                        <div class="user-info">
+
+                            <div class="user-info-item">
+
+                                <span class="info-label">
+                                    Idioma
+                                </span>
+
+                                <strong>
+                                    {{ usuario["idioma"] }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="user-info-item">
+
+                                <span class="info-label">
+                                    Nível atual
+                                </span>
+
+                                <strong>
+                                    {{ usuario["nivel_atual"] }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="user-info-item">
+
+                                <span class="info-label">
+                                    Pontuação
+                                </span>
+
+                                <strong>
+                                    {{ usuario["pontuacao"] }} pontos
+                                </strong>
+
+                            </div>
+
+
+                            <div class="user-info-item">
+
+                                <span class="info-label">
+                                    Tipo
+                                </span>
+
+                                <span class="user-type-badge
+                                    {% if usuario['tipo'] == 'Administrador' %}
+                                        admin-badge
+                                    {% else %}
+                                        user-badge
+                                    {% endif %}
+                                ">
+                                    {{ usuario["tipo"] }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="user-card-footer">
+
+                            <span class="user-code">
+                                Código #{{ usuario["id"] }}
+                            </span>
+
+                            <div class="user-actions">
+
+                                <a
+                                    href="/admin/usuarios/editar/{{ usuario['id'] }}"
+                                    class="action-button"
+                                >
+                                    Editar
+                                </a>
+
+                                <a
+                                    href="/admin/usuarios/excluir/{{ usuario['id'] }}"
+                                    class="action-button delete-button"
+                                    onclick="return confirm('Tem certeza que deseja excluir este usuário?');"
+                                >
+                                    Excluir
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                {% else %}
+
+                    <div class="empty-users">
+
+                        <h2>Nenhum usuário cadastrado</h2>
+
+                        <p>
+                            Ainda não existem usuários registrados na plataforma.
+                        </p>
+
+                    </div>
+
+                {% endfor %}
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

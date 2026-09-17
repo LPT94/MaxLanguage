@@ -45,10 +45,10 @@ def cadastro():
         senha = request.form["senha"]
         cod_idioma = request.form["cod_idioma"]
 
-        id = ctrl_usuarios.get_proximo_id()
+        codigo = ctrl_usuarios.get_proximo_id()
         senha_hash = hashlib.sha256(senha.encode("utf-8")).hexdigest()
 
-        novo_usuario = RegistroUsuarios(id, cod_idioma, nome, login, senha_hash, 1, 0, 1)
+        novo_usuario = RegistroUsuarios(codigo, cod_idioma, nome, login, senha_hash, 1, 0, 1)
 
         sucesso, mensagem = ctrl_usuarios.inserir_registro(novo_usuario)
 
