@@ -67,7 +67,7 @@ class ControladorUsuarios(Controlador):
             
     
     def validar_cascade(self, lista_info):
-        arquivo = open(lista_info[0].get_nome_arq(), "r", encoding="utf-8")
+        arquivo = open(lista_info[0]._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
         self.__procurar_e_deletar(arquivo, lista_info[0]._arvore_indices.get_root(), lista_info[1], lista_info[0])
         arquivo.close()
         return True, "Constraints validadas."

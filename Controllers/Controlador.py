@@ -219,6 +219,7 @@ class Controlador:
         for offset, id in lista_registros:
             arquivo.seek(offset)
             dados = arquivo.readline().strip().split(";")
+            print(dados[indice_atributo], atributo)
             if dados[indice_atributo] == atributo:
                 arquivo.close()
                 return False

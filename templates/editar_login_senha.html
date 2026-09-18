@@ -36,51 +36,17 @@
                     </div> 
                     <form method="POST">
                         <div class="form-group">
-                        <label for="cod_idioma" class="top_padding_extra"> Idioma </label>
-                        <select id="cod_idioma" name="cod_idioma" required>
-                            {% for idioma in idiomas %}
-                            <option value="{{ idioma.get_id() }}" {% if idioma.get_id()|string == usuario.get_cod_idioma()|string %} 
-                            selected {% endif %}>
-                            {{ idioma.get_descricao() }}
-                            </option>
-                            {% endfor %}
-                        </select>
-                        </div>
-                        <div class="form-group">
                         <label for="nome"> Nome </label>
                         <input type="text" id="nome" name="nome" value="{{ usuario.get_nome() }}" required />
                         </div>
                         <div class="form-group">
-                        <label for="nivel_atual"> Nível </label>
-                        <input
-                            type="number"
-                            id="nivel_atual"
-                            name="nivel_atual"
-                            min="1"
-                            max=""
-                            value="{{ usuario.get_nivel_atual() }}"
-                            required
-                        />
+                        <div class="form-group">
+                            <label for="login"> Novo Login </label>
+                            <input type="text" id="login" name="login"  value="{{ usuario.get_login() }}" required />
                         </div>
                         <div class="form-group">
-                        <label for="pontuacao"> Pontuação </label>
-                        <input
-                            type="number"
-                            id="pontuacao"
-                            name="pontuacao"
-                            min="0"
-                            max=""
-                            value="{{ usuario.get_pontuacao() }}"
-                            required
-                        />
-                        </div>
-                        <div class="form-group">
-                        <label for="tipo" class="top_padding_extra"> Tipo </label>
-                        <select id="tipo" name="tipo" required>
-                            <option value="" disabled selected>Selecione um tipo</option>
-                            <option value="0">Administrador</option>
-                            <option value="1">Usuário</option>
-                        </select>
+                            <label for="senha"> Nova senha </label>
+                            <input type="password" id="senha" name="senha" required />
                         </div>
                         <div class="form-actions">
                         <a href="/admin/usuarios" class="action-button"> Cancelar </a>

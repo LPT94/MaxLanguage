@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, session
-from context import ctrl_exercicios, ctrl_licoes, ctrl_idiomas
+from context import ctrl_exercicios, ctrl_licoes, ctrl_idiomas, ctrl_exe_feitos
 from Registers.RegistroExercicios import RegistroExercicios
 from Utils.decorators import admin_required
 
@@ -83,4 +83,12 @@ def editar_exercicio(id):
     return render_template("editar_exercicio.html", licoes=licoes, actual=licao, exercicio=exercicio)
 
 
+@exercicio_bp.route("/excluir/<int:id>", methods=["GET"])
+@admin_required
+def excluir_exercicio(id):
 
+    sucesso, mensagem = ctrl_exercicios.del_registro(id, [ctrl_exe_feitos, id])
+    if sucesso:
+        return redirect("/admin/exercicios")
+
+    return render_template("erro.html", titulo="Não foi possível excluir o exercício", mensagem=mensagem, voltar="/admin/exercicios")

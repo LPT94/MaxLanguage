@@ -81,7 +81,7 @@ class ControladorExercicios(Controlador):
         
 
     def validar_cascade(self, restricoes_info):
-        arquivo = open(restricoes_info[0].get_nome_arq(), "r", encoding="utf-8")
+        arquivo = open(restricoes_info[0]._gerenciador_txt.get_nome_arq(), "r", encoding="utf-8")
         self.__procurar_e_deletar(arquivo, restricoes_info[0]._arvore_indices.get_root(), restricoes_info[1], restricoes_info[0])
         arquivo.close()
         return True, "Constraints validadas."

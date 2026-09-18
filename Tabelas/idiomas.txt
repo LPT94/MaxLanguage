@@ -1,3 +1,5 @@
-1;Inglês
+-1;nglês
 -1;spanhol
-3;Russo
+3;Francês
+-1;lemão
+4;Inglês

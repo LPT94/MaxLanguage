@@ -47,17 +47,17 @@ class ControladorLicoes(Controlador):
         if registro.formatar() == registro_antigo.formatar():
             return False, "Nenhuma alteração foi realizada."
         
-        lista_dados = controlador.registros_com_criterio({1:registro.get_id()})
+        lista_exercicios = controlador.registros_com_criterio({1:registro.get_id()})
         novo_nivel = int(registro.get_total_niveis())
-        for dado in lista_dados:
+        for dado in lista_exercicios:
             if int(dado[2]) > novo_nivel:
                 return False, f"O exercício de código {dado[0]} pertence à um nível maior que o nível selecionado."
 
-        descricao_unica = self.unique(registro.get_descricao(), 3)
-        idioma_unico = self.unique(registro.get_cod_idioma(), 1)
-        if not descricao_unica and not idioma_unico:
-            return False, "Lição com esta descrição já existe neste idioma"
-        
+        lista_licoes = self.registros_com_criterio({1: registro.get_cod_idioma()})
+        for dado in lista_licoes:
+            if dado[3] == registro.get_descricao():
+                return False, "Já existe esta lição neste idioma" 
+
         return True, "Constraints validadas"
 
 
