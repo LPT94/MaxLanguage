@@ -1,17 +1,4 @@
--1;;10;Lição 1
--1;;7;Lição 2
--1;;10;Lição 1
--1;;10;Lição 3
--1;;10;Lição 2
--1;;7;Lição 1
--1;;10;Lição 1
--1;;10;Lição 2
--1;;10;Lição 1
--1;;10;Lição 2
--1;;10;Lição 3
--1;;10;Lição 2
--1;;10;Lição 1
--1;;5;Lição 1
--1;;10;Lesson Francais
-5;3;10;Lesson Francais1
-6;4;15;Lesson1
+-1;;7;Hello World
+-1;;5;Greetings
+3;3;9;Bon Jour
+2;2;5;Hello World

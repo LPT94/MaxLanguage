@@ -1,7 +1,2 @@
--1;;4;Exercício 1 da lição 1;A;B;C;D;B;11
--1;;4;aBC;AD;AD;AD;AD;B;12
--1;;10;Exercício 1 da lição 1;A;B;C;D;B;11
--1;;4;Exercício 1 da lição 1;A;B;C;D;B;11
--1;;1;d11;a;b;c;d;A;12
-1;5;1;d11;a;b;c;d;A;12
-2;5;1;ddd2;a;b;c;d;A;12
+-1;;1;Como se diz Bom dia em Francês?;A;B;C;D;A;1
+1;2;1;Como se diz Bom dia em Francês?;A;B;C;D;A;1

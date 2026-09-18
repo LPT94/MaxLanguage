@@ -1,5 +1,4 @@
 -1;nglês
+2;Inglês
 -1;spanhol
 3;Francês
--1;lemão
-4;Inglês

@@ -1,6 +1,6 @@
 import hashlib
 from flask import Blueprint, render_template, redirect, session, request
-from context import ctrl_usuarios, ctrl_idiomas, ctrl_exe_feitos
+from context import ctrl_usuarios, ctrl_idiomas, ctrl_licoes, ctrl_exercicios, ctrl_exe_feitos
 from Registers.RegistroUsuarios import RegistroUsuarios
 from Utils.decorators import admin_required
 
@@ -117,7 +117,26 @@ def editar_usuario(id):
         return render_template("erro.html", titulo="Não foi possível editar o usuário", mensagem=mensagem, valor=f"admin/usuarios/editar/{id}")
 
     return render_template("editar_usuario.html", idiomas=idiomas, usuario=usuario)
+
+@usuarios_bp.route("/exercicios/<int:id>", methods=["GET"])
+@admin_required
+def execicios_usuario(id):
+
+    exercicios = ctrl_exe_feitos.listar_exercicios(id)
+    usuario = ctrl_usuarios.get_registro(id)
+
+    dados_exercicio = []
+
+    for exercicio in exercicios:
+        codigo = exercicio.get_id()
+        licao = ctrl_licoes.get_registro(codigo)
+        idioma = ctrl_idiomas.get_registro(licao.get_id())
+
+        dados_exercicio.append({"id": codigo, "licao": licao.get_descricao(), "idioma": idioma.get_descricao()})
         
+
+    return render_template("exercicios_usuario.html", usuario=usuario, exercicios=dados_exercicio)
+
 @usuarios_bp.route("/excluir/<int:id>", methods=["GET"])
 @admin_required
 def excluir_usuario(id):
@@ -128,3 +147,4 @@ def excluir_usuario(id):
         return redirect("/admin/usuarios")
 
     return render_template("erro.html", titulo="Não foi possível excluir o usuário", mensagem=mensagem, valor="/admin/usuarios")
+
