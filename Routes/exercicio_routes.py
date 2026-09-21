@@ -14,6 +14,7 @@ def exercicio():
     dados = []
 
     for exercicio in lista_exercicios:
+        print(exercicio.get_descricao())
         licao = ctrl_licoes.get_registro(exercicio.get_licao())
         idioma = ctrl_idiomas.get_registro(licao.get_cod_idioma())
         dados.append({"exercicio": exercicio.get_id(), "idioma": idioma.get_descricao(), "licao": licao.get_descricao(), 

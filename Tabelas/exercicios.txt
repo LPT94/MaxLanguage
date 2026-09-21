@@ -1,10 +1,101 @@
--1;;1;Como se diz Bom dia em Francês?;A;B;C;D;A;1
-1;2;1;Como se diz Bom dia em Francês?;A;B;C;D;A;1
-2;2;1;e1;a;b;c;d;A;12
-3;6;5;e2;a;b;c;d;B;12
-4;6;3;e22;a;b;c;d;D;11
-5;7;1;e3;a;b;c;d;B;12
-6;3;2;b1;a;b;c;d;B;9
-7;3;2;b2;a;b;c;d;C;3
-8;4;3;b21;a;b;c;d;B;5
-9;7;2;3;a;b;c;d;D;4
+1;1;1;Choose the correct form: She ___ to school every day.;go;goes;going;gone;B;25
+2;1;1;Choose the correct plural of 'child'.;childs;childes;children;childrens;C;26
+3;1;1;What is the opposite of 'cheap'?;expensive;small;easy;slow;A;17
+4;1;1;Complete: I ___ coffee every morning.;drinks;drink;drinking;drank;B;25
+5;1;1;Which word is a color?;table;green;window;teacher;B;26
+6;1;2;Complete: They ___ playing football now.;is;am;are;be;C;18
+7;1;2;Choose the past tense of 'go'.;goed;gone;went;going;C;27
+8;1;2;Which sentence is correct?;He don't like tea.;He doesn't likes tea.;He doesn't like tea.;He not like tea.;C;28
+9;1;2;Complete: There ___ a book on the table.;are;am;be;is;D;25
+10;1;2;What does 'apple' mean?;maçã;laranja;casa;janela;A;26
+11;1;3;Choose the correct article: ___ orange.;a;an;thee;no;B;25
+12;1;3;Complete: We ___ dinner yesterday.;eat;eats;ate;eating;C;27
+13;1;3;Which word is a profession?;doctor;blue;quickly;beautiful;A;16
+14;1;3;Complete: My brother is ___ than me.;tall;taller;more tall;tallest;B;18
+15;1;3;Choose the correct possessive: This is ___ car.;John;Johns;John's;Johns';C;27
+16;1;4;What is the meaning of 'book'?;livro;mesa;caneta;porta;A;25
+17;1;4;Complete: She has ___ umbrella.;a;an;some;many;B;26
+18;1;4;Which sentence is in the future?;I went home.;I am home.;I will travel tomorrow.;I travel yesterday.;C;18
+19;1;4;Complete: There are ___ students in the classroom.;much;a;three;any;C;25
+20;1;4;Choose the correct comparative form of 'good'.;gooder;better;more good;best;B;19
+21;1;5;Complete: If it rains, we ___ stay home.;will;would have;are;did;A;18
+22;1;5;Which sentence uses the present perfect?;I have finished my homework.;I finished my homework yesterday.;I finish my homework.;I am finishing my homework.;A;19
+23;1;5;Choose the correct preposition: The keys are ___ the table.;in;on;at;to;B;26
+24;1;5;Complete: She has lived here ___ 2020.;for;since;during;from;B;19
+25;1;5;Which word is an adverb?;quickly;quick;quickness;quicker;A;27
+26;1;6;Complete: You ___ wear a seat belt.;should;might not;wouldn't;couldn't;A;18
+27;1;6;Choose the correct sentence.;I have never been to London.;I never have been London.;I has never been to London.;I never been to London.;A;19
+28;1;6;What is the past participle of 'write'?;wrote;written;writing;writes;B;18
+29;1;6;Complete: The movie was ___ than I expected.;interesting;more interesting;most interesting;interest;B;19
+30;1;6;Choose the correct conditional sentence.;If I had money, I would travel.;If I have money, I would traveled.;If I had money, I will traveled.;If I have money, I would travel yesterday.;A;20
+31;1;7;Complete: By next year, she ___ graduated.;has;will have;had;is;B;20
+32;1;7;Which sentence is passive?;The chef cooked the meal.;The meal was cooked by the chef.;The chef is cooking the meal.;The chef cooks meals.;B;19
+33;1;7;Choose the correct relative pronoun: The woman ___ lives here is a doctor.;which;where;who;when;C;28
+34;1;7;Complete: I wish I ___ more time.;have;had;will have;am having;B;19
+35;1;7;Which sentence is grammatically correct?;Neither of them are ready.;Neither of them is ready.;Neither them is ready.;Neither are them ready.;B;20
+36;1;8;Choose the correct reported speech: He said, 'I am tired.';He said that he is tired.;He said that I was tired.;He said that he was tired.;He says that he was tired.;C;19
+37;1;8;Complete: Hardly ___ the train arrived when it started raining.;had;has;did;was;A;20
+38;1;8;Which word means 'very important'?;minor;essential;ordinary;distant;B;27
+39;1;8;Choose the correct form: She suggested ___ earlier.;to leave;leave;leaving;left;C;19
+40;1;8;Complete: Not only ___ late, but he also forgot the keys.;he was;was he;he is;is he;B;20
+41;1;9;Choose the correct meaning of 'although'.;porque;embora;portanto;enquanto;B;27
+42;1;9;Complete: If she ___ harder, she would have passed.;studied;had studied;has studied;would study;B;20
+43;1;9;Which sentence is correct?;Despite of the rain, we went out.;Despite the rain, we went out.;Despite it rained, we went out.;Despite of raining, we went out.;B;19
+44;1;9;Choose the correct phrasal verb: Please ___ the lights before leaving.;turn off;turn on;turn into;turn over;A;27
+45;1;9;Complete: I look forward to ___ from you.;hear;hearing;heard;have heard;B;19
+46;1;10;Which word is closest in meaning to 'rapid'?;slow;fast;weak;late;B;27
+47;1;10;Choose the correct inversion: Never ___ such a beautiful place.;I have seen;have I seen;I saw have;seen I have;B;20
+48;1;10;Complete: The report needs ___ before publication.;edit;editing;edited;to editing;C;19
+49;1;10;Which sentence correctly uses 'would rather'?;I would rather stay home.;I would rather to stay home.;I would rather staying home.;I rather would stayed home.;A;18
+50;1;10;Complete: She has been working here ___ three years.;since;for;during;from;B;18
+51;3;1;Completa: Yo ___ español todos los días.;estudio;estudias;estudian;estudiar;A;25
+52;3;1;¿Cuál es el plural de 'mujer'?;mujeres;mujers;mujereses;mujer;A;26
+53;3;1;¿Cuál es el opuesto de 'alto'?;grande;bajo;largo;ancho;B;25
+54;3;1;Completa: Nosotros ___ una casa grande.;tiene;tienes;tenemos;tener;C;25
+55;3;1;¿Cuál palabra significa 'book'?;mesa;libro;puerta;silla;B;26
+56;3;2;Completa: Ella ___ en Madrid.;vivo;vives;vive;vivimos;C;27
+57;3;2;¿Cuál es el pasado de 'ir'?;iba;fui;ido;voy;B;27
+58;3;2;Elige la frase correcta.;Yo no gusta café.;A mí no me gusta el café.;A mí no gusta el café.;Yo no me gustan café.;B;18
+59;3;2;Completa: Hay ___ libro sobre la mesa.;una;un;unos;unas;B;25
+60;3;2;¿Qué significa 'perro'?;gato;caballo;perro;pájaro;C;25
+61;3;3;Completa: ___ agua está fría.;El;La;Los;Las;A;26
+62;3;3;Completa: Ayer nosotros ___ al cine.;vamos;fuimos;iremos;ido;B;27
+63;3;3;¿Cuál palabra es una profesión?;azul;médico;rápidamente;bonito;B;26
+64;3;3;Completa: Mi hermana es ___ que yo.;alta;más alta;muy alta que;altísima que;B;18
+65;3;3;Elige el posesivo correcto: Este es ___ libro.;Juan;Juans;el Juan;de Juan;D;27
+66;3;4;¿Cuál es el significado de 'ventana'?;puerta;ventana;pared;techo;B;25
+67;3;4;Completa: Tengo ___ hora libre.;un;una;unos;unas;B;26
+68;3;4;¿Cuál frase está en futuro?;Ayer fui al parque.;Ahora estoy en casa.;Mañana viajaré a Madrid.;Antes viajaba mucho.;C;18
+69;3;4;Completa: Hay ___ estudiantes en la clase.;mucho;tres;mucha;muy;B;25
+70;3;4;Elige el comparativo correcto de 'bueno'.;bueno más;mejor;más bueno que;buenísimo;B;19
+71;3;5;Completa: Si llueve, nosotros ___ en casa.;quedaremos;quedamos ayer;quedamos;quedando;A;28
+72;3;5;¿Cuál frase usa el pretérito perfecto compuesto?;He terminado mi tarea.;Terminé mi tarea ayer.;Termino mi tarea.;Estoy terminando mi tarea.;A;19
+73;3;5;Completa: Las llaves están ___ la mesa.;en;sobre;a;por;B;26
+74;3;5;Completa: Vivo aquí ___ 2020.;por;desde;durante;hacia;B;19
+75;3;5;¿Cuál palabra es un adverbio?;rápido;rápidamente;rapidez;rápida;A;27
+76;3;6;Completa: Tú ___ estudiar más.;deberías;deberías no;serías;fueras;B;18
+77;3;6;Elige la frase correcta.;Nunca he estado en México.;Nunca estado he en México.;Nunca he estar en México.;Nunca había estado en México ayer.;A;19
+78;3;6;¿Cuál es el participio de 'escribir'?;escribiendo;escribió;escrito;escribe;C;28
+79;3;6;Completa: La película fue ___ de lo que esperaba.;más interesante;interesante más;más interesar;interesantes;A;19
+80;3;6;Elige la frase condicional correcta.;Si tuviera dinero, viajaría.;Si tendría dinero, viajaría.;Si tuve dinero, viajaría.;Si tendría dinero, viajé.;A;20
+81;3;7;Completa: Para el próximo año, ella ___ terminado el curso.;ha;habrá;había;está;B;20
+82;3;7;¿Cuál frase está en voz pasiva?;El chef cocinó la comida.;La comida fue cocinada por el chef.;El chef está cocinando.;El chef cocina todos los días.;B;19
+83;3;7;Completa: La mujer ___ vive aquí es doctora.;que;donde;cuando;cuyo;A;28
+84;3;7;Completa: Ojalá ___ más tiempo.;tengo;tuviera;tendré;teniendo;B;19
+85;3;7;Elige la frase gramaticalmente correcta.;Ninguno de ellos están listos.;Ninguno de ellos está listo.;Ninguno ellos está listo.;Ninguno de ellos estar listo.;B;20
+86;3;8;Elige el estilo indirecto correcto: Él dijo: 'Estoy cansado'.;Él dijo que estoy cansado.;Él dijo que estaba cansado.;Él dijo que estuvo cansado.;Él dice que estaba cansado ayer.;B;19
+87;3;8;Completa: Apenas ___ llegado cuando empezó a llover.;había;he;estaba;fue;A;20
+88;3;8;¿Qué palabra significa 'very important'?;mínimo;esencial;normal;lejano;B;27
+89;3;8;Completa: Ella sugirió ___ más temprano.;salir;a salir;salido;salió;A;19
+90;3;8;Completa: No solo ___ tarde, sino que también olvidó las llaves.;llegó;llegaba;llegar;llegando;A;20
+91;3;9;¿Qué significa 'aunque'?;porque;aunque;por eso;mientras;B;27
+92;3;9;Completa: Si ella ___ más, habría aprobado.;estudiaba;hubiera estudiado;ha estudiado;estudiaría;B;20
+93;3;9;Elige la frase correcta.;A pesar de la lluvia, salimos.;A pesar de la lluvia que, salimos.;A pesar la lluvia, salimos.;A pesar de llover la lluvia, salimos.;A;19
+94;3;9;Elige el verbo correcto: Por favor, ___ la luz antes de salir.;apaga;enciende;cambia;abre;A;27
+95;3;9;Completa: Tengo ganas de ___ contigo.;hablar;hablando;hablé;habla;A;19
+96;3;10;¿Cuál palabra es sinónimo de 'rápido'?;lento;veloz;débil;tarde;B;27
+97;3;10;Elige la frase correcta.;Nunca he visto un lugar tan bonito.;Nunca he un lugar visto tan bonito.;Nunca visto he un lugar tan bonito.;Nunca había visto ayer un lugar.;A;20
+98;3;10;Completa: El informe necesita ___ antes de publicarse.;revisar;revisión;revisado;revisando;A;19
+99;3;10;¿Cuál frase usa correctamente 'preferiría'?;Preferiría quedarme en casa.;Preferiría a quedarme en casa.;Preferiría quedando en casa.;Preferiría quedé en casa.;A;18
+100;3;10;Completa: Trabajo aquí ___ tres años.;desde;por;durante;hacia;B;18
+101;2;3;Exercício teste;A;B;C;D;B;22

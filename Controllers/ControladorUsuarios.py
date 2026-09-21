@@ -8,14 +8,25 @@ class ControladorUsuarios(Controlador):
         super().__init__(nome_arquivo)
         self._controlador_idiomas = controlador_idiomas
 
+    def _eh_float(self, valor):
+        try:
+            float(valor)
+        except ValueError:
+            return False, f"pontuação deve ser um número real positivo."
+    
+        return True, "Valor válido."
 
     def validar_dados(self, registro):
         tipo = registro.get_tipo()
         nivel_atual = registro.get_nivel_atual()
         pontuacao = registro.get_pontuacao()
 
-        verificacao, mensagem = self._eh_int([registro.get_id(), registro.get_cod_idioma(),nivel_atual,
-                            pontuacao], ['Id', 'Código Idioma', 'Nivel Atual', 'Pontuação'])
+        verificacao, mensagem = self._eh_int([registro.get_id(), registro.get_cod_idioma(),nivel_atual], 
+                                             ['Id', 'Código Idioma', 'Nivel Atual'])
+        if not verificacao:
+            return verificacao, mensagem
+
+        verificacao, mensagem = self._eh_float(pontuacao)
         if not verificacao:
             return verificacao, mensagem
 
@@ -30,7 +41,7 @@ class ControladorUsuarios(Controlador):
         if int(nivel_atual) < 1:
             return False, "Nivel atual deve ser maior ou igual à 1."
 
-        if int(pontuacao) < 0:
+        if float(pontuacao) < 0.0:
             return False, "Pontuação deve ser maior ou igual à 0."
 
         no_estrangeiro = self._controlador_idiomas.buscar_node(int(registro.get_cod_idioma()))
@@ -98,11 +109,11 @@ class ControladorUsuarios(Controlador):
         
     def listar_registros(self):
         
-            lista_registros = []
-            lista_dados = self.listar_dados()
-    
-            for i in range(len(lista_dados)):
-                lista_registros.append(RegistroUsuarios(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3],
-                                                        lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7],))
-    
-            return lista_registros
+        lista_registros = []
+        lista_dados = self.listar_dados()
+
+        for i in range(len(lista_dados)):
+            lista_registros.append(RegistroUsuarios(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3],
+                                                    lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7],))
+
+        return lista_registros

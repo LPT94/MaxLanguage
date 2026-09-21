@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Exercício - {{ licao.get_descricao() }} - MaxLanguage
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        MaxLanguage
+    </div>
+
+    <nav class="menu">
+
+        <a href="/usuario">
+            Início
+        </a>
+
+        <a href="/usuario" class="ativo">
+            Lições
+        </a>
+
+        <a href="/usuario/ranking">
+            Ranking
+        </a>
+
+        <a href="/usuario/certificado">
+            Certificado
+        </a>
+
+    </nav>
+
+    <div class="usuario-menu">
+
+        <span>
+            {{ usuario.get_nome() }}
+        </span>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="conteudo-usuario">
+
+    <section class="pagina-exercicio">
+
+        <div class="caminho-exercicio">
+
+            <a href="/usuario/licao/{{ licao.get_id() }}">
+                {{ licao.get_descricao() }}
+            </a>
+
+            <span>›</span>
+
+            <a href="/usuario/licao/{{ licao.get_id() }}/nivel/{{ nivel }}">
+                Nível {{ nivel }}
+            </a>
+
+        </div>
+
+
+        <article class="card-exercicio-completo">
+
+            <div class="cabecalho-exercicio-completo">
+
+                <div>
+
+                    <span class="rotulo-exercicio">
+                        Exercício
+                    </span>
+
+                    <h1>
+                        {{ exercicio.get_descricao() }}
+                    </h1>
+
+                </div>
+
+                <div class="valor-exercicio">
+                    +{{ exercicio.get_pontuacao() }} pts
+                </div>
+
+            </div>
+
+
+            <form
+                method="POST"
+                action="/usuario/licao/{{ licao.get_id() }}/nivel/{{ nivel }}/exercicio/{{ exercicio.get_id() }}"
+            >
+
+                <div class="opcoes-exercicio-completo">
+
+                    <label class="opcao-exercicio-completo">
+
+                        <input
+                            type="radio"
+                            name="resposta"
+                            value="A"
+                            required
+                        >
+
+                        <span class="letra-opcao">
+                            A
+                        </span>
+
+                        <span class="texto-opcao">
+                            {{ exercicio.get_op_a() }}
+                        </span>
+
+                    </label>
+
+
+                    <label class="opcao-exercicio-completo">
+
+                        <input
+                            type="radio"
+                            name="resposta"
+                            value="B"
+                            required
+                        >
+
+                        <span class="letra-opcao">
+                            B
+                        </span>
+
+                        <span class="texto-opcao">
+                            {{ exercicio.get_op_b() }}
+                        </span>
+
+                    </label>
+
+
+                    <label class="opcao-exercicio-completo">
+
+                        <input
+                            type="radio"
+                            name="resposta"
+                            value="C"
+                            required
+                        >
+
+                        <span class="letra-opcao">
+                            C
+                        </span>
+
+                        <span class="texto-opcao">
+                            {{ exercicio.get_op_c() }}
+                        </span>
+
+                    </label>
+
+
+                    <label class="opcao-exercicio-completo">
+
+                        <input
+                            type="radio"
+                            name="resposta"
+                            value="D"
+                            required
+                        >
+
+                        <span class="letra-opcao">
+                            D
+                        </span>
+
+                        <span class="texto-opcao">
+                            {{ exercicio.get_op_d() }}
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="acao-exercicio-completo">
+
+                    <button
+                        type="submit"
+                        class="botao-primario"
+                    >
+                        Responder
+                    </button>
+
+                </div>
+
+            </form>
+
+        </article>
+
+    </section>
+
+</main>
+
+</body>
+</html>

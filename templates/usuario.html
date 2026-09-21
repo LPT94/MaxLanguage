@@ -1,14 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+
 <head>
-    <title>MaxLanguage - Usuário</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaxLanguage - Lições</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <h1>Bem-vindo ao MaxLanguage!</h1>
+    <header class="topbar">
 
-    <p>Olá, {{ usuario.get_nome() }}, você está na área do usuário.</p>
+        <div class="logo">
+            MaxLanguage
+        </div>
+
+        <nav class="menu">
+
+            <a href="/usuario">
+                Início
+            </a>
+            
+            <a href="/usuario/ranking">
+                Ranking
+            </a>
+
+            <a href="/usuario/certificado">
+                Certificado
+            </a>
+
+        </nav>
+
+        <div class="usuario-menu">
+
+            <span>
+                {{ usuario.get_nome() }}
+            </span>
+
+            <a href="/logout">
+                Sair
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="conteudo-usuario">
+
+        <section class="cabecalho-pagina">
+
+            <div>
+                <h1>Minhas lições</h1>
+
+                <p>
+                    Continue aprendendo e avance pelos níveis.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="lista-licoes">
+
+            {% if dados_licoes %}
+
+                {% for dados in dados_licoes %}
+
+                    {% set licao = dados["licao"] %}
+                    {% set niveis = dados["nivel"] %}
+                    {% set nivel_maximo = dados["nivel_maximo"] %}
+                    {% set progresso = dados["progresso"] %}
+
+                    <article class="card-licao">
+
+                        <div class="card-licao-conteudo">
+
+                            <div class="icone-licao">
+                                📚
+                            </div>
+
+                            <div class="informacoes-licao">
+
+                                <h2>
+                                    Lição {{ dados["licao"] }}
+                                </h2>
+
+                                <p>
+                                    {{ niveis }} de {{ nivel_maximo }}
+                                    níveis desbloqueados
+                                </p>
+
+                                <div class="barra-progresso">
+                                        
+                                    <div
+                                        class="progresso"
+                                        style="width: {{ progresso }}%;"   
+                                    >
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-licao-acao">
+
+                            {% if nivel_maximo > 0 %}
+
+                                <a
+                                    href="/usuario/licao/{{ dados['id'] }}"
+                                    class="botao-primario"
+                                >
+                                    Continuar
+                                </a>
+
+                            {% else %}
+
+                                <button
+                                    class="botao-bloqueado"
+                                    disabled
+                                >
+                                    Bloqueada
+                                </button>
+
+                            {% endif %}
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="mensagem-vazia">
+
+                    <h2>Nenhuma lição disponível</h2>
+
+                    <p>
+                        Não existem lições disponíveis para o seu idioma no momento.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
 
 </body>
+
 </html>

@@ -24,7 +24,7 @@ class RegistroExerciciosFeitos:
     
     def set_cod_exercicio(self, cod_exercicio):
         self._cod_exercicio = cod_exercicio
-        self.id = self._cod_usuario*10000 + self._cod_exercicio
+        self._id = self._cod_usuario*10000 + self._cod_exercicio
 
     def formatar(self):
         return str(self._id)+";"+str(self._cod_usuario)+";"+str(self._cod_exercicio)

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ licao.get_descricao() }} - MaxLanguage</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        MaxLanguage
+    </div>
+
+    <nav class="menu">
+        <a href="/usuario">Início</a>
+        <a href="/usuario" class="ativo">Lições</a>
+        <a href="/usuario/ranking">Ranking</a>
+        <a href="/usuario/certificado">Certificado</a>
+    </nav>
+
+    <div class="usuario-menu">
+        <span>{{ usuario.get_nome() }}</span>
+        <a href="/logout">Sair</a>
+    </div>
+
+</header>
+
+<main class="conteudo-usuario">
+
+    <section class="cabecalho-pagina">
+
+        <div>
+            <h1>{{ licao.get_descricao() }}</h1>
+            <p>Escolha um nível para continuar seus estudos.</p>
+        </div>
+
+    </section>
+
+    <section class="lista-niveis">
+    {% if niveis %}
+        {% for nivel in niveis %}
+            
+            {% if nivel["desbloqueado"] %}
+
+                <article class="card-nivel">
+
+                    <div class="numero-nivel">
+                        {{ nivel["nivel"] }}
+                    </div>
+
+                    <div class="informacoes-nivel">
+                        <h2>Nível {{ nivel["nivel"] }}</h2>
+
+                        <p>Continue seus estudos</p>
+                    </div>
+
+                    <div class="status-nivel">
+                        ✓ Liberado
+                    </div>
+
+                    <a
+                        href="/usuario/licao/{{ licao.get_id() }}/nivel/{{ nivel['nivel'] }}"
+                        class="botao-nivel"
+                    >
+                        Começar
+                    </a>
+
+                </article>
+
+            {% else %}
+
+                <article class="card-nivel nivel-bloqueado">
+
+                    <div class="numero-nivel">
+                        {{ nivel["nivel"] }}
+                    </div>
+
+                    <div class="informacoes-nivel">
+                        <h2>Nível {{ nivel["nivel"] }}</h2>
+
+                        <p>Alcance mais pontos para desbloquear</p>
+                    </div>
+
+                    <div class="status-nivel">
+                        🔒 Bloqueado
+                    </div>
+
+                </article>
+
+            {% endif %}
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="mensagem-vazia">
+
+            <h2>Nenhuma lição disponível</h2>
+
+            <p>
+                Nesta lição não existem exercícios disponíveis no momento.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+</main>
+
+</body>
+</html>

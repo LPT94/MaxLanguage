@@ -88,3 +88,12 @@ class ControladorLicoes(Controlador):
             lista_registros.append(RegistroLicoes(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3]))
 
         return lista_registros
+
+    def listar_licoes_idioma(self, cod_idioma):
+
+        lista_dados = self.registros_com_criterio({1:cod_idioma})
+        lista_registros = []
+        for i in range(len(lista_dados)):
+            lista_registros.append(RegistroLicoes(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3]))
+
+        return lista_registros

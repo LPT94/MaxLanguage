@@ -1,8 +1,10 @@
--1;;7;Hello World
--1;;5;Greetings
-3;3;9;Bon Jour
-2;2;5;Hello World
-4;3;6;Bon Jour 2
-5;3;10;Bon Jour 4
-6;2;8;Hello World 2
-7;2;8;Hello World 3
+1;1;5;Greetings and Introductions
+2;1;4;Numbers, Dates, and Times
+3;1;7;Vocabulary
+4;1;8;Articles
+5;1;5;Pronouns and Possessives
+6;1;9;Concordância Verbal
+7;1;6;Subject-Verb Agreement
+8;1;8;Prepositions
+9;1;7;Adjectives and Comparisons
+10;1;5;Sentence Construction

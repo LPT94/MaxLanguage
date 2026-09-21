@@ -26,16 +26,16 @@ class RegistroExercicios:
         return str(self._descricao)
 
     def get_op_a(self):
-        return str(self._a)
+        return str(self._a).upper()
 
     def get_op_b(self):
-        return str(self._b)
+        return str(self._b).upper()
 
     def get_op_c(self):
-        return str(self._c)
+        return str(self._c).upper()
 
     def get_op_d(self):
-        return str(self._d)
+        return str(self._d).upper()
 
     def get_op_correta(self):
         return str(self._opcao_correta)

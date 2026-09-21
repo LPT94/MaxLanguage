@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ licao.get_descricao() }} - Nível {{ nivel }} - MaxLanguage
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        MaxLanguage
+    </div>
+
+    <nav class="menu">
+
+        <a href="/usuario">
+            Início
+        </a>
+
+        <a href="/usuario" class="ativo">
+            Lições
+        </a>
+
+        <a href="/usuario/ranking">
+            Ranking
+        </a>
+
+        <a href="/usuario/certificado">
+            Certificado
+        </a>
+
+    </nav>
+
+    <div class="usuario-menu">
+
+        <span>
+            {{ usuario.get_nome() }}
+        </span>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="conteudo-usuario">
+
+<section class="lista-exercicios">
+
+    {% if dados_exercicios %}
+        {% for dado in dados_exercicios %}
+
+            {% set exercicio = dado["exercicio"] %}
+            {% set feito = dado["feito"] %}
+
+            <a
+                href="/usuario/licao/{{ licao.get_id() }}/nivel/{{ nivel }}/exercicio/{{ exercicio.get_id() }}"
+                class="link-exercicio"
+            >
+
+                <article class="card-exercicio-lista
+                    {% if feito %}exercicio-lista-feito{% endif %}">
+
+                    <div class="numero-exercicio-lista">
+
+                        {% if feito %}
+                            ✓
+                        {% else %}
+                            {{ loop.index }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="informacoes-exercicio-lista">
+
+                        <h2>
+                            Exercício {{ loop.index }}
+                        </h2>
+
+                        <p>
+                            {{ exercicio.get_descricao() }}
+                        </p>
+
+                    </div>
+
+                    <div class="pontuacao-exercicio-lista">
+                        +{{ exercicio.get_pontuacao() }} pts
+                    </div>
+
+                </article>
+
+            </a>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="mensagem-vazia">
+
+            <h2>Nenhuma lição disponível</h2>
+
+            <p>
+                Nesta lição não existem exercícios disponíveis no momento.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</main>
+
+</body>
+</html>
