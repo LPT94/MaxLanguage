@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meu Perfil - MaxLanguage</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo">
+    MaxLanguage
+</div>
+
+<nav class="menu">
+    <a href="/usuario">Início</a>
+    <a href="/usuario/licoes">Lições</a>
+    <a href="/usuario/ranking">Ranking</a>
+    <a href="/usuario/certificado">Certificado</a>
+</nav>
+
+<div class="usuario-menu">
+    <span>{{ usuario.get_nome() }}</span>
+    <a href="/logout">Sair</a>
+</div>
+
+</header>
+
+<main class="conteudo-usuario">
+
+<section class="pagina-perfil">
+
+    <div class="cabecalho-pagina-perfil">
+        <span class="rotulo-perfil">Minha conta</span>
+        <h1>Meu Perfil</h1>
+        <p>
+            Consulte suas informações e altere seus dados de acesso.
+        </p>
+    </div>
+
+
+    <div class="grid-perfil">
+
+
+        <!-- Informações do usuário -->
+
+        <article class="card-perfil">
+
+            <div class="titulo-card-perfil">
+                <div class="icone-card-perfil">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Informações pessoais</h2>
+                    <p>Dados da sua conta no MaxLanguage.</p>
+                </div>
+            </div>
+
+
+            <div class="informacoes-perfil">
+
+                <div class="campo-perfil">
+                    <span class="rotulo-campo-perfil">
+                        Nome
+                    </span>
+
+                    <span class="valor-campo-perfil">
+                        {{ usuario.get_nome() }}
+                    </span>
+                </div>
+
+
+                <div class="campo-perfil">
+                    <span class="rotulo-campo-perfil">
+                        Login
+                    </span>
+
+                    <span class="valor-campo-perfil">
+                        {{ usuario.get_login() }}
+                    </span>
+                </div>
+
+
+                <div class="campo-perfil">
+                    <span class="rotulo-campo-perfil">
+                        Nível atual
+                    </span>
+
+                    <span class="valor-campo-perfil destaque-perfil">
+                        Nível {{ usuario.get_nivel_atual() }}
+                    </span>
+                </div>
+
+
+                <div class="campo-perfil">
+                    <span class="rotulo-campo-perfil">
+                        Pontuação
+                    </span>
+
+                    <span class="valor-campo-perfil pontuacao-perfil">
+                        {{ usuario.get_pontuacao() }} pontos
+                    </span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- Alteração de dados -->
+
+        <article class="card-perfil">
+
+            <div class="titulo-card-perfil">
+                <div class="icone-card-perfil">
+                    ⚙
+                </div>
+
+                <div>
+                    <h2>Dados de acesso</h2>
+                    <p>Altere seu login ou sua senha.</p>
+                </div>
+            </div>
+
+
+            <form method="POST">
+
+                <div class="formulario-perfil">
+
+                    <div class="campo-formulario-perfil">
+
+                        <label for="login">
+                            Novo login
+                        </label>
+
+                        <input
+                            type="text"
+                            id="login"
+                            name="login"
+                            value="{{ usuario.get_login() }}"
+                            required
+                        >
+
+                        <small>
+                            Seu login deve ser único.
+                        </small>
+
+                    </div>
+
+
+                    <div class="campo-formulario-perfil">
+
+                        <label for="senha">
+                            Nova senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite uma nova senha"
+                        >
+
+                        <small>
+                            Deixe em branco para manter a senha atual.
+                        </small>
+
+                    </div>
+
+                    
+                    <div class="acao-formulario-perfil">
+                        
+                         <a
+                            href="/usuario"
+                            class="secondary-button"
+                        >
+                            Cancelar
+                        </a>
+                        <button
+                            type="submit"
+                            class="botao-primario"
+                        >
+                            Salvar alterações
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
+</body>
+
+</html>

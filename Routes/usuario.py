@@ -1,3 +1,4 @@
+import hashlib
 from flask import Blueprint, render_template, redirect, session, request
 from context import ctrl_usuarios, ctrl_exe_feitos, ctrl_exercicios, ctrl_idiomas, ctrl_licoes
 from Registers.RegistroUsuarios import RegistroUsuarios
@@ -189,3 +190,29 @@ def usuario_exercicio(id, nivel, exercicio_id):
         mensagem=mensagem,
         voltar=f"/usuario/licao/{id}/nivel/{nivel}"
     )
+
+@usuario_bp.route("/meu_perfil/<int:id>", methods=["GET", "POST"])
+@user_required
+def usuario_perfil(id):
+
+    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
+    if int(usuario.get_id()) != id:
+        return render_template("erro.html", titulo="Acesso Negado.", mensagem="Você não está permitido acessar esta página.", voltar="/usuario")
+
+    if request.method == "POST":
+        login = request.form["login"]
+        senha = request.form["senha"]
+
+        if senha:
+            senha_hash = hashlib.sha256(senha.encode("utf-8")).hexdigest()
+
+            usuario.set_login(login)
+            usuario.set_senha(senha_hash)
+
+            sucesso, mensagem = ctrl_usuarios.editar_registro(usuario)
+            if not sucesso:
+                return render_template("erro.html", titulo="Erro ao alterar login/senha", mensagem=mensagem, voltar=f"/usuario/meu_perfil/{id}")
+
+        return redirect("/usuario")
+
+    return render_template("usuario_perfil.html", usuario=usuario)
