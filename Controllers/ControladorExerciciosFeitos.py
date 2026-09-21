@@ -56,6 +56,15 @@ class ControladorExerciciosFeitos(Controlador):
         
         dados_brutos = self._gerenciador_txt.acessar(node.get_offs())
         dados = dados_brutos.strip().split(";")
-        registro = RegistroExerciciosFeitos(dados[0], dados[1], dados[2])
+        registro = RegistroExerciciosFeitos(dados[1], dados[2], dados[0])
 
         return registro
+
+    def listar_exercicios(self, usuario_id):
+        exercicios = self.registros_com_criterio({1: usuario_id})
+        lista_exercicios = []
+        for i in range(len(exercicios)):
+            lista_exercicios.append(RegistroExerciciosFeitos(exercicios[i][1], exercicios[i][2], exercicios[i][0]))
+
+        return lista_exercicios
+

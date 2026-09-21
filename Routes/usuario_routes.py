@@ -118,7 +118,7 @@ def editar_usuario(id):
 
     return render_template("editar_usuario.html", idiomas=idiomas, usuario=usuario)
 
-@usuarios_bp.route("/exercicios/<int:id>", methods=["GET"])
+@usuarios_bp.route("/exercicios_usuario/<int:id>", methods=["GET"])
 @admin_required
 def execicios_usuario(id):
 
@@ -129,13 +129,29 @@ def execicios_usuario(id):
 
     for exercicio in exercicios:
         codigo = exercicio.get_id()
-        licao = ctrl_licoes.get_registro(codigo)
-        idioma = ctrl_idiomas.get_registro(licao.get_id())
+        exerc = ctrl_exercicios.get_registro(exercicio.get_cod_exercicio())
+        licao = ctrl_licoes.get_registro(exerc.get_licao())
+        idioma = ctrl_idiomas.get_registro(licao.get_cod_idioma())
 
         dados_exercicio.append({"id": codigo, "licao": licao.get_descricao(), "idioma": idioma.get_descricao()})
         
 
     return render_template("exercicios_usuario.html", usuario=usuario, exercicios=dados_exercicio)
+
+
+@usuarios_bp.route("/exercicios_usuario/excluir/<int:id>", methods=["GET"])
+@admin_required
+def excluir_execicios_usuario(id):
+
+    id_usuario = ctrl_usuarios.get_registro(ctrl_exe_feitos.get_registro(id).get_cod_usuario()).get_id()
+
+    sucesso, mensagem = ctrl_exe_feitos.del_registro(id, [])
+
+    if sucesso:
+        return redirect(f"/admin/usuarios/exercicios_usuario/{id_usuario}")
+
+    return render_template("erro.html", titulo="Não foi possível remover o exercício da lista de feitos", 
+                           mensagem=mensagem, valor=f"/admin/usuarios/exercicios_usuario/{id_usuario}")
 
 @usuarios_bp.route("/excluir/<int:id>", methods=["GET"])
 @admin_required

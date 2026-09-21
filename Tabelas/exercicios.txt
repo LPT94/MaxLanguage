@@ -1,2 +1,10 @@
 -1;;1;Como se diz Bom dia em Francês?;A;B;C;D;A;1
 1;2;1;Como se diz Bom dia em Francês?;A;B;C;D;A;1
+2;2;1;e1;a;b;c;d;A;12
+3;6;5;e2;a;b;c;d;B;12
+4;6;3;e22;a;b;c;d;D;11
+5;7;1;e3;a;b;c;d;B;12
+6;3;2;b1;a;b;c;d;B;9
+7;3;2;b2;a;b;c;d;C;3
+8;4;3;b21;a;b;c;d;B;5
+9;7;2;3;a;b;c;d;D;4

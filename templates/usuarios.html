@@ -140,7 +140,14 @@
                             </div>
 
                         </div>
-
+                        <div>
+                                <a
+                                    href="/admin/usuarios/exercicios_usuario/{{ usuario['id'] }}"
+                                    class="action-button"
+                                >
+                                    Exercicios
+                                </a>
+                            </div>
 
                         <div class="user-card-footer">
 
@@ -149,12 +156,7 @@
                             </span>
 
                             <div class="user-actions">
-                                <a
-                                    href="/admin/usuarios/exercicios/{{ usuario['id'] }}"
-                                    class="action-button"
-                                >
-                                    Exercicios
-                                </a>
+                                
                                 <a
                                     href="/admin/usuarios/login_senha/{{ usuario['id'] }}"
                                     class="action-button"

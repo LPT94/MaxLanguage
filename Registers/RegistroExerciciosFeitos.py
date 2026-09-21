@@ -1,7 +1,7 @@
 class RegistroExerciciosFeitos:
 
-    def __init__(self, cod_usuario: int, cod_exercicios: int):
-        self._id = None
+    def __init__(self, cod_usuario: int, cod_exercicios: int, id=None):
+        self._id = id
         self._cod_usuario = cod_usuario
         self._cod_exercicio = cod_exercicios
 
