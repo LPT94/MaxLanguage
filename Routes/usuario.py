@@ -225,7 +225,13 @@ def usuario_ranking():
     ranking = ctrl_usuarios.listar_ranking()
     usuario = ctrl_usuarios.get_registro(session["usuario_id"])
 
-    return render_template("ranking.html", usuario=usuario, usuarios=ranking)
+    dados = []
+    for usuario in ranking:
+        idioma = ctrl_idiomas.get_registro(usuario.get_cod_idioma()).get_descricao()
+        dados.append({"nome": usuario.get_nome(), "login": usuario.get_login(),
+                      "idioma": idioma, "pontuacao": f"{float(usuario.get_pontuacao()):.2f}"})
+
+    return render_template("ranking.html", usuario=usuario, dados=dados)
 
 
 @usuario_bp.route("/certificado")

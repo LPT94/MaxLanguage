@@ -1,101 +1,600 @@
-1;1;1;Choose the correct form: She ___ to school every day.;go;goes;going;gone;B;25
-2;1;1;Choose the correct plural of 'child'.;childs;childes;children;childrens;C;26
-3;1;1;What is the opposite of 'cheap'?;expensive;small;easy;slow;A;17
-4;1;1;Complete: I ___ coffee every morning.;drinks;drink;drinking;drank;B;25
-5;1;1;Which word is a color?;table;green;window;teacher;B;26
-6;1;2;Complete: They ___ playing football now.;is;am;are;be;C;18
-7;1;2;Choose the past tense of 'go'.;goed;gone;went;going;C;27
-8;1;2;Which sentence is correct?;He don't like tea.;He doesn't likes tea.;He doesn't like tea.;He not like tea.;C;28
-9;1;2;Complete: There ___ a book on the table.;are;am;be;is;D;25
-10;1;2;What does 'apple' mean?;maçã;laranja;casa;janela;A;26
-11;1;3;Choose the correct article: ___ orange.;a;an;thee;no;B;25
-12;1;3;Complete: We ___ dinner yesterday.;eat;eats;ate;eating;C;27
-13;1;3;Which word is a profession?;doctor;blue;quickly;beautiful;A;16
-14;1;3;Complete: My brother is ___ than me.;tall;taller;more tall;tallest;B;18
-15;1;3;Choose the correct possessive: This is ___ car.;John;Johns;John's;Johns';C;27
-16;1;4;What is the meaning of 'book'?;livro;mesa;caneta;porta;A;25
-17;1;4;Complete: She has ___ umbrella.;a;an;some;many;B;26
-18;1;4;Which sentence is in the future?;I went home.;I am home.;I will travel tomorrow.;I travel yesterday.;C;18
-19;1;4;Complete: There are ___ students in the classroom.;much;a;three;any;C;25
-20;1;4;Choose the correct comparative form of 'good'.;gooder;better;more good;best;B;19
-21;1;5;Complete: If it rains, we ___ stay home.;will;would have;are;did;A;18
-22;1;5;Which sentence uses the present perfect?;I have finished my homework.;I finished my homework yesterday.;I finish my homework.;I am finishing my homework.;A;19
-23;1;5;Choose the correct preposition: The keys are ___ the table.;in;on;at;to;B;26
-24;1;5;Complete: She has lived here ___ 2020.;for;since;during;from;B;19
-25;1;5;Which word is an adverb?;quickly;quick;quickness;quicker;A;27
-26;1;6;Complete: You ___ wear a seat belt.;should;might not;wouldn't;couldn't;A;18
-27;1;6;Choose the correct sentence.;I have never been to London.;I never have been London.;I has never been to London.;I never been to London.;A;19
-28;1;6;What is the past participle of 'write'?;wrote;written;writing;writes;B;18
-29;1;6;Complete: The movie was ___ than I expected.;interesting;more interesting;most interesting;interest;B;19
-30;1;6;Choose the correct conditional sentence.;If I had money, I would travel.;If I have money, I would traveled.;If I had money, I will traveled.;If I have money, I would travel yesterday.;A;20
-31;1;7;Complete: By next year, she ___ graduated.;has;will have;had;is;B;20
-32;1;7;Which sentence is passive?;The chef cooked the meal.;The meal was cooked by the chef.;The chef is cooking the meal.;The chef cooks meals.;B;19
-33;1;7;Choose the correct relative pronoun: The woman ___ lives here is a doctor.;which;where;who;when;C;28
-34;1;7;Complete: I wish I ___ more time.;have;had;will have;am having;B;19
-35;1;7;Which sentence is grammatically correct?;Neither of them are ready.;Neither of them is ready.;Neither them is ready.;Neither are them ready.;B;20
-36;1;8;Choose the correct reported speech: He said, 'I am tired.';He said that he is tired.;He said that I was tired.;He said that he was tired.;He says that he was tired.;C;19
-37;1;8;Complete: Hardly ___ the train arrived when it started raining.;had;has;did;was;A;20
-38;1;8;Which word means 'very important'?;minor;essential;ordinary;distant;B;27
-39;1;8;Choose the correct form: She suggested ___ earlier.;to leave;leave;leaving;left;C;19
-40;1;8;Complete: Not only ___ late, but he also forgot the keys.;he was;was he;he is;is he;B;20
-41;1;9;Choose the correct meaning of 'although'.;porque;embora;portanto;enquanto;B;27
-42;1;9;Complete: If she ___ harder, she would have passed.;studied;had studied;has studied;would study;B;20
-43;1;9;Which sentence is correct?;Despite of the rain, we went out.;Despite the rain, we went out.;Despite it rained, we went out.;Despite of raining, we went out.;B;19
-44;1;9;Choose the correct phrasal verb: Please ___ the lights before leaving.;turn off;turn on;turn into;turn over;A;27
-45;1;9;Complete: I look forward to ___ from you.;hear;hearing;heard;have heard;B;19
-46;1;10;Which word is closest in meaning to 'rapid'?;slow;fast;weak;late;B;27
-47;1;10;Choose the correct inversion: Never ___ such a beautiful place.;I have seen;have I seen;I saw have;seen I have;B;20
-48;1;10;Complete: The report needs ___ before publication.;edit;editing;edited;to editing;C;19
-49;1;10;Which sentence correctly uses 'would rather'?;I would rather stay home.;I would rather to stay home.;I would rather staying home.;I rather would stayed home.;A;18
-50;1;10;Complete: She has been working here ___ three years.;since;for;during;from;B;18
-51;3;1;Completa: Yo ___ español todos los días.;estudio;estudias;estudian;estudiar;A;25
-52;3;1;¿Cuál es el plural de 'mujer'?;mujeres;mujers;mujereses;mujer;A;26
-53;3;1;¿Cuál es el opuesto de 'alto'?;grande;bajo;largo;ancho;B;25
-54;3;1;Completa: Nosotros ___ una casa grande.;tiene;tienes;tenemos;tener;C;25
-55;3;1;¿Cuál palabra significa 'book'?;mesa;libro;puerta;silla;B;26
-56;3;2;Completa: Ella ___ en Madrid.;vivo;vives;vive;vivimos;C;27
-57;3;2;¿Cuál es el pasado de 'ir'?;iba;fui;ido;voy;B;27
-58;3;2;Elige la frase correcta.;Yo no gusta café.;A mí no me gusta el café.;A mí no gusta el café.;Yo no me gustan café.;B;18
-59;3;2;Completa: Hay ___ libro sobre la mesa.;una;un;unos;unas;B;25
-60;3;2;¿Qué significa 'perro'?;gato;caballo;perro;pájaro;C;25
-61;3;3;Completa: ___ agua está fría.;El;La;Los;Las;A;26
-62;3;3;Completa: Ayer nosotros ___ al cine.;vamos;fuimos;iremos;ido;B;27
-63;3;3;¿Cuál palabra es una profesión?;azul;médico;rápidamente;bonito;B;26
-64;3;3;Completa: Mi hermana es ___ que yo.;alta;más alta;muy alta que;altísima que;B;18
-65;3;3;Elige el posesivo correcto: Este es ___ libro.;Juan;Juans;el Juan;de Juan;D;27
-66;3;4;¿Cuál es el significado de 'ventana'?;puerta;ventana;pared;techo;B;25
-67;3;4;Completa: Tengo ___ hora libre.;un;una;unos;unas;B;26
-68;3;4;¿Cuál frase está en futuro?;Ayer fui al parque.;Ahora estoy en casa.;Mañana viajaré a Madrid.;Antes viajaba mucho.;C;18
-69;3;4;Completa: Hay ___ estudiantes en la clase.;mucho;tres;mucha;muy;B;25
-70;3;4;Elige el comparativo correcto de 'bueno'.;bueno más;mejor;más bueno que;buenísimo;B;19
-71;3;5;Completa: Si llueve, nosotros ___ en casa.;quedaremos;quedamos ayer;quedamos;quedando;A;28
-72;3;5;¿Cuál frase usa el pretérito perfecto compuesto?;He terminado mi tarea.;Terminé mi tarea ayer.;Termino mi tarea.;Estoy terminando mi tarea.;A;19
-73;3;5;Completa: Las llaves están ___ la mesa.;en;sobre;a;por;B;26
-74;3;5;Completa: Vivo aquí ___ 2020.;por;desde;durante;hacia;B;19
-75;3;5;¿Cuál palabra es un adverbio?;rápido;rápidamente;rapidez;rápida;A;27
-76;3;6;Completa: Tú ___ estudiar más.;deberías;deberías no;serías;fueras;B;18
-77;3;6;Elige la frase correcta.;Nunca he estado en México.;Nunca estado he en México.;Nunca he estar en México.;Nunca había estado en México ayer.;A;19
-78;3;6;¿Cuál es el participio de 'escribir'?;escribiendo;escribió;escrito;escribe;C;28
-79;3;6;Completa: La película fue ___ de lo que esperaba.;más interesante;interesante más;más interesar;interesantes;A;19
-80;3;6;Elige la frase condicional correcta.;Si tuviera dinero, viajaría.;Si tendría dinero, viajaría.;Si tuve dinero, viajaría.;Si tendría dinero, viajé.;A;20
-81;3;7;Completa: Para el próximo año, ella ___ terminado el curso.;ha;habrá;había;está;B;20
-82;3;7;¿Cuál frase está en voz pasiva?;El chef cocinó la comida.;La comida fue cocinada por el chef.;El chef está cocinando.;El chef cocina todos los días.;B;19
-83;3;7;Completa: La mujer ___ vive aquí es doctora.;que;donde;cuando;cuyo;A;28
-84;3;7;Completa: Ojalá ___ más tiempo.;tengo;tuviera;tendré;teniendo;B;19
-85;3;7;Elige la frase gramaticalmente correcta.;Ninguno de ellos están listos.;Ninguno de ellos está listo.;Ninguno ellos está listo.;Ninguno de ellos estar listo.;B;20
-86;3;8;Elige el estilo indirecto correcto: Él dijo: 'Estoy cansado'.;Él dijo que estoy cansado.;Él dijo que estaba cansado.;Él dijo que estuvo cansado.;Él dice que estaba cansado ayer.;B;19
-87;3;8;Completa: Apenas ___ llegado cuando empezó a llover.;había;he;estaba;fue;A;20
-88;3;8;¿Qué palabra significa 'very important'?;mínimo;esencial;normal;lejano;B;27
-89;3;8;Completa: Ella sugirió ___ más temprano.;salir;a salir;salido;salió;A;19
-90;3;8;Completa: No solo ___ tarde, sino que también olvidó las llaves.;llegó;llegaba;llegar;llegando;A;20
-91;3;9;¿Qué significa 'aunque'?;porque;aunque;por eso;mientras;B;27
-92;3;9;Completa: Si ella ___ más, habría aprobado.;estudiaba;hubiera estudiado;ha estudiado;estudiaría;B;20
-93;3;9;Elige la frase correcta.;A pesar de la lluvia, salimos.;A pesar de la lluvia que, salimos.;A pesar la lluvia, salimos.;A pesar de llover la lluvia, salimos.;A;19
-94;3;9;Elige el verbo correcto: Por favor, ___ la luz antes de salir.;apaga;enciende;cambia;abre;A;27
-95;3;9;Completa: Tengo ganas de ___ contigo.;hablar;hablando;hablé;habla;A;19
-96;3;10;¿Cuál palabra es sinónimo de 'rápido'?;lento;veloz;débil;tarde;B;27
-97;3;10;Elige la frase correcta.;Nunca he visto un lugar tan bonito.;Nunca he un lugar visto tan bonito.;Nunca visto he un lugar tan bonito.;Nunca había visto ayer un lugar.;A;20
-98;3;10;Completa: El informe necesita ___ antes de publicarse.;revisar;revisión;revisado;revisando;A;19
-99;3;10;¿Cuál frase usa correctamente 'preferiría'?;Preferiría quedarme en casa.;Preferiría a quedarme en casa.;Preferiría quedando en casa.;Preferiría quedé en casa.;A;18
-100;3;10;Completa: Trabajo aquí ___ tres años.;desde;por;durante;hacia;B;18
-101;2;3;Exercício teste;A;B;C;D;B;22
+1;1;5;What is the most appropriate response to 'Good morning?';Good night!;See you yesterday.;I'm eleven.;Good morning!;D;13
+2;1;2;Which expression is commonly used when meeting someone for the first time?;I'm late yesterday.;Nice to meet you.;See you last week.;Goodbye forever.;B;11
+3;1;2;How do you introduce yourself?;Name my Anna.;Your name is Anna.;My name is Anna.;His name Anna.;C;12
+4;1;5;What is a polite way to ask someone's name?;Where your name?;How old your name?;What's your name?;Who you are name?;C;13
+5;1;2;What is an appropriate response to 'How are you?';It's Monday.;I'm fine, thank you.;I'm from Canada.;My name is John.;B;11
+6;1;4;Which phrase means that you are leaving?;Nice to meet you.;Good morning.;See you later.;How are you?;C;13
+7;1;5;What can you say when you meet a friend casually?;Thank you yesterday.;Nice to sleep.;Hi!;Goodbye forever!;C;13
+8;1;4;Which sentence is a correct self-introduction?;Am I David is.;I David am.;I am David.;David is I.;C;12
+9;1;2;What is a polite way to introduce another person?;My is Sarah friend this.;Sarah this my is.;Friend this Sarah my.;This is my friend Sarah.;D;12
+10;1;3;What does 'Nice to meet you' express?;A request for directions.;A goodbye to someone.;A question about age.;Pleasure at meeting someone.;D;12
+11;1;5;What is the most appropriate response to 'Good morning?';Good morning!;I'm eleven.;See you yesterday.;Good night!;A;13
+12;1;5;Which expression is commonly used when meeting someone for the first time?;I'm late yesterday.;Goodbye forever.;Nice to meet you.;See you last week.;C;14
+13;1;1;How do you introduce yourself?;Your name is Anna.;His name Anna.;Name my Anna.;My name is Anna.;D;11
+14;1;1;What is a polite way to ask someone's name?;How old your name?;Where your name?;What's your name?;Who you are name?;C;11
+15;1;1;What is an appropriate response to 'How are you?';I'm from Canada.;It's Monday.;My name is John.;I'm fine, thank you.;D;11
+16;1;5;Which phrase means that you are leaving?;How are you?;See you later.;Nice to meet you.;Good morning.;B;14
+17;1;5;What can you say when you meet a friend casually?;Nice to sleep.;Thank you yesterday.;Goodbye forever!;Hi!;D;13
+18;1;5;Which sentence is a correct self-introduction?;I am David.;I David am.;David is I.;Am I David is.;A;13
+19;1;3;What is a polite way to introduce another person?;My is Sarah friend this.;This is my friend Sarah.;Sarah this my is.;Friend this Sarah my.;B;12
+20;1;1;What does 'Nice to meet you' express?;A goodbye to someone.;Pleasure at meeting someone.;A question about age.;A request for directions.;B;11
+21;1;5;What is the most appropriate response to 'Good morning?';Good night!;Good morning!;I'm eleven.;See you yesterday.;B;13
+22;1;2;Which expression is commonly used when meeting someone for the first time?;I'm late yesterday.;See you last week.;Nice to meet you.;Goodbye forever.;C;11
+23;1;5;How do you introduce yourself?;Name my Anna.;Your name is Anna.;My name is Anna.;His name Anna.;C;13
+24;1;4;What is a polite way to ask someone's name?;How old your name?;Who you are name?;Where your name?;What's your name?;D;12
+25;1;1;What is an appropriate response to 'How are you?';It's Monday.;I'm from Canada.;I'm fine, thank you.;My name is John.;C;12
+26;1;4;Which phrase means that you are leaving?;Good morning.;See you later.;Nice to meet you.;How are you?;B;12
+27;1;1;What can you say when you meet a friend casually?;Hi!;Thank you yesterday.;Goodbye forever!;Nice to sleep.;A;12
+28;1;5;Which sentence is a correct self-introduction?;I am David.;I David am.;David is I.;Am I David is.;A;13
+29;1;1;What is a polite way to introduce another person?;Friend this Sarah my.;Sarah this my is.;This is my friend Sarah.;My is Sarah friend this.;C;12
+30;1;1;What does 'Nice to meet you' express?;A request for directions.;A goodbye to someone.;A question about age.;Pleasure at meeting someone.;D;11
+31;2;3;What number comes after nineteen?;Twelve;Eighteen;Twenty;Ninety;C;12
+32;2;4;How do you write 30 in English?;Thirteen;Thirteenth;Thirty;Three;C;13
+33;2;2;Which expression refers to 7:30?;Quarter to seven;Seven past half;Half past seven;Half past eight;C;11
+34;2;3;What comes after Friday?;Monday;Sunday;Saturday;Thursday;C;12
+35;2;2;Which month comes after March?;February;May;April;June;C;12
+36;2;2;How do you write 21st in words?;Twenty-first;Twenty-second;Two-first;Twenty-one;A;12
+37;2;2;What time is 12:00 p.m.?;Dawn;Noon;Midnight;Dusk;B;12
+38;2;2;Which number is 'fifty-two'?;72;15;52;25;C;11
+39;2;4;Which day comes before Monday?;Sunday;Tuesday;Saturday;Friday;A;13
+40;2;3;What is the correct way to say 8:15?;A half past eight;A quarter past eight;Eight past quarter;A quarter to eight;B;12
+41;2;4;What number comes after nineteen?;Twenty;Eighteen;Ninety;Twelve;A;13
+42;2;1;How do you write 30 in English?;Thirteen;Thirteenth;Three;Thirty;D;12
+43;2;2;Which expression refers to 7:30?;Half past seven;Half past eight;Seven past half;Quarter to seven;A;12
+44;2;4;What comes after Friday?;Thursday;Sunday;Monday;Saturday;D;13
+45;2;4;Which month comes after March?;June;April;May;February;B;13
+46;2;2;How do you write 21st in words?;Twenty-one;Twenty-second;Two-first;Twenty-first;D;12
+47;2;1;What time is 12:00 p.m.?;Dusk;Midnight;Dawn;Noon;D;11
+48;2;3;Which number is 'fifty-two'?;72;25;15;52;D;13
+49;2;3;Which day comes before Monday?;Saturday;Sunday;Tuesday;Friday;B;13
+50;2;3;What is the correct way to say 8:15?;Eight past quarter;A half past eight;A quarter past eight;A quarter to eight;C;12
+51;2;3;What number comes after nineteen?;Twenty;Twelve;Eighteen;Ninety;A;12
+52;2;3;How do you write 30 in English?;Three;Thirteen;Thirty;Thirteenth;C;12
+53;2;2;Which expression refers to 7:30?;Half past seven;Half past eight;Seven past half;Quarter to seven;A;12
+54;2;3;What comes after Friday?;Monday;Saturday;Sunday;Thursday;B;13
+55;2;3;Which month comes after March?;June;May;April;February;C;12
+56;2;4;How do you write 21st in words?;Twenty-one;Twenty-first;Two-first;Twenty-second;B;12
+57;2;3;What time is 12:00 p.m.?;Noon;Dawn;Dusk;Midnight;A;13
+58;2;2;Which number is 'fifty-two'?;25;15;52;72;C;12
+59;2;3;Which day comes before Monday?;Sunday;Tuesday;Saturday;Friday;A;13
+60;2;4;What is the correct way to say 8:15?;Eight past quarter;A quarter past eight;A half past eight;A quarter to eight;B;12
+61;3;1;Which word means 'very big'?;Huge;Narrow;Weak;Tiny;A;12
+62;3;7;Which word is the opposite of 'cheap'?;Early;Small;Quiet;Expensive;D;14
+63;3;7;What is a 'kitchen'?;A room for sleeping;A place for driving;A room for cooking;A type of clothing;C;15
+64;3;5;Which word means 'quick'?;Fast;Heavy;Late;Slow;A;13
+65;3;4;Which item is normally used for writing?;Pillow;Plate;Pen;Spoon;C;12
+66;3;4;What is the opposite of 'empty'?;Quiet;Young;Cold;Full;D;12
+67;3;6;Which word refers to a place where you can borrow books?;Library;Garage;Airport;Bakery;A;14
+68;3;2;Which animal commonly barks?;Dog;Fish;Cat;Horse;A;11
+69;3;5;Which word means 'to purchase'?;Buy;Sell;Lose;Borrow;A;13
+70;3;1;Which word is related to weather?;Chair;Wallet;Rain;Bottle;C;11
+71;3;4;Which word means 'very big'?;Narrow;Huge;Tiny;Weak;B;13
+72;3;1;Which word is the opposite of 'cheap'?;Expensive;Quiet;Small;Early;A;11
+73;3;3;What is a 'kitchen'?;A type of clothing;A room for cooking;A room for sleeping;A place for driving;B;12
+74;3;5;Which word means 'quick'?;Fast;Late;Slow;Heavy;A;13
+75;3;7;Which item is normally used for writing?;Pen;Pillow;Plate;Spoon;A;14
+76;3;5;What is the opposite of 'empty'?;Full;Young;Quiet;Cold;A;14
+77;3;4;Which word refers to a place where you can borrow books?;Airport;Library;Bakery;Garage;B;13
+78;3;7;Which animal commonly barks?;Horse;Dog;Fish;Cat;B;14
+79;3;6;Which word means 'to purchase'?;Sell;Lose;Buy;Borrow;C;14
+80;3;2;Which word is related to weather?;Rain;Wallet;Bottle;Chair;A;11
+81;3;3;Which word means 'very big'?;Narrow;Tiny;Huge;Weak;C;12
+82;3;7;Which word is the opposite of 'cheap'?;Small;Expensive;Quiet;Early;B;14
+83;3;3;What is a 'kitchen'?;A room for sleeping;A place for driving;A room for cooking;A type of clothing;C;13
+84;3;6;Which word means 'quick'?;Heavy;Late;Fast;Slow;C;13
+85;3;1;Which item is normally used for writing?;Plate;Pillow;Pen;Spoon;C;11
+86;3;3;What is the opposite of 'empty'?;Cold;Quiet;Young;Full;D;12
+87;3;6;Which word refers to a place where you can borrow books?;Bakery;Library;Airport;Garage;B;14
+88;3;4;Which animal commonly barks?;Fish;Horse;Cat;Dog;D;13
+89;3;4;Which word means 'to purchase'?;Lose;Sell;Borrow;Buy;D;13
+90;3;3;Which word is related to weather?;Rain;Bottle;Wallet;Chair;A;12
+91;4;4;Choose the correct article: ___ apple.;the;a;an;no article;C;12
+92;4;1;Choose the correct article: ___ book on the table is mine.;No article;A;An;The;D;11
+93;4;8;Choose the correct article: She is ___ teacher.;a;an;no article;the;A;15
+94;4;8;Choose the correct article: He ate ___ orange.;no article;an;a;the;B;15
+95;4;4;Choose the correct article: I saw ___ dog in the park.;a;no article;an;the;A;12
+96;4;6;Choose the correct article: ___ sun is a star.;A;No article;An;The;D;13
+97;4;1;Choose the correct article: She wants to be ___ engineer.;an;the;no article;a;A;12
+98;4;7;Choose the correct article: We had ___ wonderful dinner.;a;no article;an;the;A;15
+99;4;4;Choose the correct article: I need ___ umbrella.;an;a;the;no article;A;13
+100;4;5;Choose the correct article: ___ United States is a country.;An;No article;The;A;C;13
+101;4;6;Choose the correct article: ___ apple.;a;an;no article;the;B;14
+102;4;2;Choose the correct article: ___ book on the table is mine.;The;No article;A;An;A;11
+103;4;3;Choose the correct article: She is ___ teacher.;a;no article;an;the;A;13
+104;4;2;Choose the correct article: He ate ___ orange.;an;no article;a;the;A;11
+105;4;1;Choose the correct article: I saw ___ dog in the park.;a;an;no article;the;A;11
+106;4;7;Choose the correct article: ___ sun is a star.;No article;A;An;The;D;14
+107;4;8;Choose the correct article: She wants to be ___ engineer.;the;no article;a;an;D;15
+108;4;7;Choose the correct article: We had ___ wonderful dinner.;no article;an;the;a;D;14
+109;4;8;Choose the correct article: I need ___ umbrella.;a;no article;an;the;C;14
+110;4;4;Choose the correct article: ___ United States is a country.;A;An;The;No article;C;13
+111;4;7;Choose the correct article: ___ apple.;the;a;no article;an;D;14
+112;4;1;Choose the correct article: ___ book on the table is mine.;An;A;No article;The;D;11
+113;4;4;Choose the correct article: She is ___ teacher.;an;no article;a;the;C;13
+114;4;5;Choose the correct article: He ate ___ orange.;no article;a;the;an;D;14
+115;4;5;Choose the correct article: I saw ___ dog in the park.;a;the;an;no article;A;13
+116;4;3;Choose the correct article: ___ sun is a star.;The;An;No article;A;A;12
+117;4;2;Choose the correct article: She wants to be ___ engineer.;the;a;an;no article;C;12
+118;4;6;Choose the correct article: We had ___ wonderful dinner.;no article;a;an;the;B;14
+119;4;7;Choose the correct article: I need ___ umbrella.;an;no article;a;the;A;15
+120;4;6;Choose the correct article: ___ United States is a country.;A;An;The;No article;C;14
+121;5;2;Choose the correct pronoun: Maria is my sister. ___ is a doctor.;She;He;It;They;A;12
+122;5;4;Choose the correct possessive: This book belongs to me. It is ___.;me;mine;my;I;B;12
+123;5;3;Choose the correct pronoun: Tom and I are friends. ___ study together.;We;He;They;Them;A;12
+124;5;4;Choose the correct possessive: Sarah has a cat. ___ cat is black.;Our;Her;Their;His;B;13
+125;5;2;Choose the correct pronoun: I saw John and Mary. I spoke to ___.;them;they;we;their;A;12
+126;5;3;Choose the correct possessive: We have a house. It is ___ house.;us;ours;our;we;C;12
+127;5;3;Choose the correct pronoun: The dog is hungry. ___ needs food.;They;It;He;We;B;13
+128;5;4;Choose the correct possessive: You have a car. It is ___ car.;yours;your;you;our;B;13
+129;5;1;Choose the correct pronoun: My brother and I went home. ___ were tired.;It;We;He;They;B;11
+130;5;2;Choose the correct possessive: The children have toys. The toys are ___.;they;their;them;theirs;D;12
+131;5;3;Choose the correct pronoun: Maria is my sister. ___ is a doctor.;They;He;It;She;D;12
+132;5;2;Choose the correct possessive: This book belongs to me. It is ___.;I;me;mine;my;C;12
+133;5;1;Choose the correct pronoun: Tom and I are friends. ___ study together.;Them;He;We;They;C;11
+134;5;4;Choose the correct possessive: Sarah has a cat. ___ cat is black.;Our;His;Their;Her;D;12
+135;5;4;Choose the correct pronoun: I saw John and Mary. I spoke to ___.;their;them;we;they;B;13
+136;5;5;Choose the correct possessive: We have a house. It is ___ house.;us;ours;we;our;D;13
+137;5;1;Choose the correct pronoun: The dog is hungry. ___ needs food.;It;He;They;We;A;12
+138;5;4;Choose the correct possessive: You have a car. It is ___ car.;your;our;yours;you;A;12
+139;5;4;Choose the correct pronoun: My brother and I went home. ___ were tired.;They;We;It;He;B;13
+140;5;4;Choose the correct possessive: The children have toys. The toys are ___.;theirs;their;them;they;A;12
+141;5;3;Choose the correct pronoun: Maria is my sister. ___ is a doctor.;He;It;They;She;D;12
+142;5;4;Choose the correct possessive: This book belongs to me. It is ___.;me;I;mine;my;C;13
+143;5;4;Choose the correct pronoun: Tom and I are friends. ___ study together.;We;They;He;Them;A;13
+144;5;5;Choose the correct possessive: Sarah has a cat. ___ cat is black.;His;Their;Our;Her;D;13
+145;5;3;Choose the correct pronoun: I saw John and Mary. I spoke to ___.;them;we;their;they;A;12
+146;5;4;Choose the correct possessive: We have a house. It is ___ house.;our;us;ours;we;A;13
+147;5;1;Choose the correct pronoun: The dog is hungry. ___ needs food.;He;They;We;It;D;11
+148;5;3;Choose the correct possessive: You have a car. It is ___ car.;yours;our;you;your;D;13
+149;5;4;Choose the correct pronoun: My brother and I went home. ___ were tired.;They;We;It;He;B;13
+150;5;4;Choose the correct possessive: The children have toys. The toys are ___.;their;they;them;theirs;D;13
+151;6;7;Choose the correct verb: She ___ to school every day.;goes;gone;going;go;A;14
+152;6;8;Choose the correct verb: They ___ English at home.;studies;studied;study;studying;C;14
+153;6;5;Choose the correct verb: He ___ coffee every morning.;drunk;drinking;drinks;drink;C;14
+154;6;1;Choose the correct verb: We ___ football on Sundays.;playing;play;played;plays;B;11
+155;6;9;Choose the correct verb: My father ___ in a hospital.;works;work;worked;working;A;15
+156;6;1;Choose the correct verb: The students ___ ready.;am;are;be;is;B;12
+157;6;4;Choose the correct verb: She ___ a new car.;had;have;has;having;C;13
+158;6;1;Choose the correct verb: The dog ___ loudly at night.;barked;bark;barks;barking;C;11
+159;6;9;Choose the correct verb: My friends ___ in London.;live;lives;living;lived;A;15
+160;6;5;Choose the correct verb: It ___ very cold today.;are;is;be;am;B;13
+161;6;7;Choose the correct verb: She ___ to school every day.;going;gone;go;goes;D;14
+162;6;6;Choose the correct verb: They ___ English at home.;studies;study;studied;studying;B;13
+163;6;9;Choose the correct verb: He ___ coffee every morning.;drinks;drink;drunk;drinking;A;15
+164;6;6;Choose the correct verb: We ___ football on Sundays.;plays;play;played;playing;B;14
+165;6;6;Choose the correct verb: My father ___ in a hospital.;work;works;worked;working;B;13
+166;6;3;Choose the correct verb: The students ___ ready.;am;is;be;are;D;13
+167;6;8;Choose the correct verb: She ___ a new car.;had;have;has;having;C;14
+168;6;7;Choose the correct verb: The dog ___ loudly at night.;barked;barks;bark;barking;B;14
+169;6;1;Choose the correct verb: My friends ___ in London.;lived;lives;living;live;D;11
+170;6;6;Choose the correct verb: It ___ very cold today.;be;am;is;are;C;14
+171;6;1;Choose the correct verb: She ___ to school every day.;going;gone;go;goes;D;12
+172;6;8;Choose the correct verb: They ___ English at home.;studied;studies;study;studying;C;15
+173;6;2;Choose the correct verb: He ___ coffee every morning.;drink;drinks;drunk;drinking;B;12
+174;6;4;Choose the correct verb: We ___ football on Sundays.;plays;played;playing;play;D;13
+175;6;9;Choose the correct verb: My father ___ in a hospital.;work;worked;working;works;D;16
+176;6;3;Choose the correct verb: The students ___ ready.;are;be;is;am;A;13
+177;6;3;Choose the correct verb: She ___ a new car.;have;having;has;had;C;12
+178;6;2;Choose the correct verb: The dog ___ loudly at night.;barking;bark;barks;barked;C;12
+179;6;6;Choose the correct verb: My friends ___ in London.;lives;living;lived;live;D;13
+180;6;2;Choose the correct verb: It ___ very cold today.;be;are;is;am;C;11
+181;7;2;Choose the correct sentence.;He are work every day.;He work every day.;He working every day.;He works every day.;D;12
+182;7;4;Choose the correct sentence.;They is like music.;They likes music.;They like music.;They liking music.;C;13
+183;7;6;Choose the correct sentence.;The cat sleep on the sofa.;The cat are sleep on the sofa.;The cat sleeps on the sofa.;The cat sleeping on the sofa.;C;14
+184;7;1;Choose the correct sentence.;We have two classes.;We having two classes.;We has two classes.;We is have two classes.;A;11
+185;7;5;Choose the correct sentence.;My mother are cook dinner.;My mother cooks dinner.;My mother cooking dinner.;My mother cook dinner.;B;13
+186;7;1;Choose the correct sentence.;The children is happy.;The children are happy.;The children am happy.;The children be happy.;B;12
+187;7;2;Choose the correct sentence.;He are do his homework.;He do his homework.;He doing his homework.;He does his homework.;D;12
+188;7;6;Choose the correct sentence.;These books belongs to me.;These books belonging to me.;These books is belong to me.;These books belong to me.;D;13
+189;7;1;Choose the correct sentence.;Anna study English.;Anna are study English.;Anna studies English.;Anna studying English.;C;11
+190;7;4;Choose the correct sentence.;The teachers works here.;The teachers is work here.;The teachers work here.;The teachers working here.;C;13
+191;7;1;Choose the correct sentence.;He works every day.;He working every day.;He are work every day.;He work every day.;A;11
+192;7;3;Choose the correct sentence.;They liking music.;They likes music.;They is like music.;They like music.;D;12
+193;7;3;Choose the correct sentence.;The cat sleeps on the sofa.;The cat sleeping on the sofa.;The cat sleep on the sofa.;The cat are sleep on the sofa.;A;12
+194;7;1;Choose the correct sentence.;We have two classes.;We is have two classes.;We has two classes.;We having two classes.;A;12
+195;7;4;Choose the correct sentence.;My mother cook dinner.;My mother are cook dinner.;My mother cooks dinner.;My mother cooking dinner.;C;12
+196;7;6;Choose the correct sentence.;The children am happy.;The children is happy.;The children are happy.;The children be happy.;C;13
+197;7;2;Choose the correct sentence.;He are do his homework.;He does his homework.;He do his homework.;He doing his homework.;B;11
+198;7;5;Choose the correct sentence.;These books is belong to me.;These books belonging to me.;These books belong to me.;These books belongs to me.;C;14
+199;7;6;Choose the correct sentence.;Anna are study English.;Anna studying English.;Anna study English.;Anna studies English.;D;14
+200;7;2;Choose the correct sentence.;The teachers work here.;The teachers working here.;The teachers is work here.;The teachers works here.;A;12
+201;7;3;Choose the correct sentence.;He work every day.;He works every day.;He are work every day.;He working every day.;B;12
+202;7;6;Choose the correct sentence.;They liking music.;They is like music.;They like music.;They likes music.;C;13
+203;7;2;Choose the correct sentence.;The cat sleeping on the sofa.;The cat are sleep on the sofa.;The cat sleep on the sofa.;The cat sleeps on the sofa.;D;12
+204;7;5;Choose the correct sentence.;We has two classes.;We have two classes.;We having two classes.;We is have two classes.;B;13
+205;7;1;Choose the correct sentence.;My mother cooking dinner.;My mother cooks dinner.;My mother cook dinner.;My mother are cook dinner.;B;11
+206;7;2;Choose the correct sentence.;The children is happy.;The children are happy.;The children am happy.;The children be happy.;B;12
+207;7;4;Choose the correct sentence.;He are do his homework.;He doing his homework.;He does his homework.;He do his homework.;C;13
+208;7;1;Choose the correct sentence.;These books is belong to me.;These books belong to me.;These books belonging to me.;These books belongs to me.;B;11
+209;7;6;Choose the correct sentence.;Anna are study English.;Anna study English.;Anna studies English.;Anna studying English.;C;13
+210;7;6;Choose the correct sentence.;The teachers is work here.;The teachers work here.;The teachers working here.;The teachers works here.;B;14
+211;8;8;Choose the correct preposition: The book is ___ the table.;at;to;on;from;C;14
+212;8;8;Choose the correct preposition: She lives ___ London.;in;on;at;to;A;15
+213;8;8;Choose the correct preposition: We arrive ___ 8 o'clock.;from;at;in;on;B;14
+214;8;7;Choose the correct preposition: The meeting is ___ Monday.;on;at;to;in;A;14
+215;8;7;Choose the correct preposition: He is going ___ school.;at;in;to;on;C;15
+216;8;4;Choose the correct preposition: They are ___ the kitchen.;in;on;to;at;A;12
+217;8;5;Choose the correct preposition: I received a letter ___ my friend.;from;to;on;at;A;14
+218;8;1;Choose the correct preposition: The picture is ___ the wall.;on;from;at;in;A;11
+219;8;3;Choose the correct preposition: We usually travel ___ summer.;on;to;in;at;C;13
+220;8;1;Choose the correct preposition: She walked ___ the room.;at;on;from;into;D;12
+221;8;2;Choose the correct preposition: The book is ___ the table.;on;to;at;from;A;12
+222;8;8;Choose the correct preposition: She lives ___ London.;to;at;in;on;C;15
+223;8;1;Choose the correct preposition: We arrive ___ 8 o'clock.;in;on;from;at;D;11
+224;8;4;Choose the correct preposition: The meeting is ___ Monday.;at;in;on;to;C;13
+225;8;3;Choose the correct preposition: He is going ___ school.;at;in;on;to;D;12
+226;8;2;Choose the correct preposition: They are ___ the kitchen.;at;in;to;on;B;12
+227;8;4;Choose the correct preposition: I received a letter ___ my friend.;from;on;to;at;A;13
+228;8;3;Choose the correct preposition: The picture is ___ the wall.;on;from;in;at;A;13
+229;8;6;Choose the correct preposition: We usually travel ___ summer.;in;at;to;on;A;13
+230;8;7;Choose the correct preposition: She walked ___ the room.;from;at;on;into;D;15
+231;8;7;Choose the correct preposition: The book is ___ the table.;to;from;at;on;D;15
+232;8;5;Choose the correct preposition: She lives ___ London.;at;in;to;on;B;13
+233;8;2;Choose the correct preposition: We arrive ___ 8 o'clock.;at;from;in;on;A;12
+234;8;8;Choose the correct preposition: The meeting is ___ Monday.;at;on;in;to;B;15
+235;8;8;Choose the correct preposition: He is going ___ school.;to;at;in;on;A;15
+236;8;2;Choose the correct preposition: They are ___ the kitchen.;on;at;in;to;C;11
+237;8;1;Choose the correct preposition: I received a letter ___ my friend.;at;from;to;on;B;11
+238;8;3;Choose the correct preposition: The picture is ___ the wall.;at;from;in;on;D;12
+239;8;1;Choose the correct preposition: We usually travel ___ summer.;in;to;at;on;A;12
+240;8;1;Choose the correct preposition: She walked ___ the room.;on;into;at;from;B;11
+241;9;6;Choose the correct adjective: The elephant is very ___.;short;thin;large;small;C;13
+242;9;5;Choose the comparative form of 'tall'.;tallest;talling;more tall;taller;D;13
+243;9;3;Choose the superlative form of 'small'.;smallest;smaller;more small;smalling;A;12
+244;9;1;Which sentence is correct?;This book is more interesting than that one.;This book is interestinger than that one.;This book is most interesting than that one.;This book more interesting that one.;A;12
+245;9;1;Choose the opposite of 'easy'.;Simple;Quiet;Difficult;Early;C;11
+246;9;1;Choose the comparative form of 'good'.;best;more good;better;gooder;C;11
+247;9;3;Choose the superlative form of 'bad'.;worst;more bad;worse;badder;A;12
+248;9;6;Which sentence is correct?;John is tallest than Peter.;John is tall than Peter.;John more tall than Peter.;John is taller than Peter.;D;14
+249;9;7;Which adjective describes something that costs a lot?;Cheap;Expensive;Empty;Weak;B;14
+250;9;7;Choose the comparative form of 'beautiful'.;more beautiful;beautifuler;most beautiful;beautifulest;A;15
+251;9;5;Choose the correct adjective: The elephant is very ___.;thin;small;short;large;D;14
+252;9;6;Choose the comparative form of 'tall'.;tallest;talling;taller;more tall;C;13
+253;9;6;Choose the superlative form of 'small'.;smallest;more small;smaller;smalling;A;14
+254;9;5;Which sentence is correct?;This book is most interesting than that one.;This book is more interesting than that one.;This book is interestinger than that one.;This book more interesting that one.;B;13
+255;9;5;Choose the opposite of 'easy'.;Early;Simple;Quiet;Difficult;D;13
+256;9;1;Choose the comparative form of 'good'.;more good;best;better;gooder;C;11
+257;9;1;Choose the superlative form of 'bad'.;more bad;worst;badder;worse;B;11
+258;9;5;Which sentence is correct?;John more tall than Peter.;John is tallest than Peter.;John is tall than Peter.;John is taller than Peter.;D;13
+259;9;7;Which adjective describes something that costs a lot?;Empty;Weak;Cheap;Expensive;D;14
+260;9;5;Choose the comparative form of 'beautiful'.;beautifulest;more beautiful;beautifuler;most beautiful;B;14
+261;9;3;Choose the correct adjective: The elephant is very ___.;large;short;thin;small;A;13
+262;9;2;Choose the comparative form of 'tall'.;talling;tallest;more tall;taller;D;12
+263;9;6;Choose the superlative form of 'small'.;smalling;more small;smaller;smallest;D;13
+264;9;5;Which sentence is correct?;This book more interesting that one.;This book is more interesting than that one.;This book is interestinger than that one.;This book is most interesting than that one.;B;13
+265;9;7;Choose the opposite of 'easy'.;Simple;Difficult;Early;Quiet;B;14
+266;9;4;Choose the comparative form of 'good'.;better;gooder;best;more good;A;13
+267;9;6;Choose the superlative form of 'bad'.;badder;worse;more bad;worst;D;14
+268;9;2;Which sentence is correct?;John more tall than Peter.;John is tall than Peter.;John is tallest than Peter.;John is taller than Peter.;D;11
+269;9;2;Which adjective describes something that costs a lot?;Cheap;Empty;Expensive;Weak;C;12
+270;9;7;Choose the comparative form of 'beautiful'.;beautifulest;beautifuler;more beautiful;most beautiful;C;14
+271;10;1;Choose the correctly constructed sentence.;English I every study day.;Every day study English I.;Study I English every day.;I study English every day.;D;11
+272;10;5;Choose the correctly constructed sentence.;She reading is a book.;She is reading a book.;A book she reading is.;Reading she is book a.;B;13
+273;10;5;Choose the correctly constructed question.;Where you do live?;Do where you live?;Where do you live?;Where live you do?;C;13
+274;10;1;Choose the correctly constructed sentence.;Went they to park yesterday the.;To the park yesterday they wented.;They yesterday went park to the.;They went to the park yesterday.;D;11
+275;10;3;Choose the correctly constructed sentence.;My brother plays tennis on Saturdays.;Plays my brother on Saturdays tennis.;On tennis Saturdays my brother plays.;My brother tennis plays on Saturdays.;A;13
+276;10;3;Choose the correctly constructed question.;What does time the class starts?;Does what time the class start?;What time does the class start?;What time the class does start?;C;12
+277;10;1;Choose the correctly constructed sentence.;We English learning are.;Learning we are English.;We are learning English.;Are English we learning.;C;11
+278;10;1;Choose the correctly constructed sentence.;Tomorrow a meeting I have.;A meeting have tomorrow I.;Have I tomorrow a meeting.;I have a meeting tomorrow.;D;11
+279;10;1;Choose the correctly constructed question.;The movie did you saw?;Did you see the movie?;You did see the movie?;Did see you the movie?;B;11
+280;10;1;Choose the correctly constructed sentence.;She English speaks very well.;Very well speaks she English.;She speaks English very well.;Speaks English she very well.;C;12
+281;10;4;Choose the correctly constructed sentence.;Every day study English I.;Study I English every day.;I study English every day.;English I every study day.;C;12
+282;10;2;Choose the correctly constructed sentence.;Reading she is book a.;She reading is a book.;A book she reading is.;She is reading a book.;D;12
+283;10;3;Choose the correctly constructed question.;Where do you live?;Where live you do?;Do where you live?;Where you do live?;A;12
+284;10;5;Choose the correctly constructed sentence.;To the park yesterday they wented.;They went to the park yesterday.;They yesterday went park to the.;Went they to park yesterday the.;B;13
+285;10;3;Choose the correctly constructed sentence.;On tennis Saturdays my brother plays.;Plays my brother on Saturdays tennis.;My brother tennis plays on Saturdays.;My brother plays tennis on Saturdays.;D;13
+286;10;2;Choose the correctly constructed question.;Does what time the class start?;What does time the class starts?;What time does the class start?;What time the class does start?;C;12
+287;10;5;Choose the correctly constructed sentence.;We English learning are.;We are learning English.;Are English we learning.;Learning we are English.;B;14
+288;10;2;Choose the correctly constructed sentence.;Have I tomorrow a meeting.;A meeting have tomorrow I.;I have a meeting tomorrow.;Tomorrow a meeting I have.;C;12
+289;10;3;Choose the correctly constructed question.;Did see you the movie?;Did you see the movie?;The movie did you saw?;You did see the movie?;B;12
+290;10;1;Choose the correctly constructed sentence.;Very well speaks she English.;Speaks English she very well.;She English speaks very well.;She speaks English very well.;D;11
+291;10;5;Choose the correctly constructed sentence.;English I every study day.;Study I English every day.;I study English every day.;Every day study English I.;C;13
+292;10;3;Choose the correctly constructed sentence.;A book she reading is.;She is reading a book.;Reading she is book a.;She reading is a book.;B;12
+293;10;5;Choose the correctly constructed question.;Where you do live?;Do where you live?;Where live you do?;Where do you live?;D;14
+294;10;1;Choose the correctly constructed sentence.;To the park yesterday they wented.;They yesterday went park to the.;Went they to park yesterday the.;They went to the park yesterday.;D;11
+295;10;2;Choose the correctly constructed sentence.;Plays my brother on Saturdays tennis.;My brother plays tennis on Saturdays.;On tennis Saturdays my brother plays.;My brother tennis plays on Saturdays.;B;12
+296;10;3;Choose the correctly constructed question.;What time does the class start?;Does what time the class start?;What time the class does start?;What does time the class starts?;A;12
+297;10;1;Choose the correctly constructed sentence.;Learning we are English.;We English learning are.;Are English we learning.;We are learning English.;D;11
+298;10;5;Choose the correctly constructed sentence.;Have I tomorrow a meeting.;I have a meeting tomorrow.;A meeting have tomorrow I.;Tomorrow a meeting I have.;B;13
+299;10;1;Choose the correctly constructed question.;Did see you the movie?;You did see the movie?;Did you see the movie?;The movie did you saw?;C;21
+300;10;2;Choose the correctly constructed sentence.;Speaks English she very well.;She English speaks very well.;Very well speaks she English.;She speaks English very well.;D;21
+301;11;5;¿Cuál es la respuesta apropiada a «¡Buenos días!»?;¡Buenas noches!;Nos vemos ayer.;Tengo once años.;¡Buenos días!;D;13
+302;11;2;¿Qué expresión se usa al conocer a alguien por primera vez?;Llegué tarde ayer.;Mucho gusto.;Nos vemos la semana pasada.;Adiós para siempre.;B;11
+303;11;2;¿Cómo te presentas?;Nombre mi Ana.;Tu nombre es Ana.;Me llamo Ana.;Su nombre Ana.;C;16
+304;11;5;¿Cuál es una forma cortés de preguntar el nombre?;¿Dónde tu nombre?;¿Cuántos años tu nombre?;¿Cómo te llamas?;¿Quién tú nombre?;C;16
+305;11;2;¿Cuál responde correctamente a «¿Cómo estás?»?;Es lunes.;Estoy bien, gracias.;Soy de Canadá.;Me llamo Juan.;B;14
+306;11;4;¿Qué expresión indica que te vas?;Mucho gusto.;Buenos días.;Hasta luego.;¿Cómo estás?;C;19
+307;11;5;¿Qué puedes decir al encontrarte con un amigo?;Gracias ayer.;Buenas noches para dormir.;¡Hola!;¡Adiós para siempre!;C;13
+308;11;4;¿Cuál oración es una presentación correcta?;Soy es David.;Yo David soy.;Soy David.;David es yo.;C;11
+309;11;2;¿Cómo presentas a otra persona?;Mi es Carlos amigo este.;Carlos este mi es.;Amigo este Carlos mi.;Este es mi amigo Carlos.;D;19
+310;11;3;¿Qué expresa «Mucho gusto»?;Una petición de direcciones.;Una despedida.;Una pregunta sobre la edad.;Placer al conocer a alguien.;D;12
+311;11;5;¿Cuál es la respuesta apropiada a «¡Buenos días!»?;¡Buenos días!;Tengo once años.;Nos vemos ayer.;¡Buenas noches!;A;16
+312;11;5;¿Qué expresión se usa al conocer a alguien por primera vez?;Llegué tarde ayer.;Adiós para siempre.;Mucho gusto.;Nos vemos la semana pasada.;C;19
+313;11;1;¿Cómo te presentas?;Tu nombre es Ana.;Su nombre Ana.;Nombre mi Ana.;Me llamo Ana.;D;11
+314;11;1;¿Cuál es una forma cortés de preguntar el nombre?;¿Cuántos años tu nombre?;¿Dónde tu nombre?;¿Cómo te llamas?;¿Quién tú nombre?;C;12
+315;11;1;¿Cuál responde correctamente a «¿Cómo estás?»?;Soy de Canadá.;Es lunes.;Me llamo Juan.;Estoy bien, gracias.;D;17
+316;11;5;¿Qué expresión indica que te vas?;¿Cómo estás?;Hasta luego.;Mucho gusto.;Buenos días.;B;12
+317;11;5;¿Qué puedes decir al encontrarte con un amigo?;Buenas noches para dormir.;¡Hola!;¡Adiós para siempre!;Gracias ayer.;B;17
+318;11;5;¿Cuál oración es una presentación correcta?;Soy David.;David es yo.;Yo David soy.;Soy es David.;A;17
+319;11;3;¿Cómo presentas a otra persona?;Este es mi amigo Carlos.;Mi es Carlos amigo este.;Amigo este Carlos mi.;Carlos este mi es.;A;15
+320;11;1;¿Qué expresa «Mucho gusto»?;Una despedida.;Una petición de direcciones.;Una pregunta sobre la edad.;Placer al conocer a alguien.;D;11
+321;11;5;¿Cuál es la respuesta apropiada a «¡Buenos días!»?;¡Buenas noches!;Tengo once años.;Nos vemos ayer.;¡Buenos días!;D;13
+322;11;2;¿Qué expresión se usa al conocer a alguien por primera vez?;Llegué tarde ayer.;Adiós para siempre.;Nos vemos la semana pasada.;Mucho gusto.;D;14
+323;11;5;¿Cómo te presentas?;Tu nombre es Ana.;Su nombre Ana.;Me llamo Ana.;Nombre mi Ana.;C;17
+324;11;4;¿Cuál es una forma cortés de preguntar el nombre?;¿Cuántos años tu nombre?;¿Dónde tu nombre?;¿Cómo te llamas?;¿Quién tú nombre?;C;12
+325;11;1;¿Cuál responde correctamente a «¿Cómo estás?»?;Estoy bien, gracias.;Soy de Canadá.;Me llamo Juan.;Es lunes.;A;17
+326;11;4;¿Qué expresión indica que te vas?;¿Cómo estás?;Buenos días.;Hasta luego.;Mucho gusto.;C;15
+327;11;1;¿Qué puedes decir al encontrarte con un amigo?;¡Hola!;¡Adiós para siempre!;Buenas noches para dormir.;Gracias ayer.;A;19
+328;11;5;¿Cuál oración es una presentación correcta?;Soy David.;David es yo.;Yo David soy.;Soy es David.;A;13
+329;11;1;¿Cómo presentas a otra persona?;Carlos este mi es.;Este es mi amigo Carlos.;Mi es Carlos amigo este.;Amigo este Carlos mi.;B;17
+330;11;1;¿Qué expresa «Mucho gusto»?;Placer al conocer a alguien.;Una petición de direcciones.;Una despedida.;Una pregunta sobre la edad.;A;16
+331;12;3;¿Qué número viene después de diecinueve?;Veinte;Doce;Dieciocho;Noventa;A;11
+332;12;3;¿Cómo se escribe 30?;Tres;Treinta;Trigésimo;Trece;B;14
+333;12;2;¿Qué expresión corresponde a las 7:30?;Las siete menos cuarto;Las ocho y media;Las siete y media;Las siete y cuarto;C;14
+334;12;4;¿Qué día viene después del viernes?;Sábado;Jueves;Domingo;Lunes;A;14
+335;12;4;¿Qué mes viene después de marzo?;Junio;Abril;Mayo;Febrero;B;18
+336;12;2;¿Cómo se escribe 21.º con palabras?;Vigésimo primero;Veintiuno;Vigésimo segundo;Dos primero;A;15
+337;12;3;¿Qué hora es 12:00 p. m.?;Amanecer;Atardecer;Medianoche;Mediodía;D;14
+338;12;3;¿Qué número corresponde a «cincuenta y dos»?;15;25;72;52;D;15
+339;12;2;¿Qué día viene antes del lunes?;Sábado;Domingo;Viernes;Martes;B;14
+340;12;2;¿Cómo se dice 8:15?;Las ocho pasadas cuarto;Las ocho y media;Las ocho menos cuarto;Las ocho y cuarto;D;19
+341;12;2;¿Qué número viene después de diecinueve?;Dieciocho;Doce;Noventa;Veinte;D;16
+342;12;2;¿Cómo se escribe 30?;Tres;Treinta;Trece;Trigésimo;B;11
+343;12;2;¿Qué expresión corresponde a las 7:30?;Las siete y media;Las siete menos cuarto;Las ocho y media;Las siete y cuarto;A;18
+344;12;1;¿Qué día viene después del viernes?;Lunes;Sábado;Jueves;Domingo;B;13
+345;12;3;¿Qué mes viene después de marzo?;Febrero;Junio;Mayo;Abril;D;16
+346;12;1;¿Cómo se escribe 21.º con palabras?;Veintiuno;Dos primero;Vigésimo segundo;Vigésimo primero;D;16
+347;12;3;¿Qué hora es 12:00 p. m.?;Medianoche;Mediodía;Amanecer;Atardecer;B;14
+348;12;4;¿Qué número corresponde a «cincuenta y dos»?;72;25;15;52;D;17
+349;12;4;¿Qué día viene antes del lunes?;Domingo;Viernes;Sábado;Martes;A;15
+350;12;3;¿Cómo se dice 8:15?;Las ocho y media;Las ocho menos cuarto;Las ocho y cuarto;Las ocho pasadas cuarto;C;15
+351;12;4;¿Qué número viene después de diecinueve?;Veinte;Dieciocho;Doce;Noventa;A;15
+352;12;3;¿Cómo se escribe 30?;Tres;Trece;Treinta;Trigésimo;C;11
+353;12;2;¿Qué expresión corresponde a las 7:30?;Las siete y media;Las siete y cuarto;Las ocho y media;Las siete menos cuarto;A;19
+354;12;2;¿Qué día viene después del viernes?;Lunes;Jueves;Sábado;Domingo;C;15
+355;12;3;¿Qué mes viene después de marzo?;Abril;Mayo;Febrero;Junio;A;13
+356;12;4;¿Cómo se escribe 21.º con palabras?;Dos primero;Veintiuno;Vigésimo segundo;Vigésimo primero;D;18
+357;12;4;¿Qué hora es 12:00 p. m.?;Medianoche;Mediodía;Atardecer;Amanecer;B;15
+358;12;4;¿Qué número corresponde a «cincuenta y dos»?;15;72;52;25;C;17
+359;12;3;¿Qué día viene antes del lunes?;Viernes;Sábado;Domingo;Martes;C;19
+360;12;3;¿Cómo se dice 8:15?;Las ocho menos cuarto;Las ocho y cuarto;Las ocho pasadas cuarto;Las ocho y media;B;15
+361;13;6;¿Qué palabra significa «muy grande»?;Estrecho;Enorme;Pequeño;Débil;B;17
+362;13;1;¿Cuál es el contrario de «barato»?;Pequeño;Silencioso;Temprano;Caro;D;13
+363;13;3;¿Qué es una cocina?;Una habitación para cocinar;Un tipo de ropa;Un lugar para conducir;Una habitación para dormir;A;15
+364;13;7;¿Qué palabra significa «rápido»?;Veloz;Lento;Pesado;Tardío;A;12
+365;13;4;¿Qué objeto se usa para escribir?;Bolígrafo;Plato;Cuchara;Almohada;A;13
+366;13;2;¿Cuál es el contrario de «vacío»?;Silencioso;Joven;Lleno;Frío;C;15
+367;13;5;¿Dónde puedes pedir libros prestados?;Aeropuerto;Biblioteca;Panadería;Garaje;B;15
+368;13;2;¿Qué animal ladra normalmente?;Perro;Caballo;Gato;Pez;A;17
+369;13;4;¿Qué palabra significa «comprar»?;Perder;Adquirir;Vender;Prestar;B;18
+370;13;2;¿Qué palabra está relacionada con el tiempo atmosférico?;Lluvia;Cartera;Silla;Botella;A;16
+371;13;7;¿Qué palabra significa «muy grande»?;Enorme;Estrecho;Pequeño;Débil;A;12
+372;13;1;¿Cuál es el contrario de «barato»?;Caro;Temprano;Pequeño;Silencioso;A;17
+373;13;2;¿Qué es una cocina?;Un tipo de ropa;Una habitación para dormir;Una habitación para cocinar;Un lugar para conducir;C;14
+374;13;3;¿Qué palabra significa «rápido»?;Pesado;Lento;Veloz;Tardío;C;15
+375;13;4;¿Qué objeto se usa para escribir?;Cuchara;Bolígrafo;Almohada;Plato;B;18
+376;13;3;¿Cuál es el contrario de «vacío»?;Lleno;Joven;Frío;Silencioso;A;11
+377;13;5;¿Dónde puedes pedir libros prestados?;Aeropuerto;Panadería;Biblioteca;Garaje;C;13
+378;13;3;¿Qué animal ladra normalmente?;Gato;Perro;Caballo;Pez;B;16
+379;13;1;¿Qué palabra significa «comprar»?;Vender;Prestar;Adquirir;Perder;C;14
+380;13;3;¿Qué palabra está relacionada con el tiempo atmosférico?;Lluvia;Cartera;Botella;Silla;A;14
+381;13;5;¿Qué palabra significa «muy grande»?;Pequeño;Estrecho;Enorme;Débil;C;17
+382;13;3;¿Cuál es el contrario de «barato»?;Silencioso;Pequeño;Temprano;Caro;D;13
+383;13;1;¿Qué es una cocina?;Una habitación para dormir;Una habitación para cocinar;Un lugar para conducir;Un tipo de ropa;B;15
+384;13;2;¿Qué palabra significa «rápido»?;Tardío;Pesado;Lento;Veloz;D;19
+385;13;1;¿Qué objeto se usa para escribir?;Cuchara;Plato;Almohada;Bolígrafo;D;14
+386;13;1;¿Cuál es el contrario de «vacío»?;Lleno;Silencioso;Joven;Frío;A;11
+387;13;6;¿Dónde puedes pedir libros prestados?;Aeropuerto;Panadería;Garaje;Biblioteca;D;16
+388;13;6;¿Qué animal ladra normalmente?;Perro;Caballo;Gato;Pez;A;17
+389;13;3;¿Qué palabra significa «comprar»?;Adquirir;Vender;Prestar;Perder;A;17
+390;13;7;¿Qué palabra está relacionada con el tiempo atmosférico?;Cartera;Botella;Lluvia;Silla;C;13
+391;14;1;Elige el artículo: ___ manzana.;unos;una;el;un;B;16
+392;14;3;Elige el artículo: ___ libro de la mesa es mío.;El;Un;Los;Una;A;17
+393;14;3;Elige el artículo: Ella es ___ profesora.;una;un;unos;el;A;17
+394;14;4;Elige el artículo: Él comió ___ naranja.;el;unos;una;un;C;12
+395;14;1;Elige el artículo: Vi ___ perro en el parque.;una;un;unas;el;B;17
+396;14;6;Elige el artículo: ___ sol es una estrella.;El;Los;Un;Una;A;12
+397;14;7;Elige el artículo: Ella quiere ser ___ ingeniera.;una;unos;un;el;A;19
+398;14;1;Elige el artículo: Tuvimos ___ cena maravillosa.;una;unos;un;el;A;11
+399;14;5;Elige el artículo: Necesito ___ paraguas.;un;una;unos;la;A;18
+400;14;8;Elige el artículo: ___ Estados Unidos es un país.;El;Unos;Una;Los;D;17
+401;14;5;Elige el artículo: ___ manzana.;el;unos;un;una;D;19
+402;14;2;Elige el artículo: ___ libro de la mesa es mío.;Los;Un;Una;El;D;14
+403;14;7;Elige el artículo: Ella es ___ profesora.;un;unos;una;el;C;13
+404;14;6;Elige el artículo: Él comió ___ naranja.;un;el;una;unos;C;19
+405;14;6;Elige el artículo: Vi ___ perro en el parque.;el;una;unas;un;D;18
+406;14;6;Elige el artículo: ___ sol es una estrella.;Una;Un;Los;El;D;12
+407;14;2;Elige el artículo: Ella quiere ser ___ ingeniera.;un;unos;una;el;C;12
+408;14;4;Elige el artículo: Tuvimos ___ cena maravillosa.;una;un;el;unos;A;18
+409;14;4;Elige el artículo: Necesito ___ paraguas.;unos;un;una;la;B;15
+410;14;1;Elige el artículo: ___ Estados Unidos es un país.;Una;Unos;Los;El;C;12
+411;14;4;Elige el artículo: ___ manzana.;una;unos;un;el;A;16
+412;14;3;Elige el artículo: ___ libro de la mesa es mío.;El;Los;Una;Un;A;18
+413;14;2;Elige el artículo: Ella es ___ profesora.;una;un;el;unos;A;11
+414;14;6;Elige el artículo: Él comió ___ naranja.;una;el;unos;un;A;12
+415;14;8;Elige el artículo: Vi ___ perro en el parque.;un;el;una;unas;A;15
+416;14;4;Elige el artículo: ___ sol es una estrella.;El;Una;Un;Los;A;18
+417;14;8;Elige el artículo: Ella quiere ser ___ ingeniera.;un;el;una;unos;C;18
+418;14;4;Elige el artículo: Tuvimos ___ cena maravillosa.;una;unos;un;el;A;13
+419;14;2;Elige el artículo: Necesito ___ paraguas.;un;una;la;unos;A;18
+420;14;5;Elige el artículo: ___ Estados Unidos es un país.;Una;Los;El;Unos;B;19
+421;15;3;María es mi hermana. ___ es médica.;Ellos;Ella;Él;Nosotros;B;18
+422;15;3;Este libro me pertenece. Es ___.;mi;yo;me;mío;D;13
+423;15;5;Tomás y yo somos amigos. ___ estudiamos juntos.;Él;Ellos;Nosotros;Los;C;18
+424;15;3;Sara tiene un gato. ___ gato es negro.;Vuestro;Sus;Nuestro;Su;D;18
+425;15;5;Vi a Juan y María. Hablé con ___.;ella;nosotros;ellos;su;C;19
+426;15;1;Tenemos una casa. Es ___ casa.;nosotros;nos;nuestra;nuestro;C;13
+427;15;2;El perro tiene hambre. ___ necesita comida.;Nosotros;Ella;Ellos;Él;D;11
+428;15;5;Tú tienes un coche. Es ___ coche.;te;tu;nuestro;tuyo;B;18
+429;15;1;Mi hermano y yo fuimos a casa. ___ estábamos cansados.;Él;Ellos;Ella;Nosotros;D;14
+430;15;3;Los niños tienen juguetes. Los juguetes son ___.;suyos;sus;ellos;los;A;15
+431;15;3;María es mi hermana. ___ es médica.;Nosotros;Ella;Él;Ellos;B;15
+432;15;2;Este libro me pertenece. Es ___.;mío;me;yo;mi;A;16
+433;15;5;Tomás y yo somos amigos. ___ estudiamos juntos.;Ellos;Él;Los;Nosotros;D;12
+434;15;3;Sara tiene un gato. ___ gato es negro.;Sus;Su;Vuestro;Nuestro;B;13
+435;15;2;Vi a Juan y María. Hablé con ___.;ellos;su;ella;nosotros;A;16
+436;15;5;Tenemos una casa. Es ___ casa.;nuestro;nosotros;nuestra;nos;C;13
+437;15;2;El perro tiene hambre. ___ necesita comida.;Nosotros;Él;Ellos;Ella;B;18
+438;15;1;Tú tienes un coche. Es ___ coche.;tu;nuestro;tuyo;te;A;17
+439;15;5;Mi hermano y yo fuimos a casa. ___ estábamos cansados.;Ellos;Él;Ella;Nosotros;D;13
+440;15;5;Los niños tienen juguetes. Los juguetes son ___.;sus;los;ellos;suyos;D;16
+441;15;2;María es mi hermana. ___ es médica.;Nosotros;Ella;Ellos;Él;B;11
+442;15;2;Este libro me pertenece. Es ___.;mío;me;mi;yo;A;17
+443;15;3;Tomás y yo somos amigos. ___ estudiamos juntos.;Nosotros;Los;Ellos;Él;A;17
+444;15;5;Sara tiene un gato. ___ gato es negro.;Sus;Nuestro;Su;Vuestro;C;11
+445;15;3;Vi a Juan y María. Hablé con ___.;nosotros;ella;ellos;su;C;13
+446;15;2;Tenemos una casa. Es ___ casa.;nuestro;nos;nosotros;nuestra;D;19
+447;15;1;El perro tiene hambre. ___ necesita comida.;Nosotros;Ellos;Ella;Él;D;19
+448;15;1;Tú tienes un coche. Es ___ coche.;tuyo;te;tu;nuestro;C;13
+449;15;4;Mi hermano y yo fuimos a casa. ___ estábamos cansados.;Nosotros;Ellos;Ella;Él;A;19
+450;15;4;Los niños tienen juguetes. Los juguetes son ___.;suyos;sus;los;ellos;A;14
+451;16;1;Ella ___ a la escuela todos los días.;voy;ir;va;van;C;13
+452;16;4;Ellos ___ español en casa.;estudian;estudia;estudiar;estudiamos;A;19
+453;16;2;Él ___ café todas las mañanas.;bebo;beben;beber;bebe;D;17
+454;16;3;Nosotros ___ al fútbol los domingos.;jugamos;juega;jugar;juegan;A;12
+455;16;5;Mi padre ___ en un hospital.;trabajan;trabaja;trabajar;trabajo;B;12
+456;16;1;Los estudiantes ___ preparados.;estoy;está;estar;están;D;16
+457;16;9;Ella ___ un coche nuevo.;tengo;tener;tienen;tiene;D;16
+458;16;8;El perro ___ fuerte por la noche.;ladran;ladrar;ladra;ladro;C;12
+459;16;4;Mis amigos ___ en Madrid.;vive;vivimos;viven;vivir;C;11
+460;16;6;Hoy ___ muy frío.;hago;hacer;hacen;hace;D;15
+461;16;9;Ella ___ a la escuela todos los días.;ir;van;voy;va;D;12
+462;16;3;Ellos ___ español en casa.;estudian;estudiar;estudia;estudiamos;A;19
+463;16;9;Él ___ café todas las mañanas.;bebo;beber;beben;bebe;D;19
+464;16;6;Nosotros ___ al fútbol los domingos.;juegan;jugamos;jugar;juega;B;13
+465;16;7;Mi padre ___ en un hospital.;trabaja;trabajar;trabajan;trabajo;A;17
+466;16;1;Los estudiantes ___ preparados.;estar;estoy;están;está;C;18
+467;16;2;Ella ___ un coche nuevo.;tengo;tener;tienen;tiene;D;13
+468;16;1;El perro ___ fuerte por la noche.;ladro;ladrar;ladra;ladran;C;11
+469;16;9;Mis amigos ___ en Madrid.;vive;vivimos;viven;vivir;C;19
+470;16;3;Hoy ___ muy frío.;hace;hago;hacer;hacen;A;17
+471;16;1;Ella ___ a la escuela todos los días.;ir;va;voy;van;B;12
+472;16;7;Ellos ___ español en casa.;estudiar;estudia;estudian;estudiamos;C;14
+473;16;4;Él ___ café todas las mañanas.;beben;bebo;beber;bebe;D;14
+474;16;8;Nosotros ___ al fútbol los domingos.;juegan;juega;jugar;jugamos;D;17
+475;16;8;Mi padre ___ en un hospital.;trabajo;trabaja;trabajar;trabajan;B;14
+476;16;9;Los estudiantes ___ preparados.;están;está;estar;estoy;A;11
+477;16;1;Ella ___ un coche nuevo.;tiene;tener;tengo;tienen;A;13
+478;16;7;El perro ___ fuerte por la noche.;ladrar;ladran;ladro;ladra;D;11
+479;16;4;Mis amigos ___ en Madrid.;vivimos;viven;vive;vivir;B;16
+480;16;3;Hoy ___ muy frío.;hacen;hago;hace;hacer;C;14
+481;17;6;Elige la oración correcta.;Él trabajando todos los días.;Él trabaja todos los días.;Él trabajan todos los días.;Él trabajar todos los días.;B;11
+482;17;1;Elige la oración correcta.;Ellos es estudiar español.;Ellos estudiando español.;Ellos estudia español.;Ellos estudian español.;D;18
+483;17;5;Elige la oración correcta.;El gato durmiendo en el sofá.;El gato duerme en el sofá.;El gato duermen en el sofá.;El gato dormir en el sofá.;B;19
+484;17;4;Elige la oración correcta.;Nosotros tenemos dos clases.;Nosotros tener dos clases.;Nosotros tiene dos clases.;Nosotros tienen dos clases.;A;19
+485;17;5;Elige la oración correcta.;Mi madre cocinan la cena.;Mi madre cocinando la cena.;Mi madre cocina la cena.;Mi madre cocinar la cena.;C;14
+486;17;6;Elige la oración correcta.;Los niños estoy contentos.;Los niños está contentos.;Los niños están contentos.;Los niños estar contentos.;C;13
+487;17;2;Elige la oración correcta.;Él haciendo su tarea.;Él hace su tarea.;Él hacen su tarea.;Él hacer su tarea.;B;12
+488;17;4;Elige la oración correcta.;Estos libros perteneciendo.;Estos libros pertenecerme.;Estos libros me pertenecen.;Estos libros me pertenece.;C;19
+489;17;3;Elige la oración correcta.;Ana estudiando español.;Ana estudiar español.;Ana estudian español.;Ana estudia español.;D;16
+490;17;6;Elige la oración correcta.;Los profesores trabajan aquí.;Los profesores trabajar aquí.;Los profesores trabajando aquí.;Los profesores trabaja aquí.;A;16
+491;17;3;Elige la oración correcta.;Él trabajar todos los días.;Él trabajando todos los días.;Él trabaja todos los días.;Él trabajan todos los días.;C;12
+492;17;2;Elige la oración correcta.;Ellos estudia español.;Ellos estudiando español.;Ellos estudian español.;Ellos es estudiar español.;C;16
+493;17;1;Elige la oración correcta.;El gato durmiendo en el sofá.;El gato duermen en el sofá.;El gato dormir en el sofá.;El gato duerme en el sofá.;D;13
+494;17;2;Elige la oración correcta.;Nosotros tenemos dos clases.;Nosotros tienen dos clases.;Nosotros tener dos clases.;Nosotros tiene dos clases.;A;13
+495;17;5;Elige la oración correcta.;Mi madre cocinando la cena.;Mi madre cocinan la cena.;Mi madre cocinar la cena.;Mi madre cocina la cena.;D;19
+496;17;1;Elige la oración correcta.;Los niños estoy contentos.;Los niños estar contentos.;Los niños está contentos.;Los niños están contentos.;D;12
+497;17;6;Elige la oración correcta.;Él hacen su tarea.;Él haciendo su tarea.;Él hacer su tarea.;Él hace su tarea.;D;11
+498;17;3;Elige la oración correcta.;Estos libros pertenecerme.;Estos libros perteneciendo.;Estos libros me pertenece.;Estos libros me pertenecen.;D;18
+499;17;4;Elige la oración correcta.;Ana estudiando español.;Ana estudiar español.;Ana estudia español.;Ana estudian español.;C;18
+500;17;4;Elige la oración correcta.;Los profesores trabajando aquí.;Los profesores trabajar aquí.;Los profesores trabajan aquí.;Los profesores trabaja aquí.;C;11
+501;17;5;Elige la oración correcta.;Él trabajando todos los días.;Él trabajar todos los días.;Él trabaja todos los días.;Él trabajan todos los días.;C;19
+502;17;4;Elige la oración correcta.;Ellos estudia español.;Ellos es estudiar español.;Ellos estudian español.;Ellos estudiando español.;C;18
+503;17;4;Elige la oración correcta.;El gato durmiendo en el sofá.;El gato duermen en el sofá.;El gato dormir en el sofá.;El gato duerme en el sofá.;D;13
+504;17;3;Elige la oración correcta.;Nosotros tienen dos clases.;Nosotros tiene dos clases.;Nosotros tenemos dos clases.;Nosotros tener dos clases.;C;18
+505;17;6;Elige la oración correcta.;Mi madre cocinar la cena.;Mi madre cocinan la cena.;Mi madre cocinando la cena.;Mi madre cocina la cena.;D;13
+506;17;5;Elige la oración correcta.;Los niños está contentos.;Los niños estoy contentos.;Los niños estar contentos.;Los niños están contentos.;D;17
+507;17;5;Elige la oración correcta.;Él hacen su tarea.;Él hace su tarea.;Él hacer su tarea.;Él haciendo su tarea.;B;19
+508;17;1;Elige la oración correcta.;Estos libros perteneciendo.;Estos libros me pertenecen.;Estos libros pertenecerme.;Estos libros me pertenece.;B;12
+509;17;3;Elige la oración correcta.;Ana estudiando español.;Ana estudian español.;Ana estudia español.;Ana estudiar español.;C;11
+510;17;5;Elige la oración correcta.;Los profesores trabajando aquí.;Los profesores trabaja aquí.;Los profesores trabajan aquí.;Los profesores trabajar aquí.;C;16
+511;18;1;El libro está ___ la mesa.;para;desde;sobre;a;C;13
+512;18;7;Ella vive ___ Madrid.;a;desde;en;sobre;C;12
+513;18;3;Llegamos ___ las ocho.;sobre;a;en;desde;B;12
+514;18;2;La reunión es ___ lunes.;desde;a;el;en;C;18
+515;18;7;Él va ___ la escuela.;en;desde;sobre;a;D;17
+516;18;8;Ellos están ___ la cocina.;en;a;sobre;para;A;16
+517;18;7;Recibí una carta ___ mi amigo.;a;de;para;en;B;18
+518;18;1;El cuadro está ___ la pared.;a;de;en;para;C;16
+519;18;3;Viajamos ___ verano.;a;en;para;de;B;17
+520;18;2;Ella entró ___ la habitación.;para;en;de;a;B;15
+521;18;7;El libro está ___ la mesa.;sobre;desde;para;a;A;15
+522;18;2;Ella vive ___ Madrid.;en;sobre;desde;a;A;16
+523;18;8;Llegamos ___ las ocho.;a;sobre;desde;en;A;16
+524;18;6;La reunión es ___ lunes.;el;en;desde;a;A;11
+525;18;5;Él va ___ la escuela.;sobre;desde;a;en;C;19
+526;18;2;Ellos están ___ la cocina.;sobre;en;para;a;B;15
+527;18;5;Recibí una carta ___ mi amigo.;a;en;para;de;D;19
+528;18;5;El cuadro está ___ la pared.;en;a;para;de;A;11
+529;18;3;Viajamos ___ verano.;a;en;para;de;B;12
+530;18;6;Ella entró ___ la habitación.;en;para;de;a;A;11
+531;18;5;El libro está ___ la mesa.;a;sobre;para;desde;B;13
+532;18;5;Ella vive ___ Madrid.;desde;en;sobre;a;B;11
+533;18;3;Llegamos ___ las ocho.;a;sobre;desde;en;A;17
+534;18;2;La reunión es ___ lunes.;el;a;desde;en;A;14
+535;18;8;Él va ___ la escuela.;desde;a;sobre;en;B;14
+536;18;4;Ellos están ___ la cocina.;sobre;en;para;a;B;18
+537;18;8;Recibí una carta ___ mi amigo.;para;de;en;a;B;12
+538;18;6;El cuadro está ___ la pared.;a;de;en;para;C;15
+539;18;2;Viajamos ___ verano.;para;en;de;a;B;12
+540;18;4;Ella entró ___ la habitación.;en;a;para;de;A;19
+541;19;5;El elefante es muy ___.;delgado;grande;pequeño;corto;B;14
+542;19;1;Elige el comparativo de «alto».;alto;altísimo;muy alto;más alto;D;14
+543;19;4;Elige el superlativo de «pequeño».;pequeñísimo solamente;muy pequeño;el más pequeño;más pequeño;C;15
+544;19;2;¿Cuál oración es correcta?;Este libro es muy más interesante que aquel.;Este libro es más interesante que aquel.;Este libro más interesante aquel.;Este libro es interesanter que aquel.;B;18
+545;19;3;Elige el contrario de «fácil».;Temprano;Tranquilo;Simple;Difícil;D;13
+546;19;2;Elige el comparativo de «bueno».;buenísimo;bueno;más bueno siempre;mejor;D;16
+547;19;7;Elige el superlativo de «malo».;malísimo solamente;el peor;peor;más malo;B;19
+548;19;5;¿Cuál oración es correcta?;Juan es más alto que Pedro.;Juan es el más alto que Pedro.;Juan más alto Pedro.;Juan es alto que Pedro.;A;19
+549;19;4;¿Qué adjetivo describe algo que cuesta mucho dinero?;Débil;Barato;Vacío;Caro;D;18
+550;19;7;Elige el comparativo de «bonito».;muy bonito;bonito más;bonitísimo;más bonito;D;13
+551;19;2;El elefante es muy ___.;corto;grande;pequeño;delgado;B;16
+552;19;6;Elige el comparativo de «alto».;altísimo;más alto;alto;muy alto;B;17
+553;19;5;Elige el superlativo de «pequeño».;el más pequeño;más pequeño;muy pequeño;pequeñísimo solamente;A;18
+554;19;3;¿Cuál oración es correcta?;Este libro más interesante aquel.;Este libro es interesanter que aquel.;Este libro es muy más interesante que aquel.;Este libro es más interesante que aquel.;D;17
+555;19;1;Elige el contrario de «fácil».;Temprano;Simple;Tranquilo;Difícil;D;14
+556;19;3;Elige el comparativo de «bueno».;más bueno siempre;buenísimo;mejor;bueno;C;18
+557;19;4;Elige el superlativo de «malo».;malísimo solamente;peor;el peor;más malo;C;11
+558;19;5;¿Cuál oración es correcta?;Juan más alto Pedro.;Juan es más alto que Pedro.;Juan es alto que Pedro.;Juan es el más alto que Pedro.;B;16
+559;19;7;¿Qué adjetivo describe algo que cuesta mucho dinero?;Débil;Barato;Caro;Vacío;C;12
+560;19;3;Elige el comparativo de «bonito».;bonitísimo;más bonito;muy bonito;bonito más;B;13
+561;19;4;El elefante es muy ___.;pequeño;delgado;corto;grande;D;11
+562;19;7;Elige el comparativo de «alto».;altísimo;muy alto;alto;más alto;D;11
+563;19;3;Elige el superlativo de «pequeño».;el más pequeño;pequeñísimo solamente;muy pequeño;más pequeño;A;13
+564;19;3;¿Cuál oración es correcta?;Este libro más interesante aquel.;Este libro es más interesante que aquel.;Este libro es muy más interesante que aquel.;Este libro es interesanter que aquel.;B;18
+565;19;1;Elige el contrario de «fácil».;Tranquilo;Temprano;Difícil;Simple;C;15
+566;19;4;Elige el comparativo de «bueno».;más bueno siempre;bueno;buenísimo;mejor;D;12
+567;19;3;Elige el superlativo de «malo».;malísimo solamente;más malo;el peor;peor;C;19
+568;19;6;¿Cuál oración es correcta?;Juan es más alto que Pedro.;Juan es alto que Pedro.;Juan más alto Pedro.;Juan es el más alto que Pedro.;A;17
+569;19;3;¿Qué adjetivo describe algo que cuesta mucho dinero?;Caro;Barato;Vacío;Débil;A;11
+570;19;6;Elige el comparativo de «bonito».;bonito más;bonitísimo;más bonito;muy bonito;C;16
+571;20;1;Elige la oración correctamente construida.;Todos estudio español yo días.;Español estudio los yo días todos.;Estudio yo español todos días los.;Estudio español todos los días.;D;14
+572;20;5;Elige la oración correctamente construida.;Un libro ella leyendo está.;Ella leyendo está un libro.;Leyendo ella un está libro.;Ella está leyendo un libro.;D;19
+573;20;5;Elige la pregunta correctamente construida.;¿Dónde tú vives?;¿Dónde vives?;¿Vives dónde tú?;¿Dónde vivir tú?;B;13
+574;20;3;Elige la oración correctamente construida.;Ellos fueron al parque ayer.;Fueron ellos al parque el ayer.;Ellos ir al parque ayer.;Ellos ayer fueron parque al.;A;13
+575;20;4;Elige la oración correctamente construida.;Mi hermano tenis juega los sábados.;Mi hermano juega al tenis los sábados.;Juega mi hermano los sábados tenis.;Los tenis sábados mi hermano juega.;B;18
+576;20;3;Elige la pregunta correctamente construida.;¿Empieza qué hora la clase?;¿Qué hora empieza a la clase?;¿A qué hora la clase empieza?;¿A qué hora empieza la clase?;D;13
+577;20;2;Elige la oración correctamente construida.;Estamos español aprendiendo.;Español aprendiendo estamos.;Estamos aprendiendo español.;Aprendiendo español estamos somos.;C;13
+578;20;5;Elige la oración correctamente construida.;Una tengo reunión mañana yo.;Tengo una reunión mañana.;Tengo mañana una reunión la.;Mañana una reunión tengo yo.;B;17
+579;20;1;Elige la pregunta correctamente construida.;¿Tú viste la película did?;¿Viste tú la película?;¿La película viste tú?;¿Viste la película?;D;11
+580;20;3;Elige la oración correctamente construida.;Ella español habla muy bien.;Habla español ella muy bien.;Ella habla español muy bien.;Muy bien habla ella español.;C;18
+581;20;1;Elige la oración correctamente construida.;Todos estudio español yo días.;Estudio yo español todos días los.;Español estudio los yo días todos.;Estudio español todos los días.;D;16
+582;20;3;Elige la oración correctamente construida.;Un libro ella leyendo está.;Ella está leyendo un libro.;Ella leyendo está un libro.;Leyendo ella un está libro.;B;17
+583;20;1;Elige la pregunta correctamente construida.;¿Dónde vivir tú?;¿Dónde vives?;¿Vives dónde tú?;¿Dónde tú vives?;B;17
+584;20;2;Elige la oración correctamente construida.;Fueron ellos al parque el ayer.;Ellos ayer fueron parque al.;Ellos ir al parque ayer.;Ellos fueron al parque ayer.;D;12
+585;20;4;Elige la oración correctamente construida.;Los tenis sábados mi hermano juega.;Mi hermano juega al tenis los sábados.;Mi hermano tenis juega los sábados.;Juega mi hermano los sábados tenis.;B;17
+586;20;2;Elige la pregunta correctamente construida.;¿Empieza qué hora la clase?;¿Qué hora empieza a la clase?;¿A qué hora empieza la clase?;¿A qué hora la clase empieza?;C;12
+587;20;1;Elige la oración correctamente construida.;Aprendiendo español estamos somos.;Estamos español aprendiendo.;Español aprendiendo estamos.;Estamos aprendiendo español.;D;18
+588;20;4;Elige la oración correctamente construida.;Tengo mañana una reunión la.;Una tengo reunión mañana yo.;Mañana una reunión tengo yo.;Tengo una reunión mañana.;D;18
+589;20;4;Elige la pregunta correctamente construida.;¿La película viste tú?;¿Viste tú la película?;¿Tú viste la película did?;¿Viste la película?;D;15
+590;20;4;Elige la oración correctamente construida.;Ella habla español muy bien.;Habla español ella muy bien.;Ella español habla muy bien.;Muy bien habla ella español.;A;12
+591;20;1;Elige la oración correctamente construida.;Estudio yo español todos días los.;Estudio español todos los días.;Español estudio los yo días todos.;Todos estudio español yo días.;B;12
+592;20;2;Elige la oración correctamente construida.;Un libro ella leyendo está.;Leyendo ella un está libro.;Ella leyendo está un libro.;Ella está leyendo un libro.;D;16
+593;20;1;Elige la pregunta correctamente construida.;¿Dónde tú vives?;¿Dónde vives?;¿Dónde vivir tú?;¿Vives dónde tú?;B;18
+594;20;2;Elige la oración correctamente construida.;Ellos ayer fueron parque al.;Ellos ir al parque ayer.;Fueron ellos al parque el ayer.;Ellos fueron al parque ayer.;D;14
+595;20;2;Elige la oración correctamente construida.;Los tenis sábados mi hermano juega.;Mi hermano juega al tenis los sábados.;Mi hermano tenis juega los sábados.;Juega mi hermano los sábados tenis.;B;16
+596;20;3;Elige la pregunta correctamente construida.;¿Qué hora empieza a la clase?;¿Empieza qué hora la clase?;¿A qué hora la clase empieza?;¿A qué hora empieza la clase?;D;13
+597;20;1;Elige la oración correctamente construida.;Estamos español aprendiendo.;Aprendiendo español estamos somos.;Español aprendiendo estamos.;Estamos aprendiendo español.;D;12
+598;20;1;Elige la oración correctamente construida.;Una tengo reunión mañana yo.;Mañana una reunión tengo yo.;Tengo una reunión mañana.;Tengo mañana una reunión la.;C;11
+599;20;5;Elige la pregunta correctamente construida.;¿Viste tú la película?;¿Viste la película?;¿La película viste tú?;¿Tú viste la película did?;B;12
+600;20;3;Elige la oración correctamente construida.;Ella habla español muy bien.;Ella español habla muy bien.;Muy bien habla ella español.;Habla español ella muy bien.;A;17

@@ -42,7 +42,7 @@
             <span>Pontuação</span>
           </div>
           <div class="lista-ranking">
-            {% for item in usuarios %}
+            {% for dado in dados %}
             <article
               class="linha-ranking {% if loop.index == 1 %} primeiro-lugar {% elif loop.index == 2 %} segundo-lugar {% elif loop.index == 3 %} terceiro-lugar {% endif %}"
             >
@@ -58,14 +58,12 @@
                 {% endif %}
               </div>
               <div class="informacoes-usuario-ranking">
-                <strong> {{ item.get_nome() }} </strong>
-                <span> @{{ item.get_login() }} </span>
+                <strong> {{ dado["nome"] }} </strong>
+                <span> @{{ dado["login"] }} </span>
               </div>
-              <div class="idioma-ranking">{{ item.idioma }}</div>
+              <div class="idioma-ranking">{{ dado["idioma"] }}</div>
               <div class="pontuacao-ranking">
-                <strong>
-                  {{ "%.2f"|format(item.get_pontuacao()|float) }}
-                </strong>
+                <strong> {{ dado["pontuacao"] }} </strong>
                 <span> pontos </span>
               </div>
             </article>

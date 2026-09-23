@@ -8,3 +8,13 @@
 8;1;8;Prepositions
 9;1;7;Adjectives and Comparisons
 10;1;5;Sentence Construction
+11;2;5;Saludos y presentaciones
+12;2;4;Números, fechas y horas
+13;2;7;Vocabulario
+14;2;8;Artículos
+15;2;5;Pronombres y posesivos
+16;2;9;Concordancia verbal
+17;2;6;Concordancia entre sujeto y verbo
+18;2;8;Preposiciones
+19;2;7;Adjetivos y comparaciones
+20;2;5;Construcción de oraciones

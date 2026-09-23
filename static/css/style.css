@@ -1571,12 +1571,12 @@ td {
   margin-top: 5px;
 }
 
-*
+/*
   =========================================
   CERTIFICADO
   =========================================
   */
-  .pagina-certificado {
+.pagina-certificado {
   max-width: 1000px;
   margin: 0 auto;
 } /* Certificado */
