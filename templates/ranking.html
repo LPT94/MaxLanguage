@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking - MaxLanguage</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">MaxLanguage</div>
+      <nav class="menu">
+        <a href="/usuario">Início</a>
+        <a href="/usuario">Lições</a>
+        <a href="/usuario/ranking" class="ativo">Ranking</a>
+        <a href="/usuario/certificado">Certificado</a>
+      </nav>
+      <div class="usuario-menu">
+        <span>{{ usuario.get_nome() }}</span>
+        <a href="/usuario/perfil">Perfil</a>
+        <a href="/logout">Sair</a>
+      </div>
+    </header>
+    <main class="conteudo-usuario">
+      <section class="pagina-ranking">
+        <div class="cabecalho-pagina-ranking">
+          <span class="rotulo-ranking"> Classificação </span>
+          <h1>Ranking</h1>
+          <p>
+            Veja a classificação dos usuários de acordo com a pontuação
+            acumulada.
+          </p>
+        </div>
+        <div class="card-ranking">
+          <div class="cabecalho-lista-ranking">
+            <span>Posição</span>
+            <span>Usuário</span>
+            <span>Idioma</span>
+            <span>Pontuação</span>
+          </div>
+          <div class="lista-ranking">
+            {% for item in usuarios %}
+            <article
+              class="linha-ranking {% if loop.index == 1 %} primeiro-lugar {% elif loop.index == 2 %} segundo-lugar {% elif loop.index == 3 %} terceiro-lugar {% endif %}"
+            >
+              <div class="posicao-ranking">
+                {% if loop.index == 1 %}
+                <span class="trofeu-ranking"> 🏆 </span>
+                {% elif loop.index == 2 %}
+                <span class="trofeu-ranking"> 🥈 </span>
+                {% elif loop.index == 3 %}
+                <span class="trofeu-ranking"> 🥉 </span>
+                {% else %}
+                <span class="numero-posicao-ranking"> {{ loop.index }} </span>
+                {% endif %}
+              </div>
+              <div class="informacoes-usuario-ranking">
+                <strong> {{ item.get_nome() }} </strong>
+                <span> @{{ item.get_login() }} </span>
+              </div>
+              <div class="idioma-ranking">{{ item.idioma }}</div>
+              <div class="pontuacao-ranking">
+                <strong>
+                  {{ "%.2f"|format(item.get_pontuacao()|float) }}
+                </strong>
+                <span> pontos </span>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

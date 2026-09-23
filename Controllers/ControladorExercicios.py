@@ -110,3 +110,14 @@ class ControladorExercicios(Controlador):
                                                      lista_dados[i][8], lista_dados[i][9]))
 
         return lista_registros
+    
+    def maior_nivel(self, codigos_licoes):
+        
+        max = 0
+        for codigo in codigos_licoes:
+            registros = self.registros_com_criterio({1:codigo})
+            for registro in registros:
+                if int(registro[2]) > max:
+                    max = int(registro[2])
+
+        return max

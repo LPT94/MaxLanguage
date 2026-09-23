@@ -20,10 +20,10 @@ def usuario():
     dados = []
 
     for licao in licoes:
-        nivel = int(min((pontuacao // 100) + 1, int(licao.get_total_niveis())))
-        progresso = nivel / int(licao.get_total_niveis()) * 100
+        nivel_abs = min(int(usuario.get_nivel_atual()), int(licao.get_total_niveis()))
+        progresso = nivel_abs / int(licao.get_total_niveis()) * 100
         dados.append({"licao": licao.get_descricao(), "nivel_maximo": int(licao.get_total_niveis()), 
-                      "nivel": nivel, "progresso": progresso, "id": licao.get_id()})
+                      "nivel": nivel_abs, "progresso": progresso, "id": licao.get_id()})
 
     return render_template("usuario.html", usuario=usuario, dados_licoes=dados)
 
@@ -150,10 +150,10 @@ def usuario_exercicio(id, nivel, exercicio_id):
         if float(usuario.get_pontuacao()) < float(nivel)*100:
             pontuacao_antiga =  float(usuario.get_pontuacao())
             nova_pontuacao = float(exercicio.get_pontuacao()) + pontuacao_antiga
-            nivel_antigo = int(usuario.get_nivel_atual())
-
-            if nova_pontuacao >= float(nivel)*100:
-                novo_nivel =  nivel_antigo + 1
+            
+            nivel_atual = int(usuario.get_nivel_atual())
+            if nova_pontuacao >= float(nivel_atual)*100:
+                novo_nivel =  nivel_atual + 1
                 usuario.set_nivel_atual(novo_nivel)
 
             usuario.set_pontuacao(nova_pontuacao)
@@ -216,3 +216,35 @@ def usuario_perfil(id):
         return redirect("/usuario")
 
     return render_template("usuario_perfil.html", usuario=usuario)
+
+
+@usuario_bp.route("/ranking")
+@user_required
+def usuario_ranking():
+
+    ranking = ctrl_usuarios.listar_ranking()
+    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
+
+    return render_template("ranking.html", usuario=usuario, usuarios=ranking)
+
+
+@usuario_bp.route("/certificado")
+@user_required
+def usuario_certificado():
+
+    usuario = ctrl_usuarios.get_registro(session["usuario_id"])
+    idioma = ctrl_idiomas.get_registro(usuario.get_cod_idioma())
+    lista_licoes = ctrl_licoes.registros_com_criterio({1: usuario.get_cod_idioma()})
+    lista_codigos = []
+    for licao in lista_licoes:
+        lista_codigos.append(licao[0])
+
+    nivel_maximo = ctrl_exercicios.maior_nivel(lista_codigos)
+    if nivel_maximo < int(usuario.get_nivel_atual()):
+        return render_template("certificado.html", usuario=usuario, idioma=idioma)
+    
+    return render_template("erro.html", titulo="Acesso negado!", 
+                           mensagem="Você ainda não atingiu o nível suficiente para obter o certificado.", 
+                           voltar="/usuario")
+
+

@@ -114,6 +114,19 @@ class ControladorUsuarios(Controlador):
 
         for i in range(len(lista_dados)):
             lista_registros.append(RegistroUsuarios(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3],
-                                                    lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7],))
+                                                    lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7]))
 
         return lista_registros
+
+
+    def listar_ranking(self):
+
+        lista_registro = []
+        lista_dados = self.listar_dados()
+        lista_dados.sort(key=lambda x: x[6], reverse=True)
+
+        for i in range(len(lista_dados)):
+            lista_registro.append(RegistroUsuarios(lista_dados[i][0], lista_dados[i][1], lista_dados[i][2], lista_dados[i][3],
+                                                    lista_dados[i][4], lista_dados[i][5], lista_dados[i][6], lista_dados[i][7]))
+            
+        return lista_registro

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificado - MaxLanguage</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">MaxLanguage</div>
+      <nav class="menu">
+        <a href="/usuario"> Início </a>
+        <a href="/usuario"> Lições </a>
+        <a href="/usuario/ranking"> Ranking </a>
+        <a href="/usuario/certificado" class="ativo"> Certificado </a>
+      </nav>
+      <div class="usuario-menu">
+        <span> {{ usuario.get_nome() }} </span>
+        <a href="/usuario/perfil"> Perfil </a> <a href="/logout"> Sair </a>
+      </div>
+    </header>
+    <main class="conteudo-usuario">
+      <section class="pagina-certificado">
+        <div class="certificado">
+          <div class="borda-certificado">
+            <div class="cabecalho-certificado">
+              <div class="logo-certificado">MaxLanguage</div>
+              <div class="titulo-certificado">CERTIFICADO</div>
+              <div class="subtitulo-certificado">DE CONCLUSÃO</div>
+            </div>
+            <div class="conteudo-certificado">
+              <p class="texto-certificado">Certificamos que</p>
+              <h1 class="nome-certificado">{{ usuario.get_nome() }}</h1>
+              <div class="linha-decorativa-certificado"></div>
+              <p class="texto-certificado principal">
+                concluiu com êxito o curso de
+              </p>
+              <h2 class="idioma-certificado">{{ idioma.get_descricao() }}</h2>
+              <p class="descricao-certificado">
+                na plataforma de aprendizagem <strong>MaxLanguage</strong>.
+              </p>
+            </div>
+            <div class="informacoes-certificado">
+              <div class="informacao-certificado">
+                <span> Pontuação final </span>
+                <strong>
+                  {{ "%.2f"|format(usuario.get_pontuacao()|float)}}
+                </strong>
+                <small> pontos </small>
+              </div>
+              <div class="selo-certificado">✓</div>
+              <div class="informacao-certificado">
+                <span> Plataforma </span> <strong> MaxLanguage </strong>
+                <small> Curso concluído </small>
+              </div>
+            </div>
+            <div class="rodape-certificado">
+              <div class="assinatura-certificado">
+                <div class="linha-assinatura"></div>
+                <span> MaxLanguage </span>
+              </div>
+              <div class="data-certificado">
+                <span> Certificado de conclusão </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="acoes-certificado">
+          <a href="/usuario" class="botao-secundario"> Voltar ao início </a>
+          <button type="button" class="botao-primario" onclick="window.print()">
+            Imprimir certificado
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
